@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Schoolfinder</title>
+</head>
+<body>
+    <h1><center>Schoolfinder</center></h1>
+
+    <p><center>Results</center></p>
+
+    <table>
+    {% for name in names %}
+    <tr> <td> {{ name }} </td> <td> info </td> </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>
