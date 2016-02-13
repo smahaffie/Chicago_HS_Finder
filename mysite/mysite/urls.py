@@ -1,3 +1,5 @@
+# Shelby Mahaffie
+
 """mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -30,4 +32,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^abc', abc),
     url(r'^$', abc),
+
+    # If we match 'start with diary', we're going to
+    # send it to another url dispatcher
+    url(r'^diary/', include('diary.urls'))
+
     ]
