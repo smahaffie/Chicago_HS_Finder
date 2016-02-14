@@ -29,20 +29,21 @@ def get_address(request):
 
 			query = """SELECT * FROM test WHERE time_between("{}",address) < "{}" """.format(
 				str(form.cleaned_data['your_address']), str(form.cleaned_data['distance']))
-			print(query)
+			#print(query)
 			r = c.execute(query)
 			results = r.fetchall()
 			print("RESULTS:")
-			print(results)
+			#print(results)
 			print()
 			context = {}
 			context['names'] = []
 			context['addresses'] = []
 			for result in results:
-				context['names'].append(result[0])
-				context['addresses'].append(result[1])
+				context['names'].append((result[0],result[1]))
+				print(result[1])
+				#context['addresses'].append(result[1])
 			connection.close()
-			print(context)
+			#print(context)
 
 			return render(request, 'matcher/results.html', context)
 
