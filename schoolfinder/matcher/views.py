@@ -10,7 +10,8 @@ import sqlite3
 
 class FinderForm(forms.Form):
 	your_address = forms.CharField(label='Your address', max_length = 100)
-	distance = forms.CharField(label="Distance you're willing to travel", max_length = 10)
+	distance = forms.CharField(label="Distance you're willing to travel", max_length = 10, required=False)
+	schooltype = forms.MultipleChoiceField(label = "School type", required = False, widget=forms.CheckboxSelectMultiple(), choices = [(1,"Neighborhood"),(2,"Selective Enrollement"), (3,"Career Academy"), (4,"Magnet"),(5,"Contract"),(6,"Special Needs")])
 
 def get_travel_info_transit(address, address2):
 	return 2000
