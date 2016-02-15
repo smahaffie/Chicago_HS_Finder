@@ -1,0 +1,904 @@
+
+(sublime_text:30810): GLib-CRITICAL **: the GVariant format string '(u)' has a type of '(u)' but the given value has a type of '(s)'
+
+(sublime_text:30810): GLib-CRITICAL **: g_variant_get: assertion 'valid_format_string (format_string, TRUE, value)' failed
+
+(sublime_text:30810): GLib-CRITICAL **: g_main_loop_quit: assertion 'g_atomic_int_get (&loop->ref_count) > 0' failed
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 30478 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 36720 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 39052 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 51152 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 60118 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 62454 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 76894 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 77281 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 83518 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 88197 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 90559 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92007 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92013 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92030 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92044 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92056 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92070 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92082 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92092 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92096 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92110 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92122 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92137 was not found when attempting to remove it
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 92149 was not found when attempting to remove it
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): Gdk-WARNING **: /build/gtk+2.0-3ongxb/gtk+2.0-2.24.23/gdk/x11/gdkdrawable-x11.c:952 drawable is not a pixmap or window
+
+(sublime_text:30810): GLib-CRITICAL **: Source ID 227040 was not found when attempting to remove it
