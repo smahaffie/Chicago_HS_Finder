@@ -1,8 +1,8 @@
 import sqlite3, csv
 
-
-#connection = sqlite3.connect('CHSF.db')
-#c = connection.cursor()
+'''
+Contains function to generate sql tables from csv files and compute average statistics
+'''
 
 def create(categoryofinterest):
     connection = sqlite3.connect('CHSF.db')
@@ -24,6 +24,7 @@ def create(categoryofinterest):
         enrollment_pct real);'''
 
     c.execute(create)
+    connection.close()
 
 def import_data(categoryofinterest):
 
@@ -58,6 +59,6 @@ def compute_average(categoryofinterest):
          #   FROM cep;'''
 
     r = c.execute(average)
-
+    connection.close()
     print(r.fetchall())
 
