@@ -30,5 +30,24 @@ def rename_categories(files,magnets):
                 else:
                     name = i["School Name"].title() + "High School"
                
-                line = [i['School ID'],name, category, i['Rating']]            
+                line = [i['School ID'],name, category, str(i['Rating'])]            
                 writer.writerow(line)
+
+#combine the seperate csvs
+
+merge = ["cleaned_Assessmentoptions_final.csv", "cleaned_Assessmentcombo_final.csv", "cleaned_Assessment912_final.csv"]
+def merge_category_csvs(files):
+    merged = open("merged.csv", 'w')
+    for f in files:
+        with open(f,'r') as fil:
+            next(fil)
+            for line in fil:
+                merged.write(line)
+
+#code to create SQL table
+
+create = '''CREATE TABLE main
+        (school_id varchar(8),
+        name varchar(30),
+        school_type varchar(30),
+        rating varchar(3));'''
