@@ -13,6 +13,7 @@ class FinderForm(forms.Form):
 	distance = forms.CharField(label="Distance you're willing to travel", max_length = 10, required=False)
 	schooltype = forms.MultipleChoiceField(label = "School type", required = False, widget=forms.CheckboxSelectMultiple(), choices = [(1,"Neighborhood"),(2,"Selective Enrollement"), (3,"Career Academy"), (4,"Magnet"),(5,"Contract"),(6,"Special Needs")])
 
+#temporary function
 def get_travel_info_transit(address, address2):
 	return 2000
 
@@ -27,23 +28,18 @@ def get_address(request):
 			connection.create_function("time_between", 2, get_travel_info_transit)
 			c = connection.cursor()
 
-			query = """SELECT * FROM test WHERE time_between("{}",address) < "{}" """.format(
-				str(form.cleaned_data['your_address']), str(form.cleaned_data['distance']))
-			#print(query)
+			time_between = """time_between("{}", address) < {}""".format(str(form.cleaned_data['your_address']),str(form.cleaned_data['distance']))
+
+			query = "SELECT * FROM test WHERE " + time_between + ";"
+
 			r = c.execute(query)
 			results = r.fetchall()
-			print("RESULTS:")
-			#print(results)
-			print()
 			context = {}
 			context['names'] = []
 			context['addresses'] = []
 			for result in results:
 				context['names'].append((result[0],result[1]))
-				print(result[1])
-				#context['addresses'].append(result[1])
 			connection.close()
-			#print(context)
 
 			return render(request, 'matcher/results.html', context)
 
@@ -52,6 +48,3 @@ def get_address(request):
 
 	c = {'form': form}
 	return render(request, 'matcher/start.html', c)
-
-# def abc(request):
-	# return render(request, 'matcher/start.html')
