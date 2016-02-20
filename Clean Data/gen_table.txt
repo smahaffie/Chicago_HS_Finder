@@ -18,7 +18,8 @@ total_tested integer);
 CREATE TABLE cep
 (school_id varchar(8),
 graduates integer,
-enrollment_pct real)
+enrollment_pct real,
+persist_pct real);
 
 .separator ","
 .import cleaned_CEP.csv

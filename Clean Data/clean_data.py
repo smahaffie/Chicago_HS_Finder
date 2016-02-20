@@ -13,7 +13,8 @@ COMMAND = '''awk 'BEGIN {FS = "|"};{print $1"|"$3"|"$5"|"$10}' < 'collenrollpers
 subprocess.call(COMMAND, shell=True)
 with open("CEP.csv",'r') as f, open("cleaned_CEP.csv",'w') as f1:
     next(f) # skip header line
-    f1.write("School ID|Graduates|Enrollment Pct|Persistence Pct")
+    #next(f)
+    #f1.write("School ID|Graduates|Enrollment Pct|Persistence Pct")
     for line in f:
         f1.write(line)
 
