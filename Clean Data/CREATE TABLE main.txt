@@ -1,0 +1,20 @@
+CREATE TABLE main
+ (school_id varchar(8),
+name varchar(30),
+school_type varchar(30),
+ rating varchar(3));Clean college preparation data
+
+
+'''COMMAND = '''awk 'BEGIN {FS = "|"};{print $1","$5","$8","$9","$11}' < 'eccc_all_schools_2015.csv' > 'ECCC.csv' '''
+subprocess.call(COMMAND, shell = True)
+with open("ECCC.csv",'r') as f, open("cleaned_ECCC.csv",'w') as f1:
+    next(f)
+    next(f)
+    next(f)
+    # skip header line
+    for line in f:
+        f1.write(line)
+        break
+    next(f)
+    for line in f:
+        f1.write(line)'''

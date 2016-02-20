@@ -1,0 +1,30 @@
+import sqlite3, csv
+
+'''
+Contains function to generate sql tables from csv files and compute average statistics
+'''
+
+CREATE TABLE act
+(school_id varchar(8),
+category varchar(20),
+category_type varchar(20),
+year integer,
+composite_score_mean real,
+total_tested integer);
+
+.separator ","
+.import cleaned_ACT.csv act
+
+CREATE TABLE cep
+(school_id varchar(8),
+graduates integer,
+enrollment_pct real)
+
+.separator ","
+.import cleaned_CEP.csv
+
+
+
+
+
+
