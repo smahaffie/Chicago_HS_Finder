@@ -743,9 +743,9 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,Overall,Overall,2001,21.2,980
 609720,Overall,Overall,2002,21.0,895
 609720,Overall,Overall,2003,20.8,960
-609720,Overall,Overall,2004,21.8,"1
-609720,Overall,Overall,2005,21.6,"1
-609720,Overall,Overall,2006,21.5,"1
+609720,Overall,Overall,2004,21.8,1,010
+609720,Overall,Overall,2005,21.6,1,124
+609720,Overall,Overall,2006,21.5,1,157
 609720,Overall,Overall,2007,22.3,852
 609720,Overall,Overall,2008,22.7,998
 609720,Overall,Overall,2009,22.4,989
@@ -753,7 +753,7 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,Overall,Overall,2011,23.5,972
 609720,Overall,Overall,2012,23.9,964
 609720,Overall,Overall,2013,24.8,982
-609720,Overall,Overall,2014,24.0,"1
+609720,Overall,Overall,2014,24.0,1,096
 609720,Overall,Overall,2015,25.1,777
 800012,Overall,Overall,2015,7.6,12
 400119,Overall,Overall,2015,16.6,94
@@ -1410,12 +1410,12 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609740,Overall,Overall,2013,14.8,146
 609740,Overall,Overall,2014,15.5,109
 609740,Overall,Overall,2015,15.2,134
- D",Network 9,Overall,11th Grade,19.2,58
- D",Network 9,Overall,11th Grade,17.3,72
- D",Network 9,Overall,11th Grade,19.6,49
- D",Network 9,Overall,11th Grade,18.7,70
- D",Network 9,Overall,11th Grade,17.4,81
- D",Network 9,Overall,11th Grade,18.3,71
+610380,Overall,Overall,2010,18.3,58
+610380,Overall,Overall,2011,17.5,72
+610380,Overall,Overall,2012,18.0,49
+610380,Overall,Overall,2013,18.2,70
+610380,Overall,Overall,2014,17.2,81
+610380,Overall,Overall,2015,17.6,71
 610574,Overall,Overall,2014,13.6,29
 610574,Overall,Overall,2015,13.9,14
 610392,Overall,Overall,2008,15.4,72
@@ -6641,24 +6641,24 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609740,Race,Hispanic,2015,15.3,64
 609740,Race,White,2015,,4
 609740,Race,Black,2015,15.1,66
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,,5
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,19.2,51
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,17.4,71
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,19.7,47
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,,2
- D",Network 9,Race,11th Grade,18.5,67
- D",Network 9,Race,11th Grade,,3
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,17.4,77
- D",Network 9,Race,11th Grade,18.2,69
- D",Network 9,Race,11th Grade,,1
- D",Network 9,Race,11th Grade,,1
+610380,Race,Hispanic,2010,,1
+610380,Race,Other,2010,,5
+610380,Race,White,2010,,1
+610380,Race,Black,2010,18.2,51
+610380,Race,Other,2011,,1
+610380,Race,Black,2011,17.5,71
+610380,Race,Other,2012,,1
+610380,Race,Black,2012,18.0,47
+610380,Race,Hispanic,2012,,1
+610380,Race,Asian / Pacific,2013,,1
+610380,Race,Hispanic,2013,,2
+610380,Race,Black,2013,18.2,67
+610380,Race,Hispanic,2014,,3
+610380,Race,Other,2014,,1
+610380,Race,Black,2014,17.2,77
+610380,Race,Black,2015,17.6,69
+610380,Race,Asian / Pacific,2015,,1
+610380,Race,Other,2015,,1
 610574,Race,Other,2014,,1
 610574,Race,Black,2014,13.6,26
 610574,Race,Hispanic,2014,,2
@@ -9743,18 +9743,18 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609740,Gender,Male,2014,15.5,40
 609740,Gender,Female,2015,15.0,72
 609740,Gender,Male,2015,15.5,62
- D",Network 9,Gender,11th Grade,19.6,32
- D",Network 9,Gender,11th Grade,18.8,26
- D",Network 9,Gender,11th Grade,17.5,46
- D",Network 9,Gender,11th Grade,17.0,26
- D",Network 9,Gender,11th Grade,19.7,35
- D",Network 9,Gender,11th Grade,19.6,14
- D",Network 9,Gender,11th Grade,19.1,54
- D",Network 9,Gender,11th Grade,17.5,16
- D",Network 9,Gender,11th Grade,17.8,62
- D",Network 9,Gender,11th Grade,15.9,19
- D",Network 9,Gender,11th Grade,18.6,59
- D",Network 9,Gender,11th Grade,16.7,12
+610380,Gender,Female,2010,18.5,32
+610380,Gender,Male,2010,18.1,26
+610380,Gender,Female,2011,17.8,46
+610380,Gender,Male,2011,17.0,26
+610380,Gender,Female,2012,18.2,35
+610380,Gender,Male,2012,17.5,14
+610380,Gender,Female,2013,18.4,54
+610380,Gender,Male,2013,17.7,16
+610380,Gender,Female,2014,17.4,62
+610380,Gender,Male,2014,16.6,19
+610380,Gender,Female,2015,17.8,59
+610380,Gender,Male,2015,16.5,12
 610574,Gender,Female,2014,13.9,16
 610574,Gender,Male,2014,13.2,13
 610574,Gender,Female,2015,,6
@@ -11402,9 +11402,9 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,IEP,Has IEP,2003,,3
 609720,IEP,Does not have IEP,2004,21.9,973
 609720,IEP,Has IEP,2004,16.9,37
-609720,IEP,Does not have IEP,2005,21.8,"1
+609720,IEP,Does not have IEP,2005,21.8,1,073
 609720,IEP,Has IEP,2005,16.2,51
-609720,IEP,Does not have IEP,2006,21.8,"1
+609720,IEP,Does not have IEP,2006,21.8,1,087
 609720,IEP,Has IEP,2006,17.2,70
 609720,IEP,Does not have IEP,2007,22.4,827
 609720,IEP,Has IEP,2007,18.0,25
@@ -11420,7 +11420,7 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,IEP,Does not have IEP,2012,24.0,929
 609720,IEP,Has IEP,2013,20.5,21
 609720,IEP,Does not have IEP,2013,24.9,961
-609720,IEP,Does not have IEP,2014,24.1,"1
+609720,IEP,Does not have IEP,2014,24.1,1,059
 609720,IEP,Has IEP,2014,21.4,37
 609720,IEP,Has IEP,2015,22.6,27
 609720,IEP,Does not have IEP,2015,25.2,750
@@ -12721,18 +12721,18 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609740,IEP,Does not have IEP,2014,15.9,88
 609740,IEP,Does not have IEP,2015,16.1,98
 609740,IEP,Has IEP,2015,13.0,36
- D",Network 9,IEP,11th Grade,,4
- D",Network 9,IEP,11th Grade,19.8,54
- D",Network 9,IEP,11th Grade,,1
- D",Network 9,IEP,11th Grade,17.4,71
- D",Network 9,IEP,11th Grade,,1
- D",Network 9,IEP,11th Grade,19.7,48
- D",Network 9,IEP,11th Grade,,2
- D",Network 9,IEP,11th Grade,18.6,68
- D",Network 9,IEP,11th Grade,,5
- D",Network 9,IEP,11th Grade,17.6,76
- D",Network 9,IEP,11th Grade,,1
- D",Network 9,IEP,11th Grade,18.2,70
+610380,IEP,Has IEP,2010,,4
+610380,IEP,Does not have IEP,2010,18.7,54
+610380,IEP,Has IEP,2011,,1
+610380,IEP,Does not have IEP,2011,17.6,71
+610380,IEP,Has IEP,2012,,1
+610380,IEP,Does not have IEP,2012,18.0,48
+610380,IEP,Has IEP,2013,,2
+610380,IEP,Does not have IEP,2013,18.2,68
+610380,IEP,Has IEP,2014,,5
+610380,IEP,Does not have IEP,2014,17.3,76
+610380,IEP,Has IEP,2015,,1
+610380,IEP,Does not have IEP,2015,17.6,70
 610574,IEP,Has IEP,2014,,4
 610574,IEP,Does not have IEP,2014,13.9,25
 610574,IEP,Does not have IEP,2015,14.2,13
@@ -20269,7 +20269,7 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,Lunch,Free / Reduced Lunch,2004,21.4,563
 609720,Lunch,Not Free / Reduced Lunch,2004,22.2,447
 609720,LEP,LEP,2004,,7
-609720,LEP,Is Not LEP,2004,21.8,"1
+609720,LEP,Is Not LEP,2004,21.8,1,003
 609720,Race / Gender,Native American - Female,2005,,1
 609720,Race / Gender,Hispanic - Female,2005,21.0,281
 609720,Race / Gender,Hispanic - Male,2005,21.1,215
@@ -20283,7 +20283,7 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,Lunch,Free / Reduced Lunch,2005,21.3,669
 609720,Lunch,Not Free / Reduced Lunch,2005,22.0,455
 609720,LEP,LEP,2005,,3
-609720,LEP,Is Not LEP,2005,21.6,"1
+609720,LEP,Is Not LEP,2005,21.6,1,121
 609720,Race / Gender,Hispanic - Male,2006,21.3,210
 609720,Race / Gender,Native American - Female,2006,,1
 609720,Race / Gender,White - Male,2006,23.1,153
@@ -20298,7 +20298,7 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,Lunch,Free / Reduced Lunch,2006,21.2,685
 609720,Lunch,Not Free / Reduced Lunch,2006,22.0,472
 609720,LEP,LEP,2006,,2
-609720,LEP,Is Not LEP,2006,21.5,"1
+609720,LEP,Is Not LEP,2006,21.5,1,155
 609720,Race / Gender,Hispanic - Male,2007,21.9,159
 609720,Race / Gender,Hispanic - Female,2007,21.3,181
 609720,Race / Gender,White - Male,2007,23.7,120
@@ -20419,7 +20419,7 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609720,Race / Gender,Other - Female,2014,23.8,10
 609720,Lunch,Free / Reduced Lunch,2014,23.6,679
 609720,Lunch,Not Free / Reduced Lunch,2014,24.8,417
-609720,LEP,Is Not LEP,2014,24.0,"1
+609720,LEP,Is Not LEP,2014,24.0,1,096
 609720,Race / Gender,Native American - Male,2015,,3
 609720,Race / Gender,Asian / Pacific - Female,2015,26.5,50
 609720,Race / Gender,Asian / Pacific - Male,2015,27.3,40
@@ -27128,49 +27128,49 @@ School ID, Category, Category Type, Year, Composite Score Mean, Total Tested
 609740,Lunch,Free / Reduced Lunch,2015,15.2,128
 609740,LEP,LEP,2015,13.3,12
 609740,LEP,Is Not LEP,2015,15.4,122
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Race / Gender,11th Grade,19.0,23
- D",Network 9,Race / Gender,11th Grade,19.5,28
- D",Network 9,Race / Gender,11th Grade,,4
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Lunch,11th Grade,19.0,52
- D",Network 9,Lunch,11th Grade,,6
- D",Network 9,LEP,11th Grade,19.2,58
- D",Network 9,Race / Gender,11th Grade,17.0,26
- D",Network 9,Race / Gender,11th Grade,17.6,45
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Lunch,11th Grade,17.3,68
- D",Network 9,Lunch,11th Grade,,4
- D",Network 9,LEP,11th Grade,17.3,72
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Race / Gender,11th Grade,19.8,13
- D",Network 9,Race / Gender,11th Grade,19.6,34
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Lunch,11th Grade,19.6,45
- D",Network 9,Lunch,11th Grade,,4
- D",Network 9,LEP,11th Grade,19.6,49
- D",Network 9,Race / Gender,11th Grade,,2
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Race / Gender,11th Grade,17.5,16
- D",Network 9,Race / Gender,11th Grade,18.9,51
- D",Network 9,Lunch,11th Grade,18.5,66
- D",Network 9,Lunch,11th Grade,,4
- D",Network 9,LEP,11th Grade,18.7,70
- D",Network 9,Race / Gender,11th Grade,,3
- D",Network 9,Race / Gender,11th Grade,15.6,16
- D",Network 9,Race / Gender,11th Grade,17.9,61
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Lunch,11th Grade,17.4,70
- D",Network 9,Lunch,11th Grade,17.0,11
- D",Network 9,LEP,11th Grade,17.4,81
- D",Network 9,Race / Gender,11th Grade,18.5,57
- D",Network 9,Race / Gender,11th Grade,16.7,12
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Race / Gender,11th Grade,,1
- D",Network 9,Lunch,11th Grade,,3
- D",Network 9,Lunch,11th Grade,18.1,68
- D",Network 9,LEP,11th Grade,18.3,71
+610380,Race / Gender,Hispanic - Male,2010,,1
+610380,Race / Gender,White - Male,2010,,1
+610380,Race / Gender,Black - Male,2010,18.1,23
+610380,Race / Gender,Black - Female,2010,18.3,28
+610380,Race / Gender,Other - Female,2010,,4
+610380,Race / Gender,Other - Male,2010,,1
+610380,Lunch,Free / Reduced Lunch,2010,18.2,52
+610380,Lunch,Not Free / Reduced Lunch,2010,,6
+610380,LEP,Is Not LEP,2010,18.3,58
+610380,Race / Gender,Black - Male,2011,17.0,26
+610380,Race / Gender,Black - Female,2011,17.8,45
+610380,Race / Gender,Other - Female,2011,,1
+610380,Lunch,Free / Reduced Lunch,2011,17.4,68
+610380,Lunch,Not Free / Reduced Lunch,2011,,4
+610380,LEP,Is Not LEP,2011,17.5,72
+610380,Race / Gender,Hispanic - Female,2012,,1
+610380,Race / Gender,Black - Male,2012,17.8,13
+610380,Race / Gender,Black - Female,2012,18.2,34
+610380,Race / Gender,Other - Male,2012,,1
+610380,Lunch,Free / Reduced Lunch,2012,18.0,45
+610380,Lunch,Not Free / Reduced Lunch,2012,,4
+610380,LEP,Is Not LEP,2012,18.0,49
+610380,Race / Gender,Hispanic - Female,2013,,2
+610380,Race / Gender,Asian / Pacific - Female,2013,,1
+610380,Race / Gender,Black - Male,2013,17.7,16
+610380,Race / Gender,Black - Female,2013,18.3,51
+610380,Lunch,Free / Reduced Lunch,2013,18.1,66
+610380,Lunch,Not Free / Reduced Lunch,2013,,4
+610380,LEP,Is Not LEP,2013,18.2,70
+610380,Race / Gender,Hispanic - Male,2014,,3
+610380,Race / Gender,Black - Male,2014,16.4,16
+610380,Race / Gender,Black - Female,2014,17.4,61
+610380,Race / Gender,Other - Female,2014,,1
+610380,Lunch,Free / Reduced Lunch,2014,17.2,70
+610380,Lunch,Not Free / Reduced Lunch,2014,17.2,11
+610380,LEP,Is Not LEP,2014,17.2,81
+610380,Race / Gender,Black - Female,2015,17.8,57
+610380,Race / Gender,Black - Male,2015,16.5,12
+610380,Race / Gender,Other - Female,2015,,1
+610380,Race / Gender,Asian / Pacific - Female,2015,,1
+610380,Lunch,Not Free / Reduced Lunch,2015,,3
+610380,Lunch,Free / Reduced Lunch,2015,17.5,68
+610380,LEP,Is Not LEP,2015,17.6,71
 610574,Race / Gender,Other - Male,2014,,1
 610574,Race / Gender,Black - Female,2014,13.9,16
 610574,Race / Gender,Hispanic - Male,2014,,2

@@ -5,7 +5,7 @@ files = ["cleaned_Assessmentoptions.csv", "cleaned_Assessmentcombo.csv", "cleane
 magnets = ["DISNEY II HS", "VON STEUBEN HS", "CHICAGO AGRICULTURE HS", "CRANE MEDICAL HS", "DEVRY HS", "CURIE HS", "CLARK HS"]
 se = ["BROOKS HS", "JONES HS", "KING HS", "LANE TECH HS", "LINDBLOM HS", "NORTHSIDE PREP HS", "PAYTON HS", "SOUTH SHORE INTL HS", "WESTINGHOUSE HS", "YOUNG HS" ]
 
-def rename_categories(files,magnets):
+def rename_categories(files,magnets,se):
     for f in files:
         print(f)
         new = f[:-4] + "_final.csv"
@@ -14,13 +14,12 @@ def rename_categories(files,magnets):
             writer = csv.writer(f1)
             for i in dr:
                 category = i["Network"].title()
-                if i["School Name"] == "LINDBLOM HS":
-                    print(i)
                 if "NETWORK" in i["Network"]:
-                    print(i["School Name"])
                     category = "Neighborhood"
                 if i["Network"] == "SERVICE LEADERSHIP ACADEMIES":
                     category = "Military Academy"
+                if i["Network"] == "Os4" or i["Network"] == "Ausl":
+                    category = "Reinvestment"
                 if i['School Name'] in magnets:
                     category = "Magnet"
                 if i['School Name'] in se:
@@ -41,6 +40,7 @@ def merge_category_csvs(files):
     for f in files:
         with open(f,'r') as fil:
             next(fil)
+            merged.write("School ID, School Name, Network, Rating" + '\n')
             for line in fil:
                 merged.write(line)
 
