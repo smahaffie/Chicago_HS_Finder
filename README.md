@@ -3,9 +3,9 @@
 Raw data:
 
 act_schools_2001_to_2015.csv
-Assessment_data_9_12_schools.csv
-Assessment_data_comboschools.csv
-Assessment_data_optionschools.csv
+Assessment912.csv
+Assessmentcombo.csv
+Assessmentoptions.csv
 collenrollpersist_rpt_2015.csv
 FOT_SchoolLevel_20151023.csv
 
@@ -51,3 +51,10 @@ name_and_id.py - maps school names to ids
 
 Database:
 CHSF.db
+
+Tables:
+ACT - average ACT scores for 2015 including divisions by race, program, etc.
+CEP - college enrollment and persistence rates for 2015\
+addrs - school ID and school address
+main - school ID, school name, school category, school rating
+FOT - freshman on track rates and number of freshman by school
