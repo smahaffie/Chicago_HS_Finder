@@ -29,5 +29,7 @@ CREATE TABLE addrs
 (school_id varchar(8),
 address varchar(100));
 
+CREATE TABLE fot
+(school_id varchar(8),fot real,num_fresh integer);
 
 
