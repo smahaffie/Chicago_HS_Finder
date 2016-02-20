@@ -4,7 +4,7 @@ import math
 mult_dict = {1:0.1, 2:0.4, 3:0.6, 4:0.8, 5:1, 6:1.2, 7:1.4, 8:1.6, 9:1.8, 10:2.1}
 
 #INCLUDE PROPER DATABASE LOCATION BELOW
-connection = sqlite3.connect('CHSF.db')
+connection = sqlite3.connect('..\schoolfinder\CHSF.db')
 c = connection.cursor()
 
 
@@ -14,30 +14,44 @@ FROM act  WHERE year = 2015 AND category = "Overall"
 AND category_type = "Overall";'''
 
 r = c.execute(average)
-connection.close()
+
 
 average_ACT = r.fetchall()
 
-def get_multipliers(preferences):
-    '''Given list of preferences where each preference is an integer,
-    returns list of preference multipliers for use in ranking computation'''
 
-    multipliers = []
-    for preference in preferences:
-        assert type(preference) = int and 1<=preference<=10
-        multiplier = mult_dict[preference]
-        multipliers.append(multiplier)
-    return multipliers
+def compute_score(d_pref, a_pref, max_willing, distance, act_score, enrollment_pct, persistance_pct, on_track_rate):
+    '''
+    '''
 
-def compute_ranking(preferences, user_inputs, distance_info, academic_info):
-    '''Given list of preferences, distance_info tuple, and academic_info tuple,
-    calculates ranking
+    d_pref = mult_dict[d_pref]
+    a_pref = mult_dict[a_pref]
 
+    distance_score = 1 - (!!!!!distance/max_willing) #distance to school / max distance willing to travel
+    
+    academic_factors = []
+    
+    if act_score != None:
+        school_act = (act.composite_score_mean/average_ACT)
+        academic_factors.append(school_act)
+    else:
+        pass
+    if enrollment_pct != None:
+        school_enrollment_pct = (cep.enrollment_pct/average_epct)
+        academic_factors.append(school_enrollment_pct)
+    else:
+        pass
+    if persistance_pct != None:
+        school_persistance_pct = (cep.persist_pct/average_ppct)
+        academic_factors.append(school_persistance_pct)
+    else:
+        pass
+    if on_track_rate != None:
+        school_on_track_rate = (fot.fot/average_on_track_rate)
+        academic_factors.append(school_on_track_rate)
+    else:
+        pass
 
-    NOTE: preferences is list of integers inputted by user (scale 1:10)
-    user_inputs is list of all user inputted values, first of which is max travel time
-    distance_info is tuple where tuple[0] is distance to school
-    academic_score is tuple where tuple[0] '''
+    academic_score = sum(academic_factors)/len(academic_factors)
 
-    distance_score = 100 - 100(distance_info[0]/user_inputs[0]) #distance to school / max distance willing to travel
-    academic_score = 
+    total_score = d_pref * distance_score + a_pref * academic_score
+    return total_score
