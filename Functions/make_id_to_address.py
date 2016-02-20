@@ -17,7 +17,7 @@ def make_id_to_address():
 						name = name[:-12]
 			assert name in name_to_address
 			w.writerow([sid, name_to_address[name]])
-
+ 
 
 id_to_name = {'400010': 'Ace Tech High School',
  '400012': 'Amandla High School',
