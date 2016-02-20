@@ -11,7 +11,7 @@ def find_best_route(home, school, travel_mode):
     '''
     gmaps = googlemaps.Client(key='AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM')
     # arrival time is Monday, September 5, 2016 at 8:45 am
-    directions_json = gmaps.directions(home, school, mode=travel_mode, arrival_time = 1473065100)
+    directions_json = gmaps.directions(home, school, mode=travel_mode)
     best_route = directions_json[0]['legs'][0]
 
     return best_route
