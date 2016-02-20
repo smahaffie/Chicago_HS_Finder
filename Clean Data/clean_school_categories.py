@@ -1,5 +1,6 @@
 '''Further clean categorization of schools data'''
 import csv
+csv.register_dialect('piper', delimiter='|', quoting=csv.QUOTE_NONE)
 
 files = ["cleaned_Assessmentoptions.csv", "cleaned_Assessmentcombo.csv", "cleaned_Assessment912.csv"]
 magnets = ["DISNEY II HS", "VON STEUBEN HS", "CHICAGO AGRICULTURE HS", "CRANE MEDICAL HS", "DEVRY HS", "CURIE HS", "CLARK HS"]
@@ -10,9 +11,12 @@ def rename_categories(files,magnets,se):
         print(f)
         new = f[:-4] + "_final.csv"
         with open(f) as fin, open(new, 'w') as f1:
-            dr = csv.DictReader(fin,fieldnames=["School ID","School Name","Network","Rating"])
-            writer = csv.writer(f1)
+            dr = csv.DictReader(fin,fieldnames=["School ID","School Name","Network","Rating"],dialect = "piper")
+            writer = csv.writer(f1,delimiter = "|")
+            next(fin)
             for i in dr:
+                if i["Network"] == None:
+                    print(i)
                 category = i["Network"].title()
                 if "NETWORK" in i["Network"]:
                     category = "Neighborhood"
@@ -27,7 +31,7 @@ def rename_categories(files,magnets,se):
                 if i["School Name"][-2:] == "HS":
                     name = i["School Name"][:-3].title() + " High School"
                 else:
-                    name = i["School Name"].title() + "High School"
+                    name = i["School Name"].title() + " High School"
                
                 line = [i['School ID'],name, category, str(i['Rating'])]            
                 writer.writerow(line)
@@ -40,7 +44,7 @@ def merge_category_csvs(files):
     for f in files:
         with open(f,'r') as fil:
             next(fil)
-            merged.write("School ID, School Name, Network, Rating" + '\n')
+            merged.write("School ID|School Name|Network|Rating" + '\n')
             for line in fil:
                 merged.write(line)
 
