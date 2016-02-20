@@ -24,7 +24,9 @@ enrollment_pct real)
 .import cleaned_CEP.csv
 
 
-
+CREATE TABLE addrs
+(school_id varchar(8),
+address varchar(100));
 
 
 
