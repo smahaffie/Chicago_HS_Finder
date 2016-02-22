@@ -36,7 +36,7 @@ def get_address(request):
             time_between = "time_between('{}', address) < {}".format(str(form.cleaned_data['your_address']),str(form.cleaned_data['distance']))
             print(time_between)
 
-            query = "SELECT * FROM WHERE " + time_between + ";"
+            query = "SELECT * FROM addrs WHERE " + time_between + ";"
             print(query)
 
             r = c.execute(query)
