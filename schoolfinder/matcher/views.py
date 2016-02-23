@@ -36,11 +36,13 @@ def get_address(request):
             time_between = "time_between('{}', address) < {}".format(str(form.cleaned_data['your_address']),str(form.cleaned_data['distance']))
             print(time_between)
 
-            query = "SELECT * FROM addrs WHERE " + time_between + ";"
+            query = "SELECT name, address FROM addrs JOIN main ON addrs.school_id = main.school_id WHERE " + time_between + ";"
             print(query)
 
             r = c.execute(query)
+            print('finished')
             results = r.fetchall()
+            print(results)
             context = {}
             context['names'] = []
             context['addresses'] = []
@@ -69,7 +71,9 @@ def find_best_route(home, school, travel_mode):
         json
     '''
     gmaps = googlemaps.Client(key='AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM')
+    print("Starting gmaps")
     directions_json = gmaps.directions(home, school, mode=travel_mode)
+    print("Got gmaps")
     best_route = directions_json[0]['legs'][0]
     return best_route
 
@@ -106,4 +110,5 @@ def get_travel_info_transit(home, school):
     return [duration, walking_time, ptroutes]
 
 def get_duration(home, school):
+    print("Got duration")
     return get_travel_info_transit(str(home),str(school))[0]
