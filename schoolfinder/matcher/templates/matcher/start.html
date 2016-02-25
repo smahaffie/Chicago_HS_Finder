@@ -1,6 +1,9 @@
 <html>
 <head>
     <title>Schoolfinder</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
 </head>
 <body>
     <h1><center>Schoolfinder</center></h1>
@@ -10,8 +13,26 @@
     <form action="/your-address/" method="post">
         {% csrf_token %}
         {{ form }}
+
+        <label><input type="checkbox" id="some_name" /> Would you like us to calculate your estimated chance of admission to selective schools?</label>
+
+        <div id="extra_form" style="display: none">
+            aaa
+            This is where the extra form should show up.
+            {{ extra_form }}
+            bbb
+        </div>
         <input type="submit" value="Submit" />
     </form>
 	</table>
+        <script>
+    $( "#some_name" ).click(function() {
+        if ($("#some_name").is(':checked')) {
+            $('#extra_form').show();    
+        } else {
+            $('#extra_form').hide();    
+     }
+    });
+    </script>
 </body>
 </html>
