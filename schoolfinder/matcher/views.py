@@ -33,6 +33,10 @@ def get_address(request):
             print(form.cleaned_data)
 
             neighborhood_schools = get_neighborhood_schools(form.cleaned_data['your_address'])
+            print(type(neighborhood_schools))
+            print(neighborhood_schools)
+            print(str(neighborhood_schools))
+
             # how to use this???
 
             connection = sqlite3.connect('CHSF.db')
@@ -40,10 +44,17 @@ def get_address(request):
             c = connection.cursor()
 
             print(form.cleaned_data)
-            time_between = "time_between('{}', address) < {}".format(str(form.cleaned_data['your_address']),str(form.cleaned_data['distance']))
-            print(time_between)
 
-            query = "SELECT name, address FROM addrs JOIN main ON addrs.school_id = main.school_id WHERE " + time_between + ";"
+            time_between = "time_between('{}', addrs.address) < {}".format(str(form.cleaned_data['your_address']),str(form.cleaned_data['distance']))
+
+            query = "SELECT main.school_id, main.name, main.school_type, act.composite_score_mean, fot.fot, main.rating FROM main JOIN fot JOIN act JOIN cep JOIN addrs " + \
+                "ON main.school_id = fot.school_id AND main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
+                " WHERE act.category_type = 'Overall' AND act.year = '2015' AND main.school_id in (SELECT school_id FROM main WHERE " + \
+                ' (school_type IN ("Selective Enrollment","Magnet","Contract","Options","Reinvestment", "Charter") OR (school_type = "Neighborhood" AND school_id IN ' + \
+                '(SELECT main.school_id FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")" + ") " + \
+                "AND " + time_between + "));"
+
+
             print(query)
 
             r = c.execute(query)
@@ -69,6 +80,10 @@ def get_address(request):
 
 
 # FUNCTIONS THAT SHOULD BE IMPORTED IN EVENTUALLY:
+def check_neighborhood_schools(school_id, neighborhood_schools):
+    if school_id in neighborhood_schools:
+        return True
+
 def find_best_route(home, school, travel_mode):
     '''
     Inputs:
@@ -78,8 +93,9 @@ def find_best_route(home, school, travel_mode):
     Returns:
         json
     '''
-    gmaps = googlemaps.Client(key='AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM')
+    gmaps = googlemaps.Client(key='AIzaSyD12ij_d_fNk93dyugiVuJHSNvEagDNfSU')
     print("Starting gmaps")
+    print(home, school, travel_mode)
     directions_json = gmaps.directions(home, school, mode=travel_mode)
     print("Got gmaps")
     best_route = directions_json[0]['legs'][0]
@@ -157,9 +173,17 @@ def get_neighborhood_schools(address):
 
     driver.close()
 
-    rv = []
+    rvl = []
     for high_school in high_schools:
-        rv.append(get_id_from_name(" ".join(high_school[:-1])))
+        rvl.append(str(get_id_from_name(" ".join(high_school[:-1]))))
+
+    print(rvl)
+
+    if len(rvl) == 1:
+        rv = "(" + str(rvl[0]) + ")" 
+
+    else:
+        rv = str(tuple(rvl))
 
     return rv
 
