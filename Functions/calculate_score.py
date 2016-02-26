@@ -7,7 +7,7 @@ import csv
 #inputs just for testing
 inputs = {"readingTest": 90, "mathTest": 90, "readingGrade": "A", "mathGrade": "B", "scienceGrade": "B", "socialGrade": "C", "tier": 1}
 grade_values = {"A": 75, "B":50, "C": 25, "D": 0, "F":0 }
-csv = '../Clean Data/Cutoff_Scores_2015_2016'
+csv = '../Clean Data/Cutoff_Scores_Fixed'
 
 def create_min_max_dict(csv):
 	'''
@@ -49,6 +49,7 @@ def calculate_scores(inputs,grade_values, schoolranges):
 	for school in schoolranges:
 		t = "Tier" + str(inputs["tier"])
 		print(school)
+		print(schoolranges[school])
 		max_ = int(schoolranges[school][t][1]) - total_pts
 		min_ = int(schoolranges[school][t][0]) - total_pts
 		point_ranges[school] = (min_,max_)
