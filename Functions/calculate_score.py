@@ -2,15 +2,12 @@
 7th Grade Reading Grade, 7th Grade Math Grade,7th Grade Science Grade,
 7th Grade Social Studies Grade, and tier and returns score range '''
 
-import re
-import util
-import bs4
 import csv
 
 #inputs just for testing
 inputs = {"readingTest": 90, "mathTest": 90, "readingGrade": "A", "mathGrade": "B", "scienceGrade": "B", "socialGrade": "C", "tier": 1}
 grade_values = {"A": 75, "B":50, "C": 25, "D": 0, "F":0 }
-csv = 'Data/Cutoff_Scores_2015-2016.csv'
+csv = '../Clean Data/Cutoff_Scores_2015_2016'
 
 def create_min_max_dict(csv):
 	'''
@@ -28,9 +25,10 @@ def create_min_max_dict(csv):
 				school_ranges[fields[0]][key] = (fields[5],fields[6])
 	return school_ranges
 
+schoolranges = create_min_max_dict(csv)
 
 
-def calculate_scores(inputs,grade_values,csv):
+def calculate_scores(inputs,grade_values, schoolranges):
 	'''
 	Computes range of points needed on entrance exam for each selective enrollment school using 2015 data
 	Inputs:
@@ -40,7 +38,7 @@ def calculate_scores(inputs,grade_values,csv):
 	Returns:
 		dictionary of ranges by school for student's tier and current points attained
 	'''
-	schoolranges = create_min_max_dict(csv)
+	
 	point_ranges = {}
 	#check test scores are integers between 0 and 100
 	assert inputs["readingTest"] <= 100 and inputs["readingTest"] >= 0, "Please enter valid number of points between 0 and 100"
@@ -50,8 +48,11 @@ def calculate_scores(inputs,grade_values,csv):
 	total_pts = test_scores + grade_pts
 	for school in schoolranges:
 		t = "Tier" + str(inputs["tier"])
+		print(school)
 		max_ = int(schoolranges[school][t][1]) - total_pts
 		min_ = int(schoolranges[school][t][0]) - total_pts
 		point_ranges[school] = (min_,max_)
 	return point_ranges
+print(schoolranges)
 
+point_ranges = calculate_scores(inputs, grade_values, schoolranges)
