@@ -23,6 +23,37 @@ class FinderForm(forms.Form):
     
     a_priority = forms.ChoiceField(label = "How important are academics?", choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
 
+def build_query(neighborhood_schools, cleaned_data):
+    time_between = "time_between('{}', addrs.address) < {}".format(str(cleaned_data['your_address']),str(cleaned_data['distance']))
+
+
+    schooltypes = cleaned_data['schooltype']
+    if 'Neighborhood' in schooltypes:
+        schooltypes.remove('Neighborhood')
+        neighborhood = True
+
+    other_schooltypes = str(tuple(schooltypes))
+
+    # If user checks no boxes, we will show them all school types. If they 
+    if schooltypes == []:
+        neighborhood = True
+        other_schooltypes = "('Selective Enrollment','Career Academy','Magnet','Contract','Special Needs')"
+
+    print(neighborhood_schools)
+    print(str(neighborhood_schools))
+    neighborhood_q_string = ''
+    if neighborhood:
+        neighborhood_q_string = ' OR (school_type = "Neighborhood" AND school_id IN (SELECT main.school_id ' + \
+            'FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")) "
+
+    query = "SELECT main.school_id, main.name, main.school_type, act.composite_score_mean, fot.fot, main.rating FROM main JOIN fot JOIN act JOIN cep JOIN addrs " + \
+                "ON main.school_id = fot.school_id AND main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
+                " WHERE act.category_type = 'Overall' AND act.year = '2015' AND main.school_id in (SELECT school_id FROM main WHERE " + \
+                ' (school_type IN ' + other_schooltypes + neighborhood_q_string + \
+                "AND " + time_between + "));"
+
+    return query
+
 def get_address(request):
     if request.method == "POST":
         form = FinderForm(request.POST) # request.GET
@@ -33,9 +64,6 @@ def get_address(request):
             print(form.cleaned_data)
 
             neighborhood_schools = get_neighborhood_schools(form.cleaned_data['your_address'])
-            print(type(neighborhood_schools))
-            print(neighborhood_schools)
-            print(str(neighborhood_schools))
 
             # how to use this???
 
@@ -43,17 +71,7 @@ def get_address(request):
             connection.create_function("time_between", 2, get_duration)
             c = connection.cursor()
 
-            print(form.cleaned_data)
-
-            time_between = "time_between('{}', addrs.address) < {}".format(str(form.cleaned_data['your_address']),str(form.cleaned_data['distance']))
-
-            query = "SELECT main.school_id, main.name, main.school_type, act.composite_score_mean, fot.fot, main.rating FROM main JOIN fot JOIN act JOIN cep JOIN addrs " + \
-                "ON main.school_id = fot.school_id AND main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
-                " WHERE act.category_type = 'Overall' AND act.year = '2015' AND main.school_id in (SELECT school_id FROM main WHERE " + \
-                ' (school_type IN ("Selective Enrollment","Magnet","Contract","Options","Reinvestment", "Charter") OR (school_type = "Neighborhood" AND school_id IN ' + \
-                '(SELECT main.school_id FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")" + ") " + \
-                "AND " + time_between + "));"
-
+            query = build_query(neighborhood_schools, form.cleaned_data)
 
             print(query)
 
@@ -63,7 +81,6 @@ def get_address(request):
             print(results)
             context = {}
             context['names'] = []
-            context['addresses'] = []
             for result in results:
                 context['names'].append((result[0],result[1]))
             connection.close()
