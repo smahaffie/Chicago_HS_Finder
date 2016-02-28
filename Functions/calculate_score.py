@@ -3,6 +3,7 @@
 7th Grade Social Studies Grade, and tier and returns score range '''
 
 import csv
+import json
 
 #inputs just for testing
 inputs = {"readingTest": 90, "mathTest": 90, "readingGrade": "A", "mathGrade": "B", "scienceGrade": "B", "socialGrade": "C", "tier": 1}
@@ -25,18 +26,22 @@ def create_min_max_dict(csv):
             print(row)
             fields = row.strip().split(",")
             key = "{}{}".format(fields[1],fields[2])
-            if fields[0] not in school_ranges:
+            print(key)
+            if name_id_dict[fields[0]] not in school_ranges:
                 name = name_id_dict[fields[0]]
                 school_ranges[name] ={key: (fields[5],fields[6])}
             else:
+                print("add")
                 school_ranges[name][key] = (fields[5],fields[6])
-    return school_ranges
 
-schoolranges = create_min_max_dict(csv)
+    with open("../Clean Data/Data_Files/school_ranges.json", 'w') as f:
+        print(school_ranges)
+        json.dump(school_ranges,f)
 
 
-def calculate_scores(inputs,grade_values, schoolranges):
-    '''
+
+def calculate_scores(inputs,grade_values):
+  
     Computes range of points needed on entrance exam for each selective enrollment school using 2015 data
     Inputs:
         inputs: student variables
@@ -44,8 +49,9 @@ def calculate_scores(inputs,grade_values, schoolranges):
         csv: csv file with point ranges for each school by tier
     Returns:
         dictionary of ranges by school for student's tier and current points attained
-    '''
-    
+
+    with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
+        schoolranges = json.load(f)
     point_ranges = {}
     #check test scores are integers between 0 and 100
     assert inputs["readingTest"] <= 100 and inputs["readingTest"] >= 0, "Please enter valid number of points between 0 and 100"
@@ -65,4 +71,4 @@ def calculate_scores(inputs,grade_values, schoolranges):
     return point_ranges
 #print(schoolranges)
 
-point_ranges = calculate_scores(inputs, grade_values, schoolranges)
+point_ranges = calculate_scores(inputs, grade_values)'''
