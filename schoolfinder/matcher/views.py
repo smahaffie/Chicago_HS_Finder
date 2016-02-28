@@ -8,6 +8,7 @@ import sqlite3
 import googlemaps
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import ranking
 
 def about(request):
     return render(request, 'matcher/about.html')
@@ -67,7 +68,7 @@ def build_query(neighborhood_schools, cleaned_data):
             'FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")) "
 
     # Remember to only calculate time between once, though!
-    query = "SELECT time_between('{}', addrs.address) / 60, ".format(cleaned_data['your_address']) + "main.school_id, main.name, main.school_type, act.composite_score_mean, main.rating FROM main JOIN act JOIN cep JOIN addrs " + \
+    query = "SELECT time_between('{}', addrs.address) / 60, ".format(cleaned_data['your_address']) + "main.school_id, main.name, main.school_type, act.composite_score_mean, main.rating, cep.enrollment_pct, cep.persist_pct FROM main JOIN act JOIN cep JOIN addrs " + \
                 "ON main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
                 " WHERE act.category_type = 'Overall' AND act.year = '2015' AND (main.school_id in (SELECT school_id FROM main WHERE " + \
                 ' (school_type IN ' + other_schooltypes + ")" + neighborhood_q_string + ")" + time_between + ");"
@@ -111,8 +112,11 @@ def form(request):
             print(results)
             context = {}
             context['names'] = []
+            
+            #rank_results(results,tier,form.cleaned_data,extra_form.cleaned_data) function in progress
+
             for result in results:
-                result_list = []
+                result_list= []
                 for item in result:
                     result_list.append(item)
                 context['names'].append(tuple(result_list))
@@ -127,6 +131,45 @@ def form(request):
     c = {'form': form, 'extra_form': extra_form}
     return render(request, 'matcher/start.html', c)
 
+
+def rank_results(results,tier,form,extra_form):
+    result_dict = {}
+
+    point_ranges = calc_difficulty(results,tier,extra_form)
+
+
+    for result in results:
+        s_id = result[1] #key is school id
+        result_dict[s_id] = {} #dictionary to store query results 
+        result_dict[s_id]["name"] = result[2]
+        result_dict[s_id]["time"] = result[0]
+        result_dict[s_id]["rating"] = result[5]
+        result_dict[s_id]["ACT"] = result[4]
+        result_dict[s_id]["type"] = result[3]
+        if s_id in point_ranges:
+            result_dict[s_id]["difficulty"] = point_ranges[s_id]
+        result[s_id]["ranking"] = ranking.compute_score(s_id,form["d_priority"],form["a_priority"], form["distance"],result[0],result[4],result[6],result[7])
+
+    print(result_dict)
+
+
+
+
+def calc_difficulty(tier,extra_form):
+    with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
+        schoolranges = json.load(f)
+    point_ranges = {}
+    grade_values = {"A": 75, "B":50, "C": 25, "D": 0, "F":0 }
+    test_scores = round(extra_form["reading_score"] * 1.515) + round(extra_form["math_score"] * 1.515)
+    grade_pts = grade_values[extra_form["reading_grade"]] + grade_values[extra_form["math_grade"]] + grade_values[extra_form["science_grade"]] + grade_values[inputs["social_science_grade"]]
+    total_pts = test_scores + grade_pts
+    for school in schoolranges:
+        t = "Tier" + tier
+        max_ = int(schoolranges[school][t][1]) - total_pts
+        min_ = int(schoolranges[school][t][0]) - total_pts
+        point_ranges[school] = (min_,max_)
+
+    return point_ranges
 
 
 
