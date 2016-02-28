@@ -38,9 +38,17 @@ def get_neighborhood_schools(address):
 
     driver.close()
 
-    rv = []
+    rvl = []
     for high_school in high_schools:
-        rv.append(get_id_from_name(" ".join(high_school[:-1])))
+        rvl.append(str(get_id_from_name(" ".join(high_school[:-1]))))
+
+    print(rvl)
+
+    if len(rvl) == 1:
+        rv = "(" + str(rvl[0]) + ")" 
+
+    else:
+        rv = str(tuple(rvl))
 
     return rv
 
@@ -244,4 +252,3 @@ name_to_id = {'ACE TECH HIGH SCHOOL': '400010',
  'YORK HIGH SCHOOL': '609748',
  'YOUNG HIGH SCHOOL': '609755',
  'YOUNG WOMENS HIGH SCHOOL': '400087'}
-

@@ -12,5 +12,6 @@ def get_tier_number(address):
     search_button.click()
 
     tier_number_text = driver.find_element_by_id('tierNumber').text
+    driver.close()
 
     return tier_number_text.split()[-1]

@@ -12,37 +12,40 @@ from selenium.webdriver.common.keys import Keys
 def about(request):
     return render(request, 'matcher/about.html')
 
-
 class FinderForm2(forms.Form):
-    your_score = forms.CharField(label = 'Your score', max_length = 100)
+    reading_score = forms.IntegerField(label = 'NWEA Reading Percentile', min_value = 0, max_value = 99)
+    math_score = forms.IntegerField(label = 'NWEA Math Percentile', min_value = 0, max_value = 99)
+    reading_grade = forms.ChoiceField(label = '7th Grade Reading Grade', choices = [('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
+    science_grade = forms.ChoiceField(label = '7th Grade Science Grade', choices = [('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
+    math_grade = forms.ChoiceField(label = '7th Grade Math Grade', choices = [('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
+    social_science_grade = forms.ChoiceField(label = '7th Grade Social Science Grade', choices =[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
 
 class FinderForm(forms.Form):
     your_address = forms.CharField(label='Your address', max_length = 100)
-    distance = forms.CharField(label="How many minutes are you willing to travel?", max_length = 10, required=False)
+    distance = forms.IntegerField(label="How many minutes are you willing to travel?", max_value = 10000, required = False, min_value = 1)
     d_priority = forms.ChoiceField(label = "How important is the transit time?",  choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
     schooltype = forms.MultipleChoiceField(label = "What types of schools are you interested in?", 
         required = False, widget=forms.CheckboxSelectMultiple(), choices = 
         [('Neighborhood',"Neighborhood"),('Selective Enrollment',"Selective Enrollement"), ('Military Academy',"Military Academy"), 
-        ('Magnet',"Magnet"),('Contract',"Contract"),('Special Needs',"Special Needs"),("International Baccalaureate", "International Baccalaureate")])
+        ('Magnet',"Magnet"),('Contract',"Contract"),('Special Needs',"Special Needs"),('Charter', 'Charter'),("International Baccalaureate", "International Baccalaureate")])
     
     a_priority = forms.ChoiceField(label = "How important are academics?",  choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
 
 
 def build_query(neighborhood_schools, cleaned_data):
     
-
     neighborhood = False
     schooltypes = cleaned_data['schooltype']
     if 'Neighborhood' in schooltypes:
         schooltypes.remove('Neighborhood')
         neighborhood = True
-
     
 
-    # If user checks no boxes, we will show them all school types. If they 
+    
+    # If user checks no boxes, we will show them all school types. 
     if schooltypes == []:
         neighborhood = True
-        other_schooltypes = "('Selective Enrollment','Military Academy','Magnet','Contract','Special Needs')"
+        other_schooltypes = "('Selective Enrollment','Military Academy','Magnet','Contract','Special Needs','Charter')"
 
     elif len(schooltypes) == 1:
         other_schooltypes = "( '" + schooltypes[0] + "')"
@@ -52,7 +55,7 @@ def build_query(neighborhood_schools, cleaned_data):
 
     if cleaned_data["distance"] != '':
         minutes = int(cleaned_data["distance"]) * 60
-        time_between = "AND time_between('{}', addrs.address) < {}".format(str(cleaned_data['your_address']),str(minutes))
+        time_between = " AND time_between('{}', addrs.address) < {}".format(str(cleaned_data['your_address']),str(minutes))
     else: #no max transit time specified
         time_between = " "
 
@@ -63,10 +66,11 @@ def build_query(neighborhood_schools, cleaned_data):
         neighborhood_q_string = ' OR (school_type = "Neighborhood" AND school_id IN (SELECT main.school_id ' + \
             'FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")) "
 
-    query = "SELECT main.school_id, main.name, main.school_type, act.composite_score_mean, fot.fot, main.rating FROM main JOIN fot JOIN act JOIN cep JOIN addrs " + \
-                "ON main.school_id = fot.school_id AND main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
-                " WHERE act.category_type = 'Overall' AND act.year = '2015' AND main.school_id in (SELECT school_id FROM main WHERE " + \
-                ' (school_type IN ' + other_schooltypes + neighborhood_q_string + time_between + "));"
+    # Remember to only calculate time between once, though!
+    query = "SELECT time_between('{}', addrs.address) / 60, ".format(cleaned_data['your_address']) + "main.school_id, main.name, main.school_type, act.composite_score_mean, main.rating FROM main JOIN act JOIN cep JOIN addrs " + \
+                "ON main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
+                " WHERE act.category_type = 'Overall' AND act.year = '2015' AND (main.school_id in (SELECT school_id FROM main WHERE " + \
+                ' (school_type IN ' + other_schooltypes + ")" + neighborhood_q_string + ")" + time_between + ");"
 
     return query
 
@@ -79,7 +83,17 @@ def form(request):
             # form.save()
             print(form.cleaned_data)
 
-            neighborhood_schools = get_neighborhood_schools(form.cleaned_data['your_address'])
+            address = form.cleaned_data['your_address']
+
+            # if the user is interested in neighborhood schools, get a list of 
+            # the neighborhood schools from the CPS schoolfinder tool.
+            neighborhood_schools = []
+            if 'Neighborhood' in form.cleaned_data['schooltype'] or form.cleaned_data['schooltype'] == []:
+                neighborhood_schools = get_neighborhood_schools(address)
+
+            if extra_form.is_valid():
+                tier = int(get_tier_number(address))
+                print("TIER NUMBER: {}".format(tier))
 
             # how to use this???
 
@@ -110,8 +124,11 @@ def form(request):
         form = FinderForm()
         extra_form = FinderForm2()
 
-    c = {'form': form}
+    c = {'form': form, 'extra_form': extra_form}
     return render(request, 'matcher/start.html', c)
+
+
+
 
 
 
@@ -172,6 +189,26 @@ def get_travel_info_transit(home, school):
 def get_duration(home, school):
     print("Got duration")
     return get_travel_info_transit(str(home),str(school))[0]
+
+
+
+def get_tier_number(address):
+    driver = webdriver.Firefox()
+    driver.get("http://cpstiers.opencityapps.org/")
+
+    search_bar = driver.find_element_by_tag_name("Input")
+    search_bar.send_keys(address)
+
+    search_button = driver.find_element_by_id("btnSearch")
+    search_button.click()
+
+    tier_number_text = driver.find_element_by_id('tierNumber').text
+    driver.close()
+
+    return tier_number_text.split()[-1]
+
+
+
 
 def get_neighborhood_schools(address):
     '''

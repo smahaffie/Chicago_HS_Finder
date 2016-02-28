@@ -1,38 +1,47 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>SchoolSmart</title>
+    <head>
+        <title>SchoolSmart</title>
+        <style>
+            .center {
+                text-align: center;
+            }
 
-    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+            .nodisplay {
+                display: none;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    </head>
+    <body BGCOLOR=#99ccff>
+        <h1 class="center">SchoolSmart</h1>
 
-</head>
-<body BGCOLOR=#99ccff>
-    <h1><center>Schoolfinder</center></h1>
+        <p class="center">Enter your information and preferences below to let SchoolMatch generate a list of schools that we recommend you explore. Click <a href="{% url 'about' %}">here</a> to learn more about how SchoolSmart generates its results.</p>
 
-    <p><center>Enter your information and preferences below to let SchoolMatch generate a list of schools that we recommend you explore. Click <a href="{% url 'about' %}">here</a> to learn more about how SchoolSmart generates its results.</center></p>
-    <table>
-    <form action="/form/" method="post">
-        {% csrf_token %}
-        {{ form }}
+        <form action="/form/" method="post">
+            <table>
+                {% csrf_token %}
+                {{ form }}
+            </table>
+            <label><input type="checkbox" id="some_name" /> Would you like us to calculate your estimated chance of admission to Selective Enrollment schools?</label>
 
-        <label><input type="checkbox" id="some_name" /> Would you like us to calculate your estimated chance of admission to selective schools?</label>
+            <div id="extra_form" class="nodisplay">
+                <table>
+                {{ extra_form }}
+                </table>
+            </div>
+            <input type="submit" value="Submit" />
+    	</form>
 
-        <div id="extra_form" style="display: none">
-            aaa
-            This is where the extra form should show up.
-            {{ extra_form }}
-            bbb
-        </div>
-        <input type="submit" value="Submit" />
-    </form>
-	</table>
         <script>
-    $( "#some_name" ).click(function() {
-        if ($("#some_name").is(':checked')) {
-            $('#extra_form').show();    
-        } else {
-            $('#extra_form').hide();    
-     }
-    });
-    </script>
-</body>
+            $("#some_name").click(function() {
+                if ($("#some_name").is(':checked')) {
+                    $('#extra_form').show();    
+                } else {
+                    $('#extra_form').hide();    
+             }
+
+            });
+        </script>
+    </body>
 </html>
