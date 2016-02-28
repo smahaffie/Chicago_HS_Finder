@@ -16,9 +16,11 @@
     <th>Type</th>
     <th>Mean ACT Score</th>
     <th>Freshman on Track Rate</th>
+    <th>Estimated Public Transit Travel Time (minutes)</th>
+
   </tr>
     {% for name in names %}
-    <tr> <td> {{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td></tr>
+    <tr> <td> {{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ placeholder}} </td></tr>
     {% endfor %}
     </table>
 
