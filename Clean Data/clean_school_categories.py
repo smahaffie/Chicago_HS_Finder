@@ -49,11 +49,11 @@ def rename_categories(files,magnets,se):
 merge = ["Data_Files/cleaned_Assessmentoptions_final.csv", "Data_Files/cleaned_Assessmentcombo_final.csv", "Data_Files/cleaned_Assessment912_final.csv"]
 def merge_category_csvs(files):
     merged = open("merged.csv", 'w')
+    merged.write("School ID|School Name|Network|Rating" + '\n')
     for f in files:
         with open(f,'r') as fil:
-            next(fil)
-            merged.write("School ID|School Name|Network|Rating" + '\n')
             for line in fil:
+                print(line)
                 merged.write(line)
 
 #code to create SQL table

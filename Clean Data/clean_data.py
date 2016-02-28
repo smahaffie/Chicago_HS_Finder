@@ -59,6 +59,7 @@ with open("Data_Files/Assessment912.csv", 'r') as f, open("Data_Files/cleaned_As
     next(f)
     f1.write("School ID|School Name|Network|Rating" + '\n')
     for line in f:
+        print(line)
         f1.write(line)
 
 COMMAND = '''awk 'BEGIN {FS = "|"};{print $1"|"$2"|"$3"|"$9}' <'Data_Files/combo_high_schools.csv' > 'Data_Files/Assessmentcombo.csv' '''
