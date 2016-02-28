@@ -1,0 +1,56 @@
+School,Selection Method,Tier,# Students,Mean,Min,Max
+Brooks,Rank,,105,786.56,746,875
+Brooks,Tier,1,62,656.87,602,739
+Brooks,Tier,2,61,702.84,665,744
+Brooks,Tier,3,61,717.46,690,746
+Brooks,Tier,4,61,699.75,655,745
+Hancock,Rank,,60,792.53,760,868
+Hancock,Tier,1,35,684.57,648,760
+Hancock,Tier,2,35,711.63,682,754
+Hancock,Tier,3,35,739.09,718,760
+Hancock,Tier,4,35,695.54,635,756
+Jones,Rank,,120,889.06,883,900
+Jones,Tier,1,70,799.67,758,881
+Jones,Tier,2,70,834.69,799,879
+Jones,Tier,3,70,858.73,839,883
+Jones,Tier,4,70,877.56,873,883
+King,Rank,,120,719.8,666,858
+King,Tier,1,42,621.74,601,658
+King,Tier,2,73,629.56,601,665
+King,Tier,3,101,631.53,600,665
+King,Tier,4,28,625.68,600,660
+Lane,Rank,,408,861.91,843,898
+Lane,Tier,1,238,733.33,684,842
+Lane,Tier,2,238,773.1,734,841
+Lane,Tier,3,238,812.36,782,843
+Lane,Tier,4,238,825.72,808,842
+Lindblom,Rank,,126,784.95,745,862
+Lindblom,Tier,1,74,655.74,606,745
+Lindblom,Tier,2,74,698.26,665,744
+Lindblom,Tier,3,73,706.63,676,745
+Lindblom,Tier,4,73,682.9,629,745
+Northside,Rank,,90,897.09,892,900
+Northside,Tier,1,53,815.79,753,891
+Northside,Tier,2,53,849.49,812,892
+Northside,Tier,3,52,874.79,857,892
+Northside,Tier,4,52,888.83,886,892
+Payton,Rank,,74,898.42,895,900
+Payton,Tier,1,44,839.34,784,894
+Payton,Tier,2,44,862.61,831,894
+Payton,Tier,3,44,886.27,877,895
+Payton,Tier,4,43,893.12,891,895
+South Shore,Rank,,60,704.4,654,829
+South Shore,Tier,1,12,622.17,603,633
+South Shore,Tier,2,29,632.17,601,653
+South Shore,Tier,3,25,627.48,605,653
+South Shore,Tier,4,13,619.31,600,651
+Westinghouse,Rank,,177,769.04,732,880
+Westinghouse,Tier,1,104,666.45,637,724
+Westinghouse,Tier,2,103,696.49,666,732
+Westinghouse,Tier,3,103,701.33,665,732
+Westinghouse,Tier,4,103,674.53,617,731
+Young,Rank,,106,884.43,875,900
+Young,Tier,1,63,812.75,770,874
+Young,Tier,2,63,833.54,806,874
+Young,Tier,3,62,851.55,835,872
+Young,Tier,4,62,868.27,862,874
