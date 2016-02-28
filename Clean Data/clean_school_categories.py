@@ -2,9 +2,17 @@
 import csv
 csv.register_dialect('piper', delimiter='|', quoting=csv.QUOTE_NONE)
 
-files = ["cleaned_Assessmentoptions.csv", "cleaned_Assessmentcombo.csv", "cleaned_Assessment912.csv"]
+files = ["Data_Files/cleaned_Assessmentoptions.csv", "Data_Files/cleaned_Assessmentcombo.csv", "Data_Files/cleaned_Assessment912.csv"]
 magnets = ["DISNEY II HS", "VON STEUBEN HS", "CHICAGO AGRICULTURE HS", "CRANE MEDICAL HS", "DEVRY HS", "CURIE HS", "CLARK HS"]
 se = ["BROOKS HS", "JONES HS", "KING HS", "LANE TECH HS", "LINDBLOM HS", "NORTHSIDE PREP HS", "PAYTON HS", "SOUTH SHORE INTL HS", "WESTINGHOUSE HS", "YOUNG HS" ]
+IB_schools = ["Amundsen High School","Back of the Yards High School",
+"Bogan High School", "Bronzeville Scholastic Academy High School", "Clemente High School",
+"Curie Metropolitan High School", "Farragut High School","Hubbard High School", 
+"Hyde Park Academy High School","Juarez High School","Kelly High School","Kennedy High School",
+"Lincoln Park High School","Morgan Park High School",
+"The Ogden International School of Chicago","Prosser Career Academy","Schurz High School",
+"Senn High School","South Shore International","Steinmetz Academic Centre",
+"Taft High School","Washington High School"]
 
 def rename_categories(files,magnets,se):
     for f in files:
@@ -38,7 +46,7 @@ def rename_categories(files,magnets,se):
 
 #combine the seperate csvs
 
-merge = ["cleaned_Assessmentoptions_final.csv", "cleaned_Assessmentcombo_final.csv", "cleaned_Assessment912_final.csv"]
+merge = ["Data_Files/cleaned_Assessmentoptions_final.csv", "Data_Files/cleaned_Assessmentcombo_final.csv", "Data_Files/cleaned_Assessment912_final.csv"]
 def merge_category_csvs(files):
     merged = open("merged.csv", 'w')
     for f in files:
