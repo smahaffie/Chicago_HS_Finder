@@ -7,7 +7,7 @@ import csv
 #inputs just for testing
 inputs = {"readingTest": 90, "mathTest": 90, "readingGrade": "A", "mathGrade": "B", "scienceGrade": "B", "socialGrade": "C", "tier": 1}
 grade_values = {"A": 75, "B":50, "C": 25, "D": 0, "F":0 }
-csv = '../Clean Data/Cutoff_Scores_Fixed'
+csv = '../Clean Data/Data_Files/Cutoff_Scores_2015_2016'
 
 
 name_id_dict = {'King':609751, 'Brooks':609726, 'Hancock':609694, 'Jones': 609678, 'Lane':609720, 'Lindblom': 610391,
