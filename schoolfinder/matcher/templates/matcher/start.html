@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Schoolfinder</title>
+    <title>SchoolSmart</title>
 
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 
@@ -8,9 +8,9 @@
 <body>
     <h1><center>Schoolfinder</center></h1>
 
-    <p><center>Find a school</center></p>
+    <p><center>Enter your information and preferences below to let SchoolMatch generate a list of schools that we recommend you explore. Click <a href="{% url 'about' %}">here</a> to learn more about how SchoolSmart generates its results.</center></p>
     <table>
-    <form action="/your-address/" method="post">
+    <form action="/form/" method="post">
         {% csrf_token %}
         {{ form }}
 

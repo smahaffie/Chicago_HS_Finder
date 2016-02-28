@@ -23,5 +23,7 @@ from matcher import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', views.get_address)
+    url(r'^form/', views.form, name="form"),
+        #url(r'', views.form, name="form"),
+    url(r'^about/',views.about,name="about")
 ]

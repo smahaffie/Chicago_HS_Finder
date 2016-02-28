@@ -7,11 +7,18 @@
 <body>
     <h1><center>Schoolfinder</center></h1>
 
-    <p><center>Results</center></p>
+    <p><center>Here is a list of schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}">here</a>.
+    </center></p>
 
-    <table bgcolor = "#CEE3F6" border = "1">
+    <table bgcolor = "#CEE3F6" border = "1" style="width:100%">
+    	<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Mean ACT Score</th>
+    <th>Freshman on Track Rate</th>
+  </tr>
     {% for name in names %}
-    <tr> <td> {{ name.0 }} </td> <td> {{ name.1 }} </td> </tr>
+    <tr> <td> {{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td></tr>
     {% endfor %}
     </table>
 

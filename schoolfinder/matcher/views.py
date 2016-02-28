@@ -9,38 +9,55 @@ import googlemaps
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+def about(request):
+    return render(request, 'matcher/about.html')
+
+
 class FinderForm2(forms.Form):
     your_score = forms.CharField(label = 'Your score', max_length = 100)
 
 class FinderForm(forms.Form):
     your_address = forms.CharField(label='Your address', max_length = 100)
     distance = forms.CharField(label="How many minutes are you willing to travel?", max_length = 10, required=False)
-    d_priority = forms.ChoiceField(label = "How important is the transit time?", choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
-    schooltype = forms.MultipleChoiceField(label = "School type", 
+    d_priority = forms.ChoiceField(label = "How important is the transit time?",  choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
+    schooltype = forms.MultipleChoiceField(label = "What types of schools are you interested in?", 
         required = False, widget=forms.CheckboxSelectMultiple(), choices = 
-        [('Neighborhood',"Neighborhood"),('Selective Enrollment',"Selective Enrollement"), ('Career Academy',"Career Academy"), 
-        ('Magnet',"Magnet"),('Contract',"Contract"),('Special Needs',"Special Needs")])
+        [('Neighborhood',"Neighborhood"),('Selective Enrollment',"Selective Enrollement"), ('Military Academy',"Military Academy"), 
+        ('Magnet',"Magnet"),('Contract',"Contract"),('Special Needs',"Special Needs"),("International Baccalaureate", "International Baccalaureate")])
     
-    a_priority = forms.ChoiceField(label = "How important are academics?", choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
+    a_priority = forms.ChoiceField(label = "How important are academics?",  choices = [(1,1),(2,2), (3,3), (4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10)])
+
 
 def build_query(neighborhood_schools, cleaned_data):
-    time_between = "time_between('{}', addrs.address) < {}".format(str(cleaned_data['your_address']),str(cleaned_data['distance']))
+    
 
-
+    neighborhood = False
     schooltypes = cleaned_data['schooltype']
     if 'Neighborhood' in schooltypes:
         schooltypes.remove('Neighborhood')
         neighborhood = True
 
-    other_schooltypes = str(tuple(schooltypes))
+    
 
     # If user checks no boxes, we will show them all school types. If they 
     if schooltypes == []:
         neighborhood = True
-        other_schooltypes = "('Selective Enrollment','Career Academy','Magnet','Contract','Special Needs')"
+        other_schooltypes = "('Selective Enrollment','Military Academy','Magnet','Contract','Special Needs')"
 
-    print(neighborhood_schools)
-    print(str(neighborhood_schools))
+    elif len(schooltypes) == 1:
+        other_schooltypes = "( '" + schooltypes[0] + "')"
+
+    else:
+        other_schooltypes = str(tuple(schooltypes))
+
+    if cleaned_data["distance"] != '':
+        minutes = int(cleaned_data["distance"]) * 60
+        time_between = "AND time_between('{}', addrs.address) < {}".format(str(cleaned_data['your_address']),str(minutes))
+    else: #no max transit time specified
+        time_between = " "
+
+    print(time_between)
+
     neighborhood_q_string = ''
     if neighborhood:
         neighborhood_q_string = ' OR (school_type = "Neighborhood" AND school_id IN (SELECT main.school_id ' + \
@@ -49,12 +66,11 @@ def build_query(neighborhood_schools, cleaned_data):
     query = "SELECT main.school_id, main.name, main.school_type, act.composite_score_mean, fot.fot, main.rating FROM main JOIN fot JOIN act JOIN cep JOIN addrs " + \
                 "ON main.school_id = fot.school_id AND main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
                 " WHERE act.category_type = 'Overall' AND act.year = '2015' AND main.school_id in (SELECT school_id FROM main WHERE " + \
-                ' (school_type IN ' + other_schooltypes + neighborhood_q_string + \
-                "AND " + time_between + "));"
+                ' (school_type IN ' + other_schooltypes + neighborhood_q_string + time_between + "));"
 
     return query
 
-def get_address(request):
+def form(request):
     if request.method == "POST":
         form = FinderForm(request.POST) # request.GET
         extra_form = FinderForm2(request.POST)
@@ -82,7 +98,10 @@ def get_address(request):
             context = {}
             context['names'] = []
             for result in results:
-                context['names'].append((result[0],result[1]))
+                result_list = []
+                for item in result:
+                    result_list.append(item)
+                context['names'].append(tuple(result_list))
             connection.close()
 
             return render(request, 'matcher/results.html', context)
