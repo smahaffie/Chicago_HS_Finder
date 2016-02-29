@@ -70,7 +70,7 @@ def build_query(neighborhood_schools, cleaned_data):
             'FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")) "
 
     # Remember to only calculate time between once, though!
-    query = "SELECT time_between('{}', addrs.address) / 60, ".format(cleaned_data['your_address']) + "main.school_id, main.name, main.school_type, act.composite_score_mean, main.rating, cep.enrollment_pct, cep.persist_pct FROM main JOIN act JOIN cep JOIN addrs " + \
+    query = "SELECT main.name, main.school_id, main.school_type, act.composite_score_mean, main.rating, " + "time_between('{}', addrs.address) / 60, ".format(cleaned_data['your_address']) + "cep.enrollment_pct, cep.persist_pct FROM main JOIN act JOIN cep JOIN addrs " + \
                 "ON main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
                 " WHERE act.category_type = 'Overall' AND act.year = '2015' AND (main.school_id in (SELECT school_id FROM main WHERE " + \
                 ' (school_type IN ' + other_schooltypes + ")" + neighborhood_q_string + ")" + time_between + ");"
