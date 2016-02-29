@@ -41,10 +41,23 @@ average_on_track_rate = average_on_track_rate[0][0]
 
 
 
+def calc_difficulty(tier,extra_form):
+    with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
+        schoolranges = json.load(f)
+    point_ranges = {}
+    grade_values = {"A": 75, "B":50, "C": 25, "D": 0, "F":0 }
+    test_scores = round(extra_form["reading_score"] * 1.515) + round(extra_form["math_score"] * 1.515)
+    grade_pts = grade_values[extra_form["reading_grade"]] + grade_values[extra_form["math_grade"]] + grade_values[extra_form["science_grade"]] + grade_values[inputs["social_science_grade"]]
+    total_pts = test_scores + grade_pts
+    for school in schoolranges:
+        t = "Tier" + tier
+        max_ = int(schoolranges[school][t][1]) - total_pts
+        min_ = int(schoolranges[school][t][0]) - total_pts
+        point_ranges[school] = (min_,max_)
+
+    return point_ranges
 
 
-#def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_score = act.composite_score_mean,
-# enrollment_pct = cep.enrollment_pct, persistance_pct = cep.persistance_pct, on_track_rate = fot.fot):
 
 def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_score, enrollment_pct, persistance_pct, on_track_rate=None):
     '''
