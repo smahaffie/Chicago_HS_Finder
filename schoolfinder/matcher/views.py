@@ -116,7 +116,7 @@ def form(request):
             context = {}
             context['names'] = []
             
-            ranking = rank_results(results,tier,form.cleaned_data,extra_form.cleaned_data) 
+            # ranking = rank_results(results,tier,form.cleaned_data,extra_form.cleaned_data) 
 
             for result in results:
                 result_list= []
@@ -134,7 +134,7 @@ def form(request):
     c = {'form': form, 'extra_form': extra_form}
     return render(request, 'matcher/start.html', c)
 
-
+'''
 def rank_results(results,tier,form,extra_form):
     result_dict = {}
 
@@ -165,38 +165,37 @@ def calculate_averages():
     #c = connection.cursor()
 
 
-    ACT_query = '''SELECT sum(total_tested*
+    ACT_query = ''SELECT sum(total_tested*
     composite_score_mean)/sum(total_tested) AS average
     FROM act WHERE year = 2015 AND category = "Overall" 
-    AND category_type = "Overall";'''
+    AND category_type = "Overall";''
     print(ACT_query)
     r = c.execute(ACT_query)
 
     average_ACT = r.fetchall()
     average_ACT = average_ACT[0][0]
 
-    EPCT_query = '''SELECT sum(graduates*
-    enrollment_pct)/sum(graduates) FROM cep;'''
+    EPCT_query = ''SELECT sum(graduates*
+    enrollment_pct)/sum(graduates) FROM cep;''
 
     r = c.execute(EPCT_query)
     average_epct = r.fetchall()
     average_epct = average_epct[0][0]
 
-    PPCT_query = '''SELECT sum(graduates*persist_pct)
-    /sum(graduates) FROM cep;'''
+    PPCT_query = ''SELECT sum(graduates*persist_pct)
+    /sum(graduates) FROM cep;''
 
     r = c.execute(PPCT_query)
     average_ppct = r.fetchall()
     average_ppct = average_ppct[0][0]
 
-    FOT_query = '''SELECT sum(num_fresh*fot)/
-    sum(num_fresh) FROM fot;'''
+    FOT_query = ''SELECT sum(num_fresh*fot)/
+    sum(num_fresh) FROM fot;''
 
     r = c.execute(FOT_query)
     average_on_track_rate = r.fetchall()
     average_on_track_rate = average_on_track_rate[0][0]
     #connection.close()
-
 
 
 def calc_difficulty(tier,extra_form):
@@ -218,8 +217,6 @@ def calc_difficulty(tier,extra_form):
 
 
 def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_score, enrollment_pct, persistance_pct, on_track_rate=None):
-    '''
-    '''
 
     d_pref = mult_dict[d_pref]
     a_pref = mult_dict[a_pref]
@@ -264,7 +261,7 @@ def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_scor
         total_score = prelim_score
 
     return total_score
-
+'''
 
 # FUNCTIONS THAT SHOULD BE IMPORTED IN EVENTUALLY:
 def check_neighborhood_schools(school_id, neighborhood_schools):
