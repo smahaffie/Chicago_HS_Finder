@@ -1,5 +1,6 @@
 '''Further clean categorization of schools data'''
 import csv
+import pandas as pd
 csv.register_dialect('piper', delimiter='|', quoting=csv.QUOTE_NONE)
 
 files = ["Data_Files/cleaned_Assessmentoptions.csv", "Data_Files/cleaned_Assessmentcombo.csv", "Data_Files/cleaned_Assessment912.csv"]
@@ -56,6 +57,29 @@ def merge_category_csvs(files):
                 print(line)
                 merged.write(line)
 
+def every_school_in_every_file(merged_file, list_of_incomplete_files, list_of_destinations ):
+    '''ensures that every file in list of file has an entry
+    for each school ID in merged by inputting null entry if not
+    already present'''
+
+    merged_df = pd.read_csv(merged_file, sep = '|')
+    merged = [school for school in list(merged_df['School ID'])]
+    print(len(merged))
+    n=0
+    for filename in list_of_incomplete_files:
+        incomplete_df = pd.read_csv(filename, sep = '|')
+        incomplete = [school for school in list(incomplete_df['School ID'])]
+        print(len(incomplete))
+        missing = [school for school in merged if school not in incomplete]
+        print(len(missing))
+        #missing_schools = {}
+        for school in missing:
+            s2 = pd.Series([school, None, None, None], index = list(incomplete_df.columns))
+            incomplete_df.append(s2, ignore_index=True)
+            #print(school)
+        incomplete_df.to_csv(list_of_destinations[n], sep = '|')
+        n+=1
+        print(incomplete_df.shape)
 #code to create SQL table
 
 create = '''CREATE TABLE main
