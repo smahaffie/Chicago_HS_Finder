@@ -1,8 +1,14 @@
 import sqlite3, csv
 
 '''
-Contains function to generate sql tables from csv files and compute average statistics
+Contains function to generate sql tables from csv files 
 '''
+
+CREATE TABLE main
+ (school_id varchar(8),
+name varchar(30),
+school_type varchar(30),
+ rating varchar(3));
 
 CREATE TABLE act
 (school_id varchar(8),
