@@ -1,13 +1,27 @@
 # 122project
 
-Raw data:
+Libraries to install:
+Googlemaps
+Selenium
 
-act_schools_2001_to_2015.csv
+Instructions to recreate database:
+run clean_data.py to generate first set of cleaned files
+run clean_school_categories.py to generate second set of cleaned files
+Copy and paste text in gen_table.txt to create sql tables
+import cleaned_FOT.csv, cleaned_ACT.csv, merged.csv, addresses.csv, and cleaned_CEP. csv 
+using sqlite ".seperator "|" and ".import <filename>"
+
+
+Raw data in Clean Data/Data Files:
+
+act_schools_2001_to_2015.csv, ACT scores data
 Assessment912.csv
 Assessmentcombo.csv
 Assessmentoptions.csv
 collenrollpersist_rpt_2015.csv
-FOT_SchoolLevel_20151023.csv
+FOT_SchoolLevel_2015.csv, Freshman-on-track data
+CPS_SchoolsView.csv, school website list
+
 
 Intermediate data (generated after intermediate cleaning using AWK) :
 
@@ -32,7 +46,9 @@ cleaned_ACT.csv
 cleaned_CEP.csv
 cleaned_FOT.csv
 merged.csv - merges the 3 cleaned_Assessment*_final.csv into 1 file
-
+IEP_schools.csv - list of schools with IEP programs
+id_to_address.csv - list of school ids and school addresses
+school_ranges.json - maps selective enrollment schools to the min and max points for admission in 2015
 
 Scripts:
 
@@ -48,6 +64,8 @@ get_neighborhood_schools.py - use CPS tool to generate neighborhood schools for 
 get_tier_number.py - find tier that an address falls into
 google_maps.py - find distance between two addresses
 name_and_id.py - maps school names to ids
+ranking.py - calculate ranking for a SQL to be displayed in results page
+
 
 Database:
 CHSF.db
