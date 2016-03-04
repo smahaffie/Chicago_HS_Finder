@@ -3,6 +3,21 @@
 <html>
 <head>
     <title>Schoolfinder</title>
+    <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Complex icons</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+
 </head>
 <body>
     <h1><center>Schoolfinder</center></h1>
@@ -20,9 +35,52 @@
 
   </tr>
     {% for name in names %}
-    <tr> <td> {{ name.0 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td></tr>
+    <tr> <td> {{ name.1 }} </td> <td> {{ name.3 }} </td> <td> {{ name.4 }} </td><td> {{ name.5}} </td><td> {{ name.6 }} </td></tr>
     {% endfor %}
     </table>
+
+    <div id="map"></div>
+    <script>
+
+      // The following example creates complex markers to indicate beaches near
+      // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+      // to the base of the flagpole.
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 41.82, lng: -87.602}
+        });
+
+        setMarkers(map);
+      }
+
+      var schools = map_info;
+
+      //sample that works if you set schools equal to it is: [
+        //['Bondi Beach', -33.890542, 151.274856, 4],
+        //['Coogee Beach', -33.923036, 151.259052, 5],
+        //['Cronulla Beach', -34.028249, 151.157507, 3],
+        //['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+        //['Maroubra Beach', -33.950198, 151.259302, 1]
+      //];
+
+      function setMarkers(map) {
+        for (var i = 0; i < schools.length; i++) {
+          var school = schools[i];
+          var marker = new google.maps.Marker({
+            position: {lat: school[1], lng: school[2]},
+            map: map,
+            title: school[0],
+            zIndex: school[3]
+          });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM&callback=initMap">
+    </script>
+
 
 </body>
 </html>
