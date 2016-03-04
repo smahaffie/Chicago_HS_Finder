@@ -7,67 +7,22 @@ from .forms import FinderForm2, FinderForm
 from .get_neighborhood_schools import get_neighborhood_schools, get_id_from_name, name_to_id
 from .get_tier import get_tier_number
 from .ranking import rank_results
-# from .transit_info import get_duration, 
+from .transit_info import *
+from .get_website import *
+import .websites
 
 
-# import get_neighborhood_schools
+
 #Next line should come out eventually:
 import googlemaps
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import json
+from .build_query import build_query
 
 def about(request):
     return render(request, 'matcher/about.html')
 
-
-def build_query(neighborhood_schools, cleaned_data):
-    '''
-    Builds a SQL query based on user-inputs for schools to display in results
-    Inputs:
-        cleaned_data, Django form
-
-    Returns:
-        query, string
-    '''
-    
-    neighborhood = False
-    schooltypes = cleaned_data['schooltype']
-    if 'Neighborhood' in schooltypes:
-        schooltypes.remove('Neighborhood')
-        neighborhood = True
-    
-    # If user checks no boxes, we will show them all school types. 
-    if schooltypes == [] and neighborhood == False:
-        neighborhood = True
-        other_schooltypes = "('Selective Enrollment','Military Academy','Magnet','Contract','Special Needs','Charter')"
-
-    elif len(schooltypes) == 1:
-        other_schooltypes = "( '" + schooltypes[0] + "')"
-
-    else:
-        other_schooltypes = str(tuple(schooltypes))
-
-    if cleaned_data["distance"] != None:
-        seconds = int(cleaned_data["distance"]) * 60
-        time_between = " AND ( time_between('{}', addrs.address) < {} )".format(str(cleaned_data['your_address'] + " Chicago, IL"),str(seconds))
-    #else: #no max transit time specified
-    #time_between = " "
-
-    #print(time_between)
-
-    neighborhood_q_string = ''
-    if neighborhood:
-        neighborhood_q_string = ' OR (school_type = "Neighborhood" AND school_id IN (SELECT main.school_id ' + \
-            'FROM main JOIN addrs on addrs.school_id = main.school_id WHERE main.school_id in ' + str(neighborhood_schools) + ")) "
-
-    # Remember to only calculate time between once, though!
-    query = "SELECT addrs.address, main.name, main.school_id, main.school_type, act.composite_score_mean, main.rating, " + "time_between('{}', addrs.address) / 60, ".format(cleaned_data['your_address'] + " Chicago, IL") + "cep.enrollment_pct, cep.persist_pct FROM main LEFT OUTER JOIN act LEFT OUTER JOIN cep JOIN addrs " + \
-                "ON main.school_id = act.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
-                " WHERE act.category_type = 'Overall' AND act.year = '2015' AND (main.school_id in (SELECT school_id FROM main WHERE " + \
-                ' (school_type IN ' + other_schooltypes + ")" + neighborhood_q_string + ")" + time_between + ");"                                    
-
-    return query
 
 def form(request):
     '''
@@ -115,11 +70,17 @@ def form(request):
             context = {}
             context['names'] = []
             context['map_info'] = []
-            
+
+            #changes this eventually
+            with open("/matcher/views/websites.json",'r') as f:
+                websites = json.load(f)
+
             # ranking = rank_results(results,tier,form.cleaned_data,extra_form.cleaned_data) 
             zIndex = 1
             for result in results:
                 result_list= []
+                website = websites[result[2]]
+                result_list.append(website)
                 for item in result:
                     result_list.append(item)
                 context['names'].append(tuple(result_list))
@@ -298,7 +259,7 @@ def get_id_from_name(schoolname):
 
 
 
-
+"""
 # NO 
 def check_neighborhood_schools(school_id, neighborhood_schools):
     if school_id in neighborhood_schools:
@@ -359,3 +320,4 @@ def get_duration(home, school):
     print("Got duration")
     return get_travel_info_transit(str(home),str(school))[0]
 
+"""

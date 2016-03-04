@@ -1,6 +1,7 @@
 import csv
 import subprocess
-
+import json
+"""
 '''
 Contains all the commands to clean all of the csvs required to build the data base
 '''
@@ -82,4 +83,14 @@ with open("Data_Files/Assessmentoptions.csv", 'r') as f, open("Data_Files/cleane
     next(f)
     f1.write("School ID|School Name|Network|Rating" + '\n')
     for line in f:
+        print(line)
         f1.write(line)
+"""
+def create_website_dict(website_csv_file):
+    with open(website_csv_file,'r') as f, open("{}_cleaned.csv".format(website_csv_file[:-4]),"w") as f1:
+        f.readline()
+        reader = csv.DictReader(f,fieldnames = ["Schoolname","School ID", "Website"])
+        writer = csv.writer(f1,delimiter = "|")
+        for row in reader:
+            line = [row["School ID"],row["Website"]]
+            writer.writerow(line)
