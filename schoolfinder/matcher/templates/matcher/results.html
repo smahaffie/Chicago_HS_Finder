@@ -22,6 +22,7 @@
 <body>
     <h1><center>Schoolfinder</center></h1>
 
+    <p> {{ map_info }} </p>
     <p><center>Here is a list of schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}">here</a>.
     </center></p>
 
@@ -40,11 +41,18 @@
     </table>
 
     <div id="map"></div>
-    <script>
+
+    <script> 
+    var SCHOOLS = {{ map_info }}
+    </script>
+
+    <script type = 'text/javascript'>
 
       // The following example creates complex markers to indicate beaches near
       // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
       // to the base of the flagpole.
+
+      //var schools = {{ map_info }}
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -55,15 +63,15 @@
         setMarkers(map);
       }
 
-      var schools = map_info;
+        //var schools = ;
 
-      //sample that works if you set schools equal to it is: [
-        //['Bondi Beach', -33.890542, 151.274856, 4],
-        //['Coogee Beach', -33.923036, 151.259052, 5],
-        //['Cronulla Beach', -34.028249, 151.157507, 3],
-        //['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-        //['Maroubra Beach', -33.950198, 151.259302, 1]
-      //];
+      var schools = [
+        ['Bondi Beach', -33.890542, 151.274856, 4],
+        ['Coogee Beach', -33.923036, 151.259052, 5],
+        ['Cronulla Beach', -34.028249, 151.157507, 3],
+        ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+        ['Maroubra Beach', -33.950198, 151.259302, 1]
+      ];
 
       function setMarkers(map) {
         for (var i = 0; i < schools.length; i++) {
