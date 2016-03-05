@@ -1,67 +1,38 @@
-
-
-def rank_results(results,tier,form,extra_form):
-    result_dict = {}
-
-    point_ranges = calc_difficulty(tier,extra_form)
-
-
-    for result in results:
-        s_id = result[1] #key is school id
-        result_dict[s_id] = {} #dictionary to store query results 
-        result_dict[s_id]["name"] = result[2]
-        result_dict[s_id]["time"] = result[0]
-        result_dict[s_id]["rating"] = result[5]
-        result_dict[s_id]["ACT"] = result[4]
-        result_dict[s_id]["type"] = result[3]
-        if s_id in point_ranges:
-            result_dict[s_id]["difficulty"] = point_ranges[s_id]
-        result[s_id]["ranking"] = compute_score(s_id,form["d_priority"],form["a_priority"], form["distance"],result[0],result[4],result[6],result[7])
-
-    print(result_dict)
-
 import math
+import json 
+def rank_results(result_dict,form,tier=None,extra_form=None):
+    point_ranges = []
+    if extra_form:
+        point_ranges = calc_difficulty(tier,extra_form)
+    for school in result_dict:
+        if school in point_ranges:
+            result_dict[school]["difficulty"] = point_ranges[school]
+        result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"], form["distance"],result_dict[school])
+
+    sorting_dict = {}
+    for school in result_dict:
+        sorting_dict[result_dict[school]["score"]] = school
+
+    sorted_school_ids = sorted(sorting_dict.keys())
+
+    final_list = []
+
+    for score in sorted_school_ids:
+        school_id = sorting_dict[score]
+        data = []
+        for key in ["name","score","time","ACT","website","enroll","persist","type","rating"]:
+            data.append(result_dict[school_id][key])
+
+        school_tup = tuple(data)
+        final_list.append(school_tup)
+
+    return final_list
+
+    
+
+
 
 mult_dict = {1:0.1, 2:0.4, 3:0.6, 4:0.8, 5:1, 6:1.2, 7:1.4, 8:1.6, 9:1.8, 10:2.1}
-
-#INCLUDE PROPER DATABASE LOCATION BELOW
-'''
-def calculate_averages():
-    #connection = sqlite3.connect('../CHSF.db')
-    #c = connection.cursor()
-
-
-    ACT_query = ''SELECT sum(total_tested*
-    composite_score_mean)/sum(total_tested) AS average
-    FROM act WHERE year = 2015 AND category = "Overall" 
-    AND category_type = "Overall";''
-    print(ACT_query)
-    r = c.execute(ACT_query)
-
-    average_ACT = r.fetchall()
-    average_ACT = average_ACT[0][0]
-
-    EPCT_query = ''SELECT sum(graduates*
-    enrollment_pct)/sum(graduates) FROM cep;''
-
-    r = c.execute(EPCT_query)
-    average_epct = r.fetchall()
-    average_epct = average_epct[0][0]
-
-    PPCT_query = ''SELECT sum(graduates*persist_pct)
-    /sum(graduates) FROM cep;''
-
-    r = c.execute(PPCT_query)
-    average_ppct = r.fetchall()
-    average_ppct = average_ppct[0][0]
-
-    FOT_query = ''SELECT sum(num_fresh*fot)/
-    sum(num_fresh) FROM fot;''
-
-    r = c.execute(FOT_query)
-    average_on_track_rate = r.fetchall()
-    average_on_track_rate = average_on_track_rate[0][0]
-    #connection.close()
 
 
 def calc_difficulty(tier,extra_form):
@@ -81,43 +52,43 @@ def calc_difficulty(tier,extra_form):
     return point_ranges
 
 
+def compute_score(school_id, d_pref, a_pref, max_willing, school,schoolranges = None):
 
-def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_score, enrollment_pct, persistance_pct, on_track_rate=None):
+    d_pref = mult_dict[int(d_pref)]
+    a_pref = mult_dict[int(a_pref)]
 
-    d_pref = mult_dict[d_pref]
-    a_pref = mult_dict[a_pref]
+    average_ACT = 18
+    average_epct = 80
+    average_ppct = 90
 
-    distance_score = 1 - (time_between/max_willing) #distance to school / max distance willing to travel
+    distance_score = 1 - (school["time"]/max_willing) #distance to school / max distance willing to travel
     
     academic_factors = []
     
-    if act_score != None:
-        school_act = (act_score/average_ACT)
+    if school["ACT"] != None:
+        school_act = (school["ACT"]/average_ACT)
         academic_factors.append(school_act)
-    else:
-        pass
-    if enrollment_pct != None:
-        school_enrollment_pct = (enrollment_pct/average_epct)
+   
+    if school["enroll"] != None:
+        school_enrollment_pct = (school["enroll"]/average_epct)
         academic_factors.append(school_enrollment_pct)
-    else:
-        pass
-    if persistance_pct != None:
-        school_persistance_pct = (persistance_pct/average_ppct)
+
+    if school["persist"] != None:
+        school_persistance_pct = (school["persist"]/average_ppct)
         academic_factors.append(school_persistance_pct)
-    else:
-        pass
-    if on_track_rate != None:
-        school_on_track_rate = (on_track_rate/average_on_track_rate)
-        academic_factors.append(school_on_track_rate)
-    else:
-        pass
+   
+    #if school["fot"] != None:
+     #   school_on_track_rate = (on_track_rate/average_on_track_rate)
+      #  academic_factors.append(school_on_track_rate)
+    
 
     academic_score = sum(academic_factors)/len(academic_factors)
 
     prelim_score = d_pref * distance_score + a_pref * academic_score
 
-    if school_id in schoolranges:
-        difficulty = (point_ranges[school_id][0] + point_ranges[school_id][1])/2
+    if schoolranges != None:
+        if school_id in schoolranges:
+            difficulty = (point_ranges[school_id][0] + point_ranges[school_id][1])/2
 
     
 
@@ -127,4 +98,3 @@ def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_scor
         total_score = prelim_score
 
     return total_score
-'''

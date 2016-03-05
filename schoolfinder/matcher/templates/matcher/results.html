@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Schoolfinder</title>
+    <title>SchoolSmart</title>
     <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -20,12 +20,12 @@
 
 </head>
 <body>
-    <h1><center>Schoolfinder</center></h1>
+    <h1><center>SchoolSmart</center></h1>
 
     <p><center>Here is a list of schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}">here</a>.
     </center></p>
 
-    <table bgcolor = "#CEE3F6" border = "1" style="width:100%">
+    <table bgcolor = "#CEE3F6" border = "1">
     	<tr>
     <th>Name</th>
     <th>Type</th>
@@ -35,7 +35,7 @@
 
   </tr>
     {% for name in names %}
-    <tr> <td> {{ name.1 }} </td> <td> {{ name.3 }} </td> <td> {{ name.4 }} </td><td> {{ name.5}} </td><td> {{ name.6 }} </td></tr>
+    <tr> <td> {{ name.1 }} </td> <td> {{ name.3 }} </td> <td> {{ name.4 }} </td><td> {{ name.5}} </td><td> {{ name.0 }} </td></tr>
     {% endfor %}
     </table>
 
