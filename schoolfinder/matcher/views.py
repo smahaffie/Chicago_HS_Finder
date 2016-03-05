@@ -171,6 +171,16 @@ def calculate_averages():
     average_on_track_rate = average_on_track_rate[0][0]
     #connection.close()
 
+    gen_average_table = ''CREATE TABLE averages (
+    statistic varchar(10),
+    average float(6));
+    INSERT INTO averages (statistic, average),
+    VALUES ('FOT', ?), ('PPCT', ?), ('EPCT', ?), ('ACT', ?)''
+
+    r = c.execute(gen_average_table, (average_on_track_rate, average_ppct, average_epct, average_ACT))
+
+
+
 
 def calc_difficulty(tier,extra_form):
     with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
@@ -190,7 +200,9 @@ def calc_difficulty(tier,extra_form):
 
 
 
-def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_score, enrollment_pct, persistance_pct, on_track_rate=None):
+def compute_score(school_id, max_willing, time_between, act_score = None, enrollment_pct = None, persistance_pct = None, on_track_rate = None, d_pref = 5, a_pref = 5):
+    '''
+    '''
 
     d_pref = mult_dict[d_pref]
     a_pref = mult_dict[a_pref]
@@ -200,22 +212,22 @@ def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_scor
     academic_factors = []
     
     if act_score != None:
-        school_act = (act_score/average_ACT)
+        school_act = (act_score/averages.ACT)
         academic_factors.append(school_act)
     else:
         pass
     if enrollment_pct != None:
-        school_enrollment_pct = (enrollment_pct/average_epct)
+        school_enrollment_pct = (enrollment_pct/averages.EPCT
         academic_factors.append(school_enrollment_pct)
     else:
         pass
     if persistance_pct != None:
-        school_persistance_pct = (persistance_pct/average_ppct)
+        school_persistance_pct = (persistance_pct/averages.PPCT)
         academic_factors.append(school_persistance_pct)
     else:
         pass
     if on_track_rate != None:
-        school_on_track_rate = (on_track_rate/average_on_track_rate)
+        school_on_track_rate = (on_track_rate/averages.FOT)
         academic_factors.append(school_on_track_rate)
     else:
         pass
@@ -226,16 +238,12 @@ def compute_score(school_id, d_pref, a_pref, max_willing, time_between, act_scor
 
     if school_id in schoolranges:
         difficulty = (point_ranges[school_id][0] + point_ranges[school_id][1])/2
-
-    
-
         total_score = prelim_score - (LAMBDA * difficulty)
-
     else:
         total_score = prelim_score
 
-    return total_score
-'''
+    return total_score'''
+
 
 # FUNCTIONS THAT SHOULD BE IMPORTED IN EVENTUALLY:
 
