@@ -8,12 +8,6 @@ from .get_neighborhood_schools import get_neighborhood_schools, get_id_from_name
 from .get_tier import get_tier_number
 from .ranking import rank_results
 from .transit_info import *
-
-
-
-
-
-#Next line should come out eventually:
 import googlemaps
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -57,6 +51,7 @@ def form(request):
 
             connection = sqlite3.connect('CHSF.db')
             connection.create_function("time_between", 2, get_duration)
+            connection.create_function("ptroutes", 2, get_ptroutes)
             c = connection.cursor()
 
             query = build_query(neighborhood_schools, form.cleaned_data)
@@ -87,6 +82,7 @@ def form(request):
                 result_dict[s_id]["time"] = result[7]
                 result_dict[s_id]["enroll"] = result[8]
                 result_dict[s_id]["persist"] = result[9]
+                result_dict[s_id]['ptroutes'] = result[10]
                 lat, lng = get_geolocation(result_dict[s_id]['address'])
                 context['map_info'].append([result_dict[s_id]['name'], lat, lng, zIndex])
                 zIndex += 1

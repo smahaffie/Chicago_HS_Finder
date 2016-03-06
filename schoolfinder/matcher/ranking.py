@@ -29,7 +29,7 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
     for score in sorted_school_ids:
         school_id = sorting_dict[score]
         data = []
-        for key in ["website", "name","type", "time","ACT","enroll","persist","rating","score"]:
+        for key in ["website", "name","type", "time","ACT","enroll","persist","rating","score","ptroutes"]:
             point = result_dict[school_id][key]
             if point != None and point != '':
                 data.append(point)
