@@ -1,14 +1,23 @@
 import math
 import json 
+
 def rank_results(result_dict,form,tier=None,extra_form=None):
     point_ranges = []
-    if extra_form:
+    if extra_form != None:
         point_ranges = calc_difficulty(tier,extra_form)
     for school in result_dict:
         if school in point_ranges:
             result_dict[school]["difficulty"] = point_ranges[school]
-        result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"], form["distance"],result_dict[school])
-
+        if form['distance']!=None:
+            if extra_form != None:
+                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], point_ranges,  form["distance"])
+            else:
+                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], form["distance"])
+        else:
+            if extra_form != None:
+                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], point_ranges)
+            else:
+                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school])
     sorting_dict = {}
     for school in result_dict:
         sorting_dict[result_dict[school]["score"]] = school
@@ -35,6 +44,8 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
         school_tup = tuple(data)
         final_list.append(school_tup)
 
+    final_list = final_list[:12]
+
     return final_list
 
     
@@ -60,8 +71,8 @@ def calc_difficulty(tier,extra_form):
 
     return point_ranges
 
-
-def compute_score(school_id, d_pref, a_pref, max_willing, school,schoolranges = None):
+LAMBDA = 1/1000
+def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60):
 
     d_pref = mult_dict[int(d_pref)]
     a_pref = mult_dict[int(a_pref)]
@@ -70,21 +81,22 @@ def compute_score(school_id, d_pref, a_pref, max_willing, school,schoolranges = 
     average_epct = 80
     average_ppct = 90
 
-    distance_score = 1 - (school["time"]/max_willing) #distance to school / max distance willing to travel
+    print(school_dict['time'], max_willing)
+    distance_score = 1 - (school_dict["time"]/max_willing) #distance to school / max distance willing to travel
     
     academic_factors = []
     
-    if school["ACT"] != None:
-        school_act = (int(school["ACT"])/average_ACT)
+    if school_dict["ACT"] != None:
+        school_act = (int(school_dict["ACT"])/average_ACT)
         academic_factors.append(school_act)
    
-    if school["enroll"] != None:
-        school_enrollment_pct = (int(school["enroll"])/average_epct)
+    if school_dict["enroll"] != None:
+        school_enrollment_pct = (int(school_dict["enroll"])/average_epct)
         academic_factors.append(school_enrollment_pct)
 
     # take out second clause eventaully
-    if school["persist"] != None and school['persist'] != '':
-        school_persistance_pct = (int(school["persist"])/average_ppct)
+    if school_dict["persist"] != None and school_dict['persist'] != '':
+        school_persistance_pct = (int(school_dict["persist"])/average_ppct)
         academic_factors.append(school_persistance_pct)
    
     #if school["fot"] != None:
@@ -96,13 +108,18 @@ def compute_score(school_id, d_pref, a_pref, max_willing, school,schoolranges = 
 
     prelim_score = d_pref * distance_score + a_pref * academic_score
 
-    if schoolranges != None:
-        if school_id in schoolranges:
-            difficulty = (point_ranges[school_id][0] + point_ranges[school_id][1])/2
+    if point_ranges != None:
+        if school_id in point_ranges:
+            difficulty = (school_dict['difficulty'][0] + school_dict['difficulty'][1])/2
 
     
 
-        total_score = prelim_score - (LAMBDA * difficulty)
+            #print(prelim_score, difficulty, LAMBDA)
+
+            total_score = prelim_score - (LAMBDA * difficulty)
+
+        else:
+            total_score = prelim_score
 
     else:
         total_score = prelim_score
