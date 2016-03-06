@@ -27,16 +27,19 @@
     </center></p>
 
     <table bgcolor = "#CEE3F6" border = "1">
-    	<tr>
+    <tr>
     <th>Name</th>
     <th>Type</th>
-    <th>Mean ACT Score</th>
-    <th>Freshman on Track Rate</th>
     <th>Estimated Public Transit Travel Time (minutes)</th>
+    <th>Mean ACT Score</th>
+    <th>College Enrollement Rate</th>
+    <th>College Persistence Rate</th>
+    <th>CPS Rating</th>
+    <th> Our Score (eventually replace with fot rate)</th>
+    </tr>
 
-  </tr>
     {% for name in names %}
-    <tr> <td> {{ name.1 }} </td> <td> {{ name.3 }} </td> <td> {{ name.4 }} </td><td> {{ name.5}} </td><td> {{ name.0 }} </td></tr>
+      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td><td> {{ name.8 }} </td> </tr> 
     {% endfor %}
     </table>
 

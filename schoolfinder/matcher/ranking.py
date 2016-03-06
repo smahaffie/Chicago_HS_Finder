@@ -13,15 +13,24 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
     for school in result_dict:
         sorting_dict[result_dict[school]["score"]] = school
 
-    sorted_school_ids = sorted(sorting_dict.keys())
+    sorted_school_ids = reversed(sorted(sorting_dict.keys()))
 
     final_list = []
 
     for score in sorted_school_ids:
         school_id = sorting_dict[score]
         data = []
-        for key in ["name","score","time","ACT","website","enroll","persist","type","rating"]:
-            data.append(result_dict[school_id][key])
+        for key in ["website", "name","type", "time","ACT","enroll","persist","rating","score"]:
+            point = result_dict[school_id][key]
+            if point != None and point != '':
+                data.append(point)
+            else:
+                if key != 'website':
+                    data.append("Data not available")
+                    print("appended not available!!!!")
+                else:
+                    # Not sure what to do in this case...
+                    data.append(None)
 
         school_tup = tuple(data)
         final_list.append(school_tup)
@@ -66,15 +75,16 @@ def compute_score(school_id, d_pref, a_pref, max_willing, school,schoolranges = 
     academic_factors = []
     
     if school["ACT"] != None:
-        school_act = (school["ACT"]/average_ACT)
+        school_act = (int(school["ACT"])/average_ACT)
         academic_factors.append(school_act)
    
     if school["enroll"] != None:
-        school_enrollment_pct = (school["enroll"]/average_epct)
+        school_enrollment_pct = (int(school["enroll"])/average_epct)
         academic_factors.append(school_enrollment_pct)
 
-    if school["persist"] != None:
-        school_persistance_pct = (school["persist"]/average_ppct)
+    # take out second clause eventaully
+    if school["persist"] != None and school['persist'] != '':
+        school_persistance_pct = (int(school["persist"])/average_ppct)
         academic_factors.append(school_persistance_pct)
    
     #if school["fot"] != None:
