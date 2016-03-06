@@ -2,6 +2,19 @@ import math
 import json 
 
 def rank_results(result_dict,form,tier=None,extra_form=None):
+
+    '''
+    takes the schools returned by the SQL query and ranks them based on user preferences and data
+    inputs:
+        result_dict, SQL query results converted to a python dictionary
+        form, cleaned data from django form
+        tier, integer
+        extra_form, cleaned data from second django form
+    returns:
+        final_list, python list, top 12 schools
+    '''
+
+
     point_ranges = []
     if extra_form != None:
         point_ranges = calc_difficulty(tier,extra_form)
@@ -12,7 +25,7 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], point_ranges,  form["distance"])
             else:
-                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], form["distance"])
+                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], max_willing = form["distance"])
         else:
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], point_ranges)
@@ -48,14 +61,21 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
 
     return final_list
 
-    
 
-
-
-mult_dict = {1:0.1, 2:0.4, 3:0.6, 4:0.8, 5:1, 6:1.2, 7:1.4, 8:1.6, 9:1.8, 10:2.1}
 
 
 def calc_difficulty(tier,extra_form):
+    '''
+    calculates min and max points needed for admission to selective enrollment 
+    schools based on student academics and historic data
+
+    inputs:
+        tier, string
+        extra_form, cleaned django form data
+    returns:
+        point_ranges, python dictionary
+    '''
+
     with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
         schoolranges = json.load(f)
     point_ranges = {}
@@ -73,6 +93,21 @@ def calc_difficulty(tier,extra_form):
 
 LAMBDA = 1/1000
 def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60):
+    '''
+    ranks a school based on academics and distance to school_id
+    Inputs:
+        school_id, integer
+        d_pref, integer
+        a_pref, integer
+        school_dict, python dictionary
+        point_ranges, python dictionary
+        max_willing, integer
+    Returns:
+        total_score, float
+
+    '''
+
+    mult_dict = {1:0.1, 2:0.4, 3:0.6, 4:0.8, 5:1, 6:1.2, 7:1.4, 8:1.6, 9:1.8, 10:2.1}
 
     d_pref = mult_dict[int(d_pref)]
     a_pref = mult_dict[int(a_pref)]
@@ -82,7 +117,7 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
     average_ppct = 90
 
     print(school_dict['time'], max_willing)
-    distance_score = 1 - (school_dict["time"]/max_willing) #distance to school / max distance willing to travel
+    distance_score = 1 - (school_dict["time"]/max_willing) 
     
     academic_factors = []
     
@@ -94,27 +129,18 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
         school_enrollment_pct = (int(school_dict["enroll"])/average_epct)
         academic_factors.append(school_enrollment_pct)
 
-    # take out second clause eventaully
     if school_dict["persist"] != None and school_dict['persist'] != '':
         school_persistance_pct = (int(school_dict["persist"])/average_ppct)
         academic_factors.append(school_persistance_pct)
-   
-    #if school["fot"] != None:
-     #   school_on_track_rate = (on_track_rate/average_on_track_rate)
-      #  academic_factors.append(school_on_track_rate)
-    
 
     academic_score = sum(academic_factors)/len(academic_factors)
 
     prelim_score = d_pref * distance_score + a_pref * academic_score
 
     if point_ranges != None:
+        
         if school_id in point_ranges:
             difficulty = (school_dict['difficulty'][0] + school_dict['difficulty'][1])/2
-
-    
-
-            #print(prelim_score, difficulty, LAMBDA)
 
             total_score = prelim_score - (LAMBDA * difficulty)
 
