@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -36,17 +36,18 @@
     <th>College Persistence Rate</th>
     <th>CPS Rating</th>
     <th> Our Score (eventually replace with fot rate)</th>
+    <th> ptroutes </th>
     </tr>
 
     {% for name in names %}
-      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td><td> {{ name.8 }} </td> </tr> 
+      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td><td> {{ name.8 }} </td> <td> {{ name.9 }} </td> </tr> 
     {% endfor %}
     </table>
 
     <div id="map"></div>
 
     <script> 
-    var SCHOOLS = {{ map_info }}
+    var SCHOOLS = {{ map_info|safe }}
     </script>
 
     <script type = 'text/javascript'>
@@ -66,15 +67,15 @@
         setMarkers(map);
       }
 
-        //var schools = ;
+        var schools = SCHOOLS;
 
-      var schools = [
-        ['Bondi Beach', -33.890542, 151.274856, 4],
-        ['Coogee Beach', -33.923036, 151.259052, 5],
-        ['Cronulla Beach', -34.028249, 151.157507, 3],
-        ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-        ['Maroubra Beach', -33.950198, 151.259302, 1]
-      ];
+      //var schools = [
+        //['Bondi Beach', -33.890542, 151.274856, 4],
+        //['Coogee Beach', -33.923036, 151.259052, 5],
+        //['Cronulla Beach', -34.028249, 151.157507, 3],
+        //['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+        //['Maroubra Beach', -33.950198, 151.259302, 1]
+      //];
 
       function setMarkers(map) {
         for (var i = 0; i < schools.length; i++) {

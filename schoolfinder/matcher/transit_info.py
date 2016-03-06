@@ -60,3 +60,7 @@ def get_duration(home, school):
     print("GET DURATION IN TRANSIT_INFO")
     print("Got duration")
     return get_travel_info_transit(str(home),str(school))[0]
+
+def get_ptroutes(home, school):
+    info = get_travel_info_transit(str(home),str(school))[1]
+    return info
