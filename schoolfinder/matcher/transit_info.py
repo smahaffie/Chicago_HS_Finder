@@ -15,7 +15,7 @@ def find_best_route(home, school, travel_mode):
     Returns:
         json
     '''
-    gmaps = googlemaps.Client(key='AIzaSyD12ij_d_fNk93dyugiVuJHSNvEagDNfSU')
+    gmaps = googlemaps.Client(key='AIzaSyBfNcZXYX443TfraOSaF-pxgi94PKP7rv0')
     print("Starting gmaps")
     print(home, school, travel_mode)
     directions_json = gmaps.directions(home, school, mode=travel_mode)
@@ -62,5 +62,6 @@ def get_duration(home, school):
     return get_travel_info_transit(str(home),str(school))[0]
 
 def get_ptroutes(home, school):
-    info = get_travel_info_transit(str(home),str(school))[1]
+    #info = get_travel_info_transit(str(home),str(school))[1]
+    info = "example string"
     return info

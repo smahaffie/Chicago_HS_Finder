@@ -68,7 +68,6 @@ def form(request):
             context['map_info'] = []
 
             # ranking = rank_results(results,tier,form.cleaned_data,extra_form.cleaned_data) 
-            zIndex = 1
             result_dict = {}
             for result in results:
                 s_id = result[2] #key is school id
@@ -83,9 +82,6 @@ def form(request):
                 result_dict[s_id]["enroll"] = result[8]
                 result_dict[s_id]["persist"] = result[9]
                 result_dict[s_id]['ptroutes'] = result[10]
-                lat, lng = get_geolocation(result_dict[s_id]['address'])
-                context['map_info'].append([result_dict[s_id]['name'], lat, lng, zIndex])
-                zIndex += 1
 
             print(tier)
             if tier != None:
@@ -94,6 +90,13 @@ def form(request):
             else:
                 print('CASE 2')
                 rank_dict = rank_results(result_dict,form.cleaned_data)
+
+            # this is incredibly inefficient eventually we should fix this
+            for tup in rank_dict:
+                for entry in result_dict:
+                    if tup[1] == result_dict[entry]['name']:
+                        lat, lng = get_geolocation(result_dict[entry]['address'])
+                        context['map_info'].append([result_dict[entry]['name'], lat, lng])
                 
             context["names"] = rank_dict
 

@@ -20,32 +20,6 @@
 
 </head>
 <body>
-    <h1><center>SchoolSmart</center></h1>
-
-    <p> {{ map_info }} </p>
-    <p><center>Here is a list of schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}">here</a>.
-    </center></p>
-
-    <table bgcolor = "#CEE3F6" border = "1">
-    <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Estimated Public Transit Travel Time (minutes)</th>
-    <th>Mean ACT Score</th>
-    <th>College Enrollement Rate</th>
-    <th>College Persistence Rate</th>
-    <th>CPS Rating</th>
-    <th> Our Score (eventually replace with fot rate)</th>
-    <th> ptroutes </th>
-    </tr>
-
-    {% for name in names %}
-      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td><td> {{ name.8 }} </td> <td> {{ name.9 }} </td> </tr> 
-    {% endfor %}
-    </table>
-
-    <div id="map"></div>
-
     <script> 
     var SCHOOLS = {{ map_info|safe }}
     </script>
@@ -92,6 +66,30 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM&callback=initMap">
     </script>
+    <h1><center>SchoolSmart</center></h1>
+
+    <p><center>Here is a list of schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}">here</a>.
+    </center></p>
+
+    <table bgcolor = "#CEE3F6" border = "1">
+    <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Estimated Public Transit Travel Time (minutes)</th>
+    <th>Mean ACT Score</th>
+    <th>College Enrollement Rate</th>
+    <th>College Persistence Rate</th>
+    <th>CPS Rating</th>
+    <th> Our Score (eventually replace with fot rate)</th>
+    <th> ptroutes </th>
+    </tr>
+
+    {% for name in names %}
+      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td><td> {{ name.8 }} </td> <td> {{ name.9 }} </td> </tr> 
+    {% endfor %}
+    </table>
+
+    <div id="map"></div>
 
 
 </body>
