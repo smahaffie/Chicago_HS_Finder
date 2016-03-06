@@ -62,6 +62,5 @@ def get_duration(home, school):
     return get_travel_info_transit(str(home),str(school))[0]
 
 def get_ptroutes(home, school):
-    #info = get_travel_info_transit(str(home),str(school))[1]
-    info = "example string"
-    return info
+    walking_time = int(round(get_travel_info_transit(str(home),str(school))[1] / 60))
+    return walking_time
