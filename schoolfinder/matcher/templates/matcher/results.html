@@ -81,10 +81,11 @@
     <th>College Enrollement Rate</th>
     <th>College Persistence Rate</th>
     <th>CPS Rating</th>
+    <th>Freshman on Track Rate </th>
     </tr>
 
     {% for name in names %}
-      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td> </tr> 
+      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td> <td> {{ name.10 }} </tr> 
     {% endfor %}
 
     <div style="height:500px;" id="map"></div>

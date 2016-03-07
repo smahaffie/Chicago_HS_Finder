@@ -23,7 +23,7 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             result_dict[school]["difficulty"] = point_ranges[school]
         if form['distance']!=None:
             if extra_form != None:
-                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], point_ranges,  form["distance"])
+                result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], point_ranges,  max_willing = form["distance"])
             else:
                 result_dict[school]["score"] = compute_score(school,form["d_priority"],form["a_priority"],result_dict[school], max_willing = form["distance"])
         else:
@@ -42,7 +42,7 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
     for score in sorted_school_ids:
         school_id = sorting_dict[score]
         data = []
-        for key in ["website", "name","type", "time","ACT","enroll","persist","rating","score","ptroutes"]:
+        for key in ["website", "name","type", "time","ACT","enroll","persist","rating","score","ptroutes", "FOT"]:
             point = result_dict[school_id][key]
             if point != None and point != '':
                 data.append(point)
@@ -115,9 +115,11 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
     average_ACT = 18
     average_epct = 80
     average_ppct = 90
+    print(school_dict['time'])
+    print(type(school_dict['time']), type(max_willing))
+    print("type")
 
-    print(school_dict['time'], max_willing)
-    distance_score = 1 - (school_dict["time"]/max_willing) 
+    distance_score = 1 - (int(school_dict["time"])/max_willing) 
     
     academic_factors = []
     

@@ -82,6 +82,7 @@ def form(request):
                 result_dict[s_id]["enroll"] = result[8]
                 result_dict[s_id]["persist"] = result[9]
                 result_dict[s_id]['ptroutes'] = result[10]
+                result_dict[s_id]["FOT"] = result[11]
 
             print(tier)
             if tier != None:
