@@ -64,22 +64,25 @@ def every_school_in_every_file(merged_file, list_of_incomplete_files, list_of_de
 
     merged_df = pd.read_csv(merged_file, sep = '|')
     merged = [school for school in list(merged_df['School ID'])]
-    print(len(merged))
+    #print(len(merged))
     n=0
     for filename in list_of_incomplete_files:
         incomplete_df = pd.read_csv(filename, sep = '|')
         incomplete = [school for school in list(incomplete_df['School ID'])]
-        print(len(incomplete))
+        length = len(incomplete)
+        #print(length)
         missing = [school for school in merged if not school in incomplete]
-        print(len(missing))
+        #print(len(missing))
         #missing_schools = {}
         for school in missing:
-            s2 = pd.Series([school, None, None, None], index = list(incomplete_df.columns))
-            incomplete_df.append(s2, ignore_index=True)
-            #print(school)
+            length += 1
+            #s2 = pd.Series([school, None, None, None], index = list(incomplete_df.columns))
+            incomplete_df.loc[length] = [school, None, None, None] 
+            
         incomplete_df.to_csv(list_of_destinations[n], sep = '|')
         n+=1
-        print(incomplete_df.shape)
+        #print(incomplete_df.shape)
+        
 #code to create SQL table
 
 create = '''CREATE TABLE main
