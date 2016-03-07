@@ -46,7 +46,7 @@ def rename_categories(files,magnets,se):
                 writer.writerow(line)
 
 #combine the seperate csvs
-
+to_merge = ["Data_Files/cleaned_Assessmentoptions.csv", "Data_Files/cleaned_Assessmentcombo.csv", "Data_Files/cleaned_Assessment912.csv"]
 merge = ["Data_Files/cleaned_Assessmentoptions_final.csv", "Data_Files/cleaned_Assessmentcombo_final.csv", "Data_Files/cleaned_Assessment912_final.csv"]
 def merge_category_csvs(files):
     merged = open("merged.csv", 'w')
@@ -70,7 +70,7 @@ def every_school_in_every_file(merged_file, list_of_incomplete_files, list_of_de
         incomplete_df = pd.read_csv(filename, sep = '|')
         incomplete = [school for school in list(incomplete_df['School ID'])]
         print(len(incomplete))
-        missing = [school for school in merged if school not in incomplete]
+        missing = [school for school in merged if not school in incomplete]
         print(len(missing))
         #missing_schools = {}
         for school in missing:
