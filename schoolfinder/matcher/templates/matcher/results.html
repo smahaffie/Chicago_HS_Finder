@@ -68,11 +68,20 @@
 
     <h1><center>SchoolSmart</center></h1>
 
-    <p><center>Here is a list of the top 12 schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}">here</a>.
+    <p><center>Here is a list of the top 12 schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}" target=blank>here</a>.
     </center></p>
 
-    <table bgcolor = "#CEE3F6" border = "1">
-    <tr>
+    <table bgcolor = "#CEE3F6" border = "1" align = "center">
+      <col width="120">
+  <col width="120">
+  <col width="120">
+  <col width="120">
+  <col width="120">
+  <col width="120">
+  <col width="120">
+  <col width="120">
+  <col width="120">
+
     <th>Name</th>
     <th>Type</th>
     <th>Estimated Public Transit Travel Time (minutes)</th>
@@ -80,14 +89,20 @@
     <th>Mean ACT Score</th>
     <th>College Enrollement Rate</th>
     <th>College Persistence Rate</th>
-    <th>CPS Rating</th>
     <th>Freshman on Track Rate </th>
     </tr>
 
     {% for name in names %}
-      <tr> <td><a href = {{ name.0 }}> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td><td> {{ name.7 }} </td> <td> {{ name.10 }} </tr> 
-    {% endfor %}
+    {% if name.0 = "" %}
+    <tr> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }}% </td><td> {{ name.6 }}% </td> <td> {{ name.10 }}% </tr> 
 
+    {% else %}
+      <tr> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }}% </td><td> {{ name.6 }}% </td> <td> {{ name.10 }}% </tr> 
+
+    
+    {% endif %}
+
+    {% endfor %}
     <div style="height:500px;" id="map"></div>
 
     </table>
