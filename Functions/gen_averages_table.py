@@ -1,3 +1,7 @@
+'''
+SQL code to calculate average scores for various metrics and store them in a seperate TABLE
+This code only needs to be run whenever data on schools in updated in the database 
+'''
 import sqlite3
 import math
 
@@ -33,8 +37,8 @@ r = c.execute(PPCT_query)
 average_ppct = r.fetchall()
 average_ppct = average_ppct[0][0]
 
-FOT_query = '''SELECT sum(num_fresh*fot)/
-sum(num_fresh) FROM fot;'''
+FOT_query = '''SELECT sum(numfresh*fot)/
+sum(numfresh) FROM fot;'''
 
 r = c.execute(FOT_query)
 average_on_track_rate = r.fetchall()

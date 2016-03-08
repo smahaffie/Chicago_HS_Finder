@@ -1,3 +1,7 @@
+'''
+Synethesize inputs from Django web interface and feed into Django template generator
+'''
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django import forms
@@ -15,6 +19,9 @@ import json
 from .build_query import build_query
 
 def about(request):
+    '''
+    generates "About SchoolSmart" page
+    '''
     return render(request, 'matcher/about.html')
 
 
@@ -31,8 +38,6 @@ def form(request):
         extra_form = FinderForm2(request.POST)
 
         if form.is_valid():
-            # form.save()
-            print(form.cleaned_data)
 
             address = form.cleaned_data['your_address'] + " Chicago, IL"
 
@@ -43,11 +48,9 @@ def form(request):
                 neighborhood_schools = get_neighborhood_schools(address)
 
             tier = None
-            if extra_form.is_valid():
-                tier = int(get_tier_number(address))
-                print("TIER NUMBER: {}".format(tier))
 
-            # how to use this???
+            if extra_form.is_valid(): #then tier is necessary for later calculations
+                tier = int(get_tier_number(address))
 
             connection = sqlite3.connect('CHSF.db')
             connection.create_function("time_between", 2, get_duration)
@@ -67,7 +70,6 @@ def form(request):
             context['names'] = []
             context['map_info'] = []
 
-            # ranking = rank_results(results,tier,form.cleaned_data,extra_form.cleaned_data) 
             result_dict = {}
             for result in results:
                 s_id = result[2] #key is school id
@@ -84,7 +86,6 @@ def form(request):
                 result_dict[s_id]['ptroutes'] = result[10]
                 result_dict[s_id]["FOT"] = result[11]
 
-            print(tier)
             if tier != None:
                 print("CASE 1")
                 rank_dict = rank_results(result_dict,form.cleaned_data,tier,extra_form.cleaned_data)
@@ -101,10 +102,6 @@ def form(request):
                 
             context["names"] = rank_dict
 
-
-
-
-
             connection.close()
 
             print("CONTEXT")
@@ -120,6 +117,16 @@ def form(request):
     return render(request, 'matcher/start.html', c)
 
 def get_geolocation(address):
+    '''
+    Finds the latitude and longitude of an address to be 
+    displayed on the map in the results page
+    Inputs:
+        address, safestring
+
+    Returns:
+        two floats
+
+    '''
     gmapsgeo = googlemaps.Client(key='AIzaSyD12ij_d_fNk93dyugiVuJHSNvEagDNfSU')
     result = gmapsgeo.geocode(address)[0]['geometry']['location']
 

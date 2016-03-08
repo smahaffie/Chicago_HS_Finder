@@ -1,3 +1,4 @@
+<!template for displaying results of user search for schools>
 <!DOCTYPE html>
 
 <html>
@@ -94,10 +95,10 @@
 
     {% for name in names %}
     {% if name.0 = "" %}
-    <tr> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }}% </td><td> {{ name.6 }}% </td> <td> {{ name.10 }}% </tr> 
+    <tr> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     {% else %}
-      <tr> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }}% </td><td> {{ name.6 }}% </td> <td> {{ name.10 }}% </tr> 
+      <tr> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     
     {% endif %}

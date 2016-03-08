@@ -4,6 +4,8 @@ from selenium.webdriver.common.keys import Keys
 
 def get_neighborhood_schools(address):
     '''
+    Find neighborhood schools that are zoned for a given address
+
     Inputs: 
         address: string
 
@@ -53,6 +55,15 @@ def get_neighborhood_schools(address):
     return rv
 
 def get_id_from_name(schoolname):
+    '''
+    find the unique integer id that corresponds to a school name_to_id
+
+    Inputs:
+        schoolname, string
+
+    Returns:
+        integer
+    '''
     schoolname = schoolname.upper()
     if schoolname[-11:] != "High School":
         if schoolname[-2:] == "HS":

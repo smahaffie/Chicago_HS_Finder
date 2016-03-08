@@ -1,10 +1,13 @@
-#build_query.py
+'''
+contains function that uses user inputs to build SQL query
+'''
 
 def build_query(neighborhood_schools, cleaned_data):
     '''
     Builds a SQL query based on user-inputs for schools to display in results
     Inputs:
         cleaned_data, Django form
+        neighborhood_schools, list of user's zoned neighborhood schools 
 
     Returns:
         query, string
@@ -27,7 +30,7 @@ def build_query(neighborhood_schools, cleaned_data):
     else:
         other_schooltypes = str(tuple(schooltypes))
 
-    time_between = " "
+    time_between = " " #in case user does not specify a max distance
     if cleaned_data["distance"] != None:
         seconds = int(cleaned_data["distance"]) * 60
         time_between = " AND ( time_between('{}', addrs.address) < {} )".format(str(cleaned_data['your_address'] + " Chicago, IL"),str(seconds))

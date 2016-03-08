@@ -1,8 +1,21 @@
+'''
+Contains all functions that use google maps to calculate transit-related
+information between a given school and given home address
+
+'''
 import googlemaps
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 def check_neighborhood_schools(school_id, neighborhood_schools):
+    '''
+    checks if a school is a neighborhood neighborhood_schools
+    Inputs:
+        school_id, integer
+        neighborhood_schools, list of integers
+    Returns:
+        boolean
+    '''
     if school_id in neighborhood_schools:
         return True
 
@@ -15,7 +28,7 @@ def find_best_route(home, school, travel_mode):
     Returns:
         json
     '''
-    gmaps = googlemaps.Client(key='AIzaSyBfNcZXYX443TfraOSaF-pxgi94PKP7rv0')
+    gmaps = googlemaps.Client(key='AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM')
     print("Starting gmaps")
     print(home, school, travel_mode)
     directions_json = gmaps.directions(home, school, mode=travel_mode)
@@ -57,6 +70,16 @@ def get_travel_info_transit(home, school):
     return [duration, walking_time, ptroutes]
 
 def get_duration(home, school):
+    '''
+    parses results of get_travel_info_transit to return total transit walking_time
+
+    Inputs:
+        home, string
+        school, string
+
+    Returns:
+        transit time, integer
+    '''
     print("GET DURATION IN TRANSIT_INFO")
     print("Got duration")
     return get_travel_info_transit(str(home),str(school))[0]
