@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 def get_tier_number(address):
-	'''
+    '''
 	finds tier user falls in that is used to calculate 
 	difficulty of admission to selective enrollment schools
 
@@ -13,7 +13,7 @@ def get_tier_number(address):
 
 	Returns:
 		integer between 1 and 4
-	'''
+    '''
     driver = webdriver.Firefox()
     driver.get("http://cpstiers.opencityapps.org/")
 
