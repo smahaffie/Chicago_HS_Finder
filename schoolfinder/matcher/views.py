@@ -47,6 +47,8 @@ def form(request):
             if 'Neighborhood' in form.cleaned_data['schooltype'] or form.cleaned_data['schooltype'] == []:
                 neighborhood_schools = get_neighborhood_schools(address)
 
+            print("NEIGHBORHOOD SCHOOLS: ", neighborhood_schools)
+
             tier = None
 
             if extra_form.is_valid(): #then tier is necessary for later calculations
