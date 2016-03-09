@@ -27,7 +27,7 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school],
-                     point_ranges,  max_willing = form["distance"])
+                     point_ranges,  max_willing = form["distance"],tier=tier)
             else:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school], 
@@ -36,7 +36,7 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school], 
-                    point_ranges)
+                    point_ranges,tier=tier)
             else:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school])
@@ -107,7 +107,7 @@ def calc_difficulty(tier,extra_form):
 
 
 
-def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60, LAMBDA = 1/1000):
+def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60, LAMBDA = 1/400,tier = None):
     '''
     ranks a school based on academics and distance to school_id
     Inputs:
@@ -135,6 +135,9 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
     average_ppct = 62.5
     average_fot = 84
 
+    with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
+        school_ranges = json.load(f)
+
     distance_score = 1 - (int(school_dict["time"])/max_willing) 
     
     academic_factors = []
@@ -159,13 +162,13 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
     academic_score = sum(academic_factors)/len(academic_factors)
 
     prelim_score = d_pref * distance_score + a_pref * academic_score
-
+    print(school_ranges)
     if point_ranges != None: #factor in the difficult b/c its a selective school
         
         if school_id in point_ranges:
             difficulty = (school_dict['difficulty'][0] + school_dict['difficulty'][1])/2
-
-            total_score = prelim_score - (LAMBDA * difficulty)
+            multiplier = point_ranges[school_id][0]/int(school_ranges[school_id]["Tier{}".format(tier)][0])
+            total_score = prelim_score - (LAMBDA * multiplier * difficulty)
 
         else:
             total_score = prelim_score
