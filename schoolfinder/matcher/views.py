@@ -39,7 +39,7 @@ def form(request):
 
         if form.is_valid():
 
-            address = form.cleaned_data['your_address'] + " Chicago, IL"
+            address = form.cleaned_data['your_address']
 
             # if the user is interested in neighborhood schools, get a list of 
             # the neighborhood schools from the CPS schoolfinder tool.

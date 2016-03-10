@@ -17,6 +17,14 @@
       #map {
         height: 100%;
       }
+
+      table {
+        border-collapse: collapse;
+        background-color: rgb(223, 225, 255);
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
     </style>
 
 </head>
@@ -25,7 +33,7 @@
     var SCHOOLS = {{ map_info|safe }}
     </script>
 
-    <script style = 'height:300px' type = 'text/javascript'>
+    <script type = 'text/javascript'>
 
       // The following example creates complex markers to indicate beaches near
       // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
@@ -65,7 +73,7 @@
     <p><center>Here is a list of the schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}" target=blank>here</a>.
     </center></p>
 
-    <table bgcolor = "#CEE3F6" border = "1" align = "center">
+    <table align = "center">
       <col width="120">
   <col width="12.5%">
   <col width="12.5%">
@@ -96,7 +104,7 @@
     {% endif %}
 
     {% endfor %}
-    <div style="height:500px;" id="map"></div>
+    <div style="height:400px;" id="map"></div>
 
     </table>
 
