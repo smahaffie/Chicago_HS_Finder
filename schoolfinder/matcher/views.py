@@ -95,19 +95,19 @@ def form(request):
                 print('CASE 2')
                 rank_dict = rank_results(result_dict,form.cleaned_data)
 
-            # this is incredibly inefficient eventually we should fix this
             for tup in rank_dict:
-                for entry in result_dict:
-                    if tup[1] == result_dict[entry]['name']:
-                        lat, lng = get_geolocation(result_dict[entry]['address'])
-                        context['map_info'].append([result_dict[entry]['name'], lat, lng])
+                lat, lng = get_geolocation(tup[-2])
+                context['map_info'].append([tup[1], lat, lng, tup[-1]])
                 
             context["names"] = rank_dict
+
+            user_lat, user_lng = get_geolocation(address + " Chicago, IL")
+            context['map_info'].append(["HOME", user_lat, user_lng, "#"])
 
             connection.close()
 
             print("CONTEXT")
-            print(context['map_info'])
+            print(context['names'])
 
             return render(request, 'matcher/results.html', context)
 
@@ -129,7 +129,7 @@ def get_geolocation(address):
         two floats
 
     '''
-    gmapsgeo = googlemaps.Client(key='AIzaSyD12ij_d_fNk93dyugiVuJHSNvEagDNfSU')
+    gmapsgeo = googlemaps.Client(key='AIzaSyA89vLJ1cY_GYmEYUVIGLuMDFpgJQPgnRI')
     result = gmapsgeo.geocode(address)[0]['geometry']['location']
 
     return result['lat'], result['lng']

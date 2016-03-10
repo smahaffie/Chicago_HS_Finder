@@ -28,7 +28,7 @@ def find_best_route(home, school, travel_mode):
     Returns:
         json
     '''
-    gmaps = googlemaps.Client(key='AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM')
+    gmaps = googlemaps.Client(key='AIzaSyBI1IzrUzrfNjmk3flBCg28YlcQcVVUsyE')
     print("Starting gmaps")
     print(home, school, travel_mode)
     directions_json = gmaps.directions(home, school, mode=travel_mode)
@@ -55,19 +55,12 @@ def get_travel_info_transit(home, school):
     duration = best_route['duration']['value']
 
     walking_time = 0 # in seconds
-    ptroutes = []
+
     for step in best_route['steps']:
         if step['travel_mode'] == "WALKING":
             walking_time += step['duration']['value']
-        elif step['travel_mode'] == 'TRANSIT':
-            if 'line' in step['transit_details']:
-                line = step['transit_details']['line']
-                if 'short_name' in line['vehicle']['type']:
-                    ptroutes.append((line['vehicle']['type'], line['short_name']))
-                elif 'name' in line:
-                    ptroutes.append((line['vehicle']['type'], line['name']))
 
-    return [duration, walking_time, ptroutes]
+    return [duration, walking_time]
 
 def get_duration(home, school):
     '''

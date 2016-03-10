@@ -48,24 +48,31 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
 
     final_list = []
 
+    letters = "ABCDEFGHIJKLMNOPQRSTUV"
+    i = 1
     for score in sorted_school_ids:
-        school_id = sorting_dict[score]
-        data = []
-        for key in ["website", "name","type", "time","ACT","enroll",
-        "persist","rating","score","ptroutes", "FOT"]:
-            point = result_dict[school_id][key]
-            if point != None and point != '':
-                data.append(point)
-            else:
-                if key != 'website':
-                    data.append("Data not available")
+        if i <= 15:
+            school_id = sorting_dict[score]
+            data = []
+            for key in ["website", "name","type", "time","ACT","enroll",
+            "persist","rating","score","ptroutes", "FOT", "address"]:
+                point = result_dict[school_id][key]
+                if point != None and point != '':
+                    data.append(point)
                 else:
-                    data.append(None)
+                    if key != 'website':
+                        data.append("Data not available")
+                    else:
+                        data.append(None)
+
+            data.append(letters[i-1])
+            i += 1
 
         school_tup = tuple(data)
+        print(school_tup)
         final_list.append(school_tup)
 
-    final_list = final_list[:12] #only display top 12 schools
+    final_list = final_list[:14] #only display top 12 schools
 
     return final_list
 

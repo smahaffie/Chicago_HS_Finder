@@ -29,6 +29,7 @@
 
 </head>
 <body>
+
     <script> 
     var SCHOOLS = {{ map_info|safe }}
     </script>
@@ -59,8 +60,9 @@
             position: {lat: school[1], lng: school[2]},
             map: map,
             title: school[0],
-            zIndex: school[3]
           });
+
+        marker.setLabel(school[3])
         }
       }
     </script>
@@ -74,15 +76,17 @@
     </center></p>
 
     <table align = "center">
-      <col width="120">
-  <col width="12.5%">
-  <col width="12.5%">
-  <col width="12.5%">
-  <col width="12.5%">
-  <col width="12.5%">
-  <col width="12.5%">
-  <col width="12.5%">
+      <col width="11.5">
+      <col width="14.75%">
+      <col width="14.75%">
+      <col width="14.75%">
+      <col width="14.75%">
+      <col width="14.75%">
+      <col width="14.75%">
+      <col width="14.75%">
+      <col width="14.75">
     <tr>
+    <th>Label</th>
     <th>Name</th>
     <th>Type</th>
     <th>Estimated Public Transit Travel Time (minutes)</th>
@@ -95,10 +99,10 @@
 
     {% for name in names %}
     {% if name.0 = "" %}
-    <tr> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
+    <tr> <td> {{ name.12 }} </td> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     {% else %}
-      <tr> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
+      <tr> <td> {{ name.12 }} </td> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     
     {% endif %}
