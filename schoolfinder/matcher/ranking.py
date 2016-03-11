@@ -18,16 +18,21 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
 
 
     point_ranges = []
-    if extra_form != None:
-        point_ranges = calc_difficulty(tier,extra_form)
+
+    if extra_form != None: #consider difficulty in ranking
+        point_ranges, schoolranges = calc_difficulty(tier,extra_form)
+
     for school in result_dict:
+
         if school in point_ranges:
-            result_dict[school]["difficulty"] = point_ranges[school]
+            result_dict[school]["difficulty"] = point_ranges[school] 
+
         if form['distance']!=None:
+
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school],
-                     point_ranges,  max_willing = form["distance"],tier=tier)
+                     point_ranges,  max_willing = form["distance"],tier=tier, schoolranges = schoolranges)
             else:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school], 
@@ -36,10 +41,13 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school], 
-                    point_ranges,tier=tier)
+                    point_ranges,tier=tier,schoolranges = schoolranges)
             else:
                 result_dict[school]["score"] = compute_score(school,
-                    form["d_priority"],form["a_priority"],result_dict[school])
+                form["d_priority"],form["a_priority"],result_dict[school])
+
+    #the following code sorts the schools based on the score we computed above
+
     sorting_dict = {}
     for school in result_dict:
         sorting_dict[result_dict[school]["score"]] = school
@@ -48,14 +56,17 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
 
     final_list = []
 
+    #letters are assigned to pins on school map display
+
     letters = "ABCDEFGHIJKLMNOPQRSTUV"
+
     i = 1
     for score in sorted_school_ids:
-        if i <= 15:
+        if i <= 15: #only display top 15 schools
             school_id = sorting_dict[score]
             data = []
             for key in ["website", "name","type", "time","ACT","enroll",
-            "persist","rating","score","ptroutes", "FOT", "address"]:
+            "persist","rating","score","ptroutes", "FOT", "address"]: #keys to display in table
                 point = result_dict[school_id][key]
                 if point != None and point != '':
                     data.append(point)
@@ -68,11 +79,11 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             data.append(letters[i-1])
             i += 1
 
-        school_tup = tuple(data)
-        print(school_tup)
-        final_list.append(school_tup)
+            school_tup = tuple(data)
 
-    final_list = final_list[:14] #only display top 12 schools
+            final_list.append(school_tup)
+
+
 
     return final_list
 
@@ -102,19 +113,20 @@ def calc_difficulty(tier,extra_form):
     point_ranges = {}
     grade_values = {"A": 75, "B":50, "C": 25, "D": 0, "F":0 }
     test_scores = round(extra_form["reading_score"] * 1.515) + round(extra_form["math_score"] * 1.515)
-    grade_pts = grade_values[extra_form["reading_grade"]] + grade_values[extra_form["math_grade"]] + grade_values[extra_form["science_grade"]] + grade_values[extra_form["social_science_grade"]]
+    grade_pts = grade_values[extra_form["reading_grade"]] + grade_values[extra_form["math_grade"]] + \
+        grade_values[extra_form["science_grade"]] + grade_values[extra_form["social_science_grade"]]
     total_pts = test_scores + grade_pts
-    for school in schoolranges:
+    for school in schoolranges: #calculate points needed to get into selective enrollment schools
         t = "Tier" + str(tier)
-        max_ = int(schoolranges[school][t][1]) - total_pts
+        max_ = int(schoolranges[school][t][1]) - total_pts 
         min_ = int(schoolranges[school][t][0]) - total_pts
         point_ranges[school] = (min_,max_)
 
-    return point_ranges
+    return point_ranges, schoolranges
 
 
 
-def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60, LAMBDA = 1/400,tier = None):
+def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60, LAMBDA = 1/400,tier = None, schoolranges =  None):
     '''
     ranks a school based on academics and distance to school_id
     Inputs:
@@ -142,13 +154,13 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
     average_ppct = 62.5
     average_fot = 84
 
-    with open("../Clean Data/Data_Files/school_ranges.json",'r') as f:
-        school_ranges = json.load(f)
 
     distance_score = 1 - (int(school_dict["time"])/max_willing) 
     
     academic_factors = []
     
+    #normalize each of the scores by city average
+
     if school_dict["ACT"] != None:
         school_act = (int(school_dict["ACT"])/average_ACT)
         academic_factors.append(school_act)
@@ -161,7 +173,6 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
         school_persistance_pct = (int(school_dict["persist"])/average_ppct)
         academic_factors.append(school_persistance_pct)
 
-    
     if school_dict["FOT"] != None and school_dict["FOT"] != "":
         school_fot_pct = (int(school_dict["FOT"])/average_fot)
         academic_factors.append(school_fot_pct)
@@ -169,12 +180,12 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
     academic_score = sum(academic_factors)/len(academic_factors)
 
     prelim_score = d_pref * distance_score + a_pref * academic_score
-    print(school_ranges)
+   
     if point_ranges != None: #factor in the difficult b/c its a selective school
         
         if school_id in point_ranges:
             difficulty = (school_dict['difficulty'][0] + school_dict['difficulty'][1])/2
-            multiplier = point_ranges[school_id][0]/int(school_ranges[school_id]["Tier{}".format(tier)][0])
+            multiplier = point_ranges[school_id][0]/int(schoolranges[school_id]["Tier{}".format(tier)][0])
             total_score = prelim_score - (LAMBDA * multiplier * difficulty)
 
         else:
