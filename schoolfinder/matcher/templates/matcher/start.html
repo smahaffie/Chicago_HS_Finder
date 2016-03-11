@@ -21,7 +21,7 @@
     </head>
     <body BGCOLOR=#99ccff>
         <h1 class="center">SchoolSmart</h1>
-        <!img src="{% static "schoolfinder/logo.png" %}" alt="My image"/>
+        <img src="{% static 'schoolfinder/logo.png' %}" alt="My image"/>
 
         <p class="center">Enter your information and preferences below to let SchoolMatch generate a list of schools that we recommend you explore. Click <a href="{% url 'about' %}" target=blank>here</a> to learn more about how SchoolSmart generates its results.</p>
 
@@ -30,7 +30,7 @@
                 {% csrf_token %}
                 {{ form }}
             </table>
-            <label><input type="checkbox" id="some_name" /> Would you us to consider odds of admissions to Selective Enrollment schools in our calculations?
+            <label><input type="checkbox" id="some_name" /> Would you like us to consider odds of admissions to Selective Enrollment schools in our calculations?
             <a href ="http://cpsoae.org/apps/pages/index.jsp?uREC_ID=72696&type=d&termREC_ID=&pREC_ID=529720" target='_blank'>Learn more here</a></label>
 
             <div id="extra_form" class="center nodisplay">
