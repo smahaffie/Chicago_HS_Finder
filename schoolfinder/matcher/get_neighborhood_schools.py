@@ -1,6 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+'''
+This file contains code that is used in cleaning high school names from all files
+to a standard all caps, ending in "HIGH SCHOOL" format. It also has a function that uses selenium 
+to tap into existing CPS tools to find neighborhood schools given an address.
+'''
 
 def get_neighborhood_schools(address):
     '''

@@ -1,3 +1,5 @@
+'''Contains code for generating map from Google API'''
+
 
 import requests
 

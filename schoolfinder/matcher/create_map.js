@@ -1,3 +1,7 @@
+'''Javascript version of create_map.py; contains code
+for generating map from Google Maps API'''
+
+
 function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 4,

@@ -1,3 +1,5 @@
+'Reference list of International Baccalaureate Schools in Chicago'
+
 IB_schools = ["Amundsen High School","Back of the Yards High School",
 "Bogan High School", "Bronzeville Scholastic Academy High School", "Clemente High School",
 "Curie Metropolitan High School", "Farragut High School","Hubbard High School", 
