@@ -1,6 +1,10 @@
 import csv
 
 def make_id_to_address():
+	'''uses extant id_to_name and name_to_address dictionaries to 
+	match school id's with their addresses and creates a csv file
+	with the matched pairs'''
+
 	with open('id_to_address.csv', 'w', newline = '') as csvfile:
 		w = csv.writer(csvfile)
 		for sid in id_to_name:
