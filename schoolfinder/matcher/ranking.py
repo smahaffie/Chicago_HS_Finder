@@ -1,7 +1,9 @@
 ''' contains all functions that process the data on schools returned by the 
 SQL query to rank the schools and sort them based on their rankings '''
 import math
-import json 
+import json
+import sqlite3
+from averages import calc_averages 
 
 def rank_results(result_dict,form,tier=None,extra_form=None):
 
@@ -125,6 +127,7 @@ def calc_difficulty(tier,extra_form):
     return point_ranges, schoolranges
 
 
+avg_tuple = calc_averages()
 
 def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60, LAMBDA = 1/400,tier = None, schoolranges =  None):
     '''
@@ -149,10 +152,10 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
 
     #we used a SQL query (see the file gen_averages_table in Fuctions folder) 
     #to tabulate these values
-    average_ACT = 18
-    average_epct = 58.8
-    average_ppct = 62.5
-    average_fot = 84
+    average_ACT = avg_tuple[3]
+    average_epct = avg_tuple[2]
+    average_ppct = avg_tuple[1]
+    average_fot = avg_tuple[0]
 
 
     distance_score = 1 - (int(school_dict["time"])/max_willing) 
