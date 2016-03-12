@@ -85,6 +85,11 @@ def clean_data(collenrollpersist_filename, act_filename, freshontrack_filename, 
             f1.write(line)
 
 def create_website_dict(website_csv_file):
+    '''
+    Creates a csv file with each line as an entry with two columns
+    the first with School ID unique identifier and the second with 
+    a link to their website.
+    '''
     with open(website_csv_file,'r') as f, open("{}_cleaned.csv".format(website_csv_file[:-4]),"w") as f1:
         f.readline()
         reader = csv.DictReader(f,fieldnames = ["Schoolname","School ID", "Website"])

@@ -1,14 +1,6 @@
 import csv
 import json
 
-#inputs just for testing
-csv = 'Data_Files/Cutoff_Scores_2015_2016'
-
-
-name_id_dict = {'King':609751, 'Brooks':609726, 'Hancock':609694, 'Jones': 609678, 'Lane':609720, 'Lindblom': 610391,
-'Northside':609749, 'Payton':609680, 'South Shore':610547, 'Westinghouse':609693, 'Young':609755}
-
-
 def create_min_max_dict(csv):
     '''
     Creates a json dictionary from csv file that lists points needed for each selective enrollment school by tier

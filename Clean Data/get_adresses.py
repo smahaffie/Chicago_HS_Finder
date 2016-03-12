@@ -5,6 +5,9 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 def get_all():
+    '''Aggregate function of get, get2, and get3, 
+    which allows us to get all addresses for schools on our list
+    of plausible schools'''
     addresses = {}
 
     driver = webdriver.Firefox()
@@ -75,12 +78,11 @@ def get_all():
     return addresses
 
 def get(html, addresses):
+    '''
+
+    '''
+
     print("BEFORE ", len(addresses))
-    '''
-    print("INPUT")
-    print(len(addresses))
-    print(addresses)
-    '''
     soup = bs4.BeautifulSoup(html, 'html5lib')
 
     results = []
@@ -109,21 +111,11 @@ def get(html, addresses):
         tmp += 1
 
     print("AFTER ", len(addresses))
-    '''
-    print("OUTPUT")
-    print(len(addresses))
-    print(addresses)
-    print("_____________________________________________________")
-    '''
+  
 
 
 
 def get2(html, addresses):
-    '''
-    print("INPUT")
-    print(len(addresses))
-    print(addresses)
-    '''
     print("BEFORE", len(addresses))
     soup = bs4.BeautifulSoup(html, 'html5lib')
 
@@ -156,11 +148,6 @@ def get2(html, addresses):
 
 def get3(html, addresses):
     print("BEFORE ", len(addresses))
-    '''
-    print("INPUT")
-    print(len(addresses))
-    print(addresses)
-    '''
     soup = bs4.BeautifulSoup(html, 'html5lib')
 
     results = []
@@ -189,9 +176,3 @@ def get3(html, addresses):
         tmp += 1
 
     print("AFTER ", len(addresses))
-    '''
-    print("OUTPUT")
-    print(len(addresses))
-    print(addresses)
-    print("_____________________________________________________")
-    '''
