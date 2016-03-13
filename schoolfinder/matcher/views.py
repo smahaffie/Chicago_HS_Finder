@@ -56,6 +56,7 @@ def form(request):
 
             connection = sqlite3.connect('CHSF.db')
             connection.create_function("time_between", 2, get_duration)
+            connection.create_function("get_transit_info", 2, get_transit_info)
             c = connection.cursor()
 
             query = build_query(neighborhood_schools, form.cleaned_data)
@@ -73,6 +74,8 @@ def form(request):
 
             result_dict = {}
             for result in results:
+                print(result)
+                gmaps_strings = result[7].split(",")
                 s_id = result[2] #key is school id
                 result_dict[s_id] = {} #dictionary to store query results 
                 result_dict[s_id]["name"] = result[1]
@@ -81,10 +84,10 @@ def form(request):
                 result_dict[s_id]["ACT"] = result[4]
                 result_dict[s_id]["type"] = result[3]
                 result_dict[s_id]["website"] = result[6]
-                result_dict[s_id]["time"] = result[7][0]
+                result_dict[s_id]["time"] = gmaps_strings[0][1:]
                 result_dict[s_id]["enroll"] = result[8]
                 result_dict[s_id]["persist"] = result[9]
-                result_dict[s_id]['ptroutes'] = result[7][2]
+                result_dict[s_id]['ptroutes'] = gmaps_strings[1][:-1]
                 result_dict[s_id]["FOT"] = result[10]
 
             if tier != None:

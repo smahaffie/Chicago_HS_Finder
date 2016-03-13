@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 
 def check_neighborhood_schools(school_id, neighborhood_schools):
     '''
-    checks if a school is a neighborhood neighborhood_schools
+    checks if a school is a neighborhood school
     Inputs:
         school_id, integer
         neighborhood_schools, list of integers
@@ -37,7 +37,7 @@ def find_best_route(home, school, travel_mode):
     return best_route
 
 
-def get_duration(home, school):
+def get_transit_info(home, school):
     '''
     Inputs:
         home: address string
@@ -54,22 +54,15 @@ def get_duration(home, school):
     duration_text = best_route['duration']['text']
     duration = best_route['duration']['value']
 
-    print('here')
-
-    walking_time = 0 # in seconds
+    walking_time = 0 
 
     for step in best_route['steps']:
         if step['travel_mode'] == "WALKING":
             walking_time += step['duration']['value']
 
-    print('here too')
+    return str([round(duration / 60), round(walking_time / 60)])
 
-    print(round(duration))
-    print(round(walking_time))
-
-    return "[round(duration), round((walking_time) / 60)]"
-
-def delete_this(home, school):
+def get_duration(home, school):
     '''
     Inputs:
         home, string
@@ -77,7 +70,6 @@ def delete_this(home, school):
 
     Returns:
         transit time, integer
-        walking time, integer
     '''
-    return round(get_travel_info_transit(str(home),str(school))[0]), \
-        int(round(get_travel_info_transit(str(home),str(school))[1] / 60))
+    best_route = find_best_route(str(home), str(school), 'transit')
+    return best_route['duration']['value']
