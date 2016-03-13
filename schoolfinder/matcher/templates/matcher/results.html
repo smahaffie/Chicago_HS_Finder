@@ -73,6 +73,8 @@
 
     <h1><center>SchoolSmart</center></h1>
 
+    {% if names|length > 0 %}
+
     <p><center>Here is a list of the schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}" target=blank>here</a>.
     </center></p>
 
@@ -98,20 +100,34 @@
     <th>Freshman on Track Rate </th>
     </tr>
 
+    
+
     {% for name in names %}
+
     {% if name.0 = "" %}
+
     <tr> <td> {{ name.12 }} </td> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     {% else %}
+
       <tr> <td> {{ name.12 }} </td> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     
     {% endif %}
 
+
     {% endfor %}
+    
+
     <div style="height:400px;" id="map"></div>
 
     </table>
+
+  {% else %}
+
+  <p> We were unable to find any schools that match your criteria. Please verify your address and try again with more generalized criteria. Thank you. </p>
+
+  {% endif %}
 
 </body>
 </html>

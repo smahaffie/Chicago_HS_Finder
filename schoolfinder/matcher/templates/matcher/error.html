@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!template for displaying an error message if there is an error executing the SQL query>
+<style>
+#section {
+    width:1050px;
+    text-align:center;
+    padding:50px; 
+}
+</style>
+<html class="no-js" lang="en" >
+<head>
+    <title>About SchoolSmart</title>
+</head>
+<body BGCOLOR=#99ccff>
+	<h1><center>Oh no!</center></h1>
+<div id="section">
+<p> It seems like something went wrong when we were searching for schools that match your criteria. 
+	Please double check your address and try again <a href="{% url 'form' %}" target=blank>here</a>
+</p>
+</div>
+
+
+</body>
+</html>

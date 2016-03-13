@@ -1,5 +1,5 @@
 '''
-contains function that uses user inputs to build SQL query
+This file contains the function that uses user inputs to build SQL query
 '''
 
 def build_query(neighborhood_schools, cleaned_data):
@@ -48,5 +48,5 @@ def build_query(neighborhood_schools, cleaned_data):
         "ON main.school_id = act.school_id AND main.school_id = fot.school_id AND main.school_id = websites.school_id AND main.school_id = cep.school_id AND addrs.school_id = main.school_id" + \
         " WHERE act.category_type = 'Overall' AND act.year = '2015' AND (main.school_id in (SELECT school_id FROM main WHERE " + \
         ' (school_type IN ' + other_schooltypes + ")" + neighborhood_q_string + ")" + time_between + ");"
-
+    
     return query

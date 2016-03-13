@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^form/', views.form, name="form"),
     url(r'^$', views.form, name="form"),
     url(r'^about/',views.about,name="about")
+    
 ]

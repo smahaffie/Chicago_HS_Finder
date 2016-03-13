@@ -44,7 +44,8 @@ def form(request):
             # if the user is interested in neighborhood schools, get a list of 
             # the neighborhood schools from the CPS schoolfinder tool.
             neighborhood_schools = []
-            if 'Neighborhood' in form.cleaned_data['schooltype'] or form.cleaned_data['schooltype'] == []:
+            if ('Neighborhood' in form.cleaned_data['schooltype'] or 
+                form.cleaned_data['schooltype'] == []):
                 neighborhood_schools = get_neighborhood_schools(address)
 
             print("NEIGHBORHOOD SCHOOLS: ", neighborhood_schools)
@@ -62,9 +63,18 @@ def form(request):
             query = build_query(neighborhood_schools, form.cleaned_data)
 
             print(query)
+            try:
+                r = c.execute(query)
+                results = r.fetchall()
 
-            r = c.execute(query)
-            results = r.fetchall()
+            #If SQL query page fails, we redirect to a page that avoids the Django error page 
+            #and asks the user to try again
+
+            except sqlite3.Error as er: 
+                return render(request, 'matcher/error.html')
+                
+
+
             
             print('finished')
             print(results)
