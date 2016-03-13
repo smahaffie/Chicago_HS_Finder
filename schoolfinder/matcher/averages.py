@@ -8,7 +8,7 @@ statistic - the statistic in question, and average - the city wide average for t
 import sqlite3
 
 def calc_averages():
-    connection = sqlite3.connect('../CHSF.db')
+    connection = sqlite3.connect('CHSF.db')
     c = connection.cursor()
 
     ACT_query = '''SELECT sum(total_tested*

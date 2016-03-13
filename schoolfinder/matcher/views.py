@@ -56,7 +56,6 @@ def form(request):
 
             connection = sqlite3.connect('CHSF.db')
             connection.create_function("time_between", 2, get_duration)
-            connection.create_function("ptroutes", 2, get_ptroutes)
             c = connection.cursor()
 
             query = build_query(neighborhood_schools, form.cleaned_data)
@@ -82,11 +81,11 @@ def form(request):
                 result_dict[s_id]["ACT"] = result[4]
                 result_dict[s_id]["type"] = result[3]
                 result_dict[s_id]["website"] = result[6]
-                result_dict[s_id]["time"] = result[7]
+                result_dict[s_id]["time"] = result[7][0]
                 result_dict[s_id]["enroll"] = result[8]
                 result_dict[s_id]["persist"] = result[9]
-                result_dict[s_id]['ptroutes'] = result[10]
-                result_dict[s_id]["FOT"] = result[11]
+                result_dict[s_id]['ptroutes'] = result[7][2]
+                result_dict[s_id]["FOT"] = result[10]
 
             if tier != None:
                 print("CASE 1")

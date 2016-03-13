@@ -3,7 +3,7 @@ SQL query to rank the schools and sort them based on their rankings '''
 import math
 import json
 import sqlite3
-from averages import calc_averages 
+from .averages import calc_averages 
 
 def rank_results(result_dict,form,tier=None,extra_form=None):
 
@@ -88,9 +88,6 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
 
 
     return final_list
-
-
-
 
 def calc_difficulty(tier,extra_form):
     '''
@@ -198,3 +195,5 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, 
         total_score = prelim_score
 
     return total_score
+
+

@@ -37,7 +37,7 @@ def find_best_route(home, school, travel_mode):
     return best_route
 
 
-def get_travel_info_transit(home, school):
+def get_duration(home, school):
     '''
     Inputs:
         home: address string
@@ -49,10 +49,12 @@ def get_travel_info_transit(home, school):
         list of tuples of form (type, line/route name) for each public transportation route taken)
     '''
     print("GET TRAVEL INFO IN TRANSIT_INFO")
-    best_route = find_best_route(home, school, 'transit')
+    best_route = find_best_route(str(home), str(school), 'transit')
 
     duration_text = best_route['duration']['text']
     duration = best_route['duration']['value']
+
+    print('here')
 
     walking_time = 0 # in seconds
 
@@ -60,23 +62,22 @@ def get_travel_info_transit(home, school):
         if step['travel_mode'] == "WALKING":
             walking_time += step['duration']['value']
 
-    return [duration, walking_time]
+    print('here too')
 
-def get_duration(home, school):
+    print(round(duration))
+    print(round(walking_time))
+
+    return "[round(duration), round((walking_time) / 60)]"
+
+def delete_this(home, school):
     '''
-    parses results of get_travel_info_transit to return total transit walking_time
-
     Inputs:
         home, string
         school, string
 
     Returns:
         transit time, integer
+        walking time, integer
     '''
-    print("GET DURATION IN TRANSIT_INFO")
-    print("Got duration")
-    return round(get_travel_info_transit(str(home),str(school))[0])
-
-def get_ptroutes(home, school):
-    walking_time = int(round(get_travel_info_transit(str(home),str(school))[1] / 60))
-    return walking_time
+    return round(get_travel_info_transit(str(home),str(school))[0]), \
+        int(round(get_travel_info_transit(str(home),str(school))[1] / 60))
