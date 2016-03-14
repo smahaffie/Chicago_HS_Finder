@@ -2,6 +2,8 @@
 This file contains the code to to connect to the above generated database and
 calculate the city wide act score, enrollment percentage, persistance 
 percentage, and freshman on track
+
+Original code
 '''
 
 import sqlite3
