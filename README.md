@@ -8,17 +8,19 @@ The majority of our data comes from http://cps.edu/SchoolData/Pages/SchoolData.a
 
 
 Libraries to install before running our application:
-Googlemaps: pip3 install -U googlemaps
-Selenium: pip3 install selenium
-Pandas: pip3 install pandas
-Json: pip3 install json
-Subprocess: pip3 install subprocess 
+Googlemaps: pip3 install -U googlemaps;
+Selenium: pip3 install selenium;
+Pandas: pip3 install pandas;
+Json: pip3 install json;
+Subprocess: pip3 install subprocess
 
 
 To run our application:
 Navigate to Chicago_HS_Finder/schoolfinder/. 
+
 Then enter the following in the terminal:
     $ python3 manage.py runserver
+    
 Open firefox and go to  http://127.0.0.1:8000/. Fill in the form with sample user preferences and press submit. Depending on the preferences that you enter, 1 or 2 additional Firefox windows may open and close within a few seconds. 
 
 You should then be directed to a new page that shows a map displaying the location of up to 15 schools that met your search criteria and your home address (marked with a '#' and labeled 'home' when you hover over the marker) and a table displaying information on the 15 best schools for the user in ranked order based on their inputted preferences and our ranking algorithm. Each label corresponds to a label on the map, and each school’s name links to that school’s website. 
@@ -46,6 +48,7 @@ Note that when the user checks the box indicdating that that they are interested
 Overall structure of our code:
 
 The files in Clean Data contain the code that we used to clean the data that is stored in the SQLite database CHSF which is located in the schoolfinder folder. The subfolder Data_Files contains all the csvs involved in the data cleaning process (raw files, intermediate files, and final files that we imported in the database). We also cleaned data further using SQLite commands because we found it very easy to do and foolproof, so the final csvs do not correspond exactly to the entries in our database.
+
 The folder schoolfinder contains all of the files that are integrated with our Django interface. The majority of the files that deal with our school selection and ranking algorithms are located in the matcher folder inside schoolfinder and are imported into views.py, which generates the final web page. 
 
 
