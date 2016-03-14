@@ -1,9 +1,9 @@
 # 122project
  
 Overview:
-This project uses public data on Chicago Public Schools and user background and preferences to generate a list of schools that meet the user’s specifications and are ranked based on academic criteria and distance from the user’s home.
+This project uses public data on Chicago Public Schools and user inputted-background and preferences to generate a list of schools that meet the user’s specifications and are ranked based on academic criteria and distance from the user’s home.
 
-The data we use comes almost exclusively from http://cps.edu/SchoolData/Pages/SchoolData.aspx.
+The data we use comes almost exclusively from http://cps.edu/SchoolData/Pages/SchoolData.aspx. 
 
 Libraries to install:
 Googlemaps: pip install -U googlemaps
@@ -19,7 +19,7 @@ Then enter the following in the terminal:
 Open firefox and go to  http://127.0.0.1:8000/. Fill in the form with sample user preferences and press submit. Depending on the preferences that you enter, 1 or 2 Firefox windows may open and close within a few seconds. 
 You should then be directed to a new page that shows a table displaying information on the 15 best schools for the user in ranked order based on the inputted preferences and our ranking algorithm. Each label corresponds to a label on the map, and each school’s name links to that school’s website. 
 
-Please note that because we did not purchase a google maps api key, our free key stops working for up to several hours if it is queried too often. After this point, every query will redirect to an error page rather than to a results map and table. Therefore, if you plan to run many queries consecutively, it may be a good idea to check only a few school types at once, and especially to avoid when possible checking Charter and IB on multiple consecutive queries simply because of the large number of these schools for which students are eligible. In practice, we would purchase a real google maps key and we would not encounter this issue. 
+Please note that because we did not purchase a google maps api key, our free key stops working for up to several hours if it is queried too often. After this point, every query will redirect to an error page rather than to a results map and table. Therefore, if you plan to run many queries consecutively, it may be a good idea to check only a few school types at once, and especially to avoid when possible checking "Charter" and "IB" on multiple consecutive queries simply because of the large number of these schools for which students are eligible. In practice, we would purchase a real google maps key and we would not encounter this issue. 
 
 Please also note, especially when entering addresses on the South Side, that for many of the school types, all of the schools are more than an hour away by public transportation. Therefore, to see the most interesting and useful results, it may be best to put in around 90 minutes as a furthest willingness to travel.
 
@@ -29,12 +29,12 @@ As an example, by running the following query with different importances assigne
 
 Overall structure of our code:
 
-The files in Clean Data contains the code that we used to clean the data that is stored in the SQLite database CHSF which is located in the schoolfinder folder. The subfolder Data_Files contains all the csvs involved in the data cleaning process (raw files, intermediate files, and final files that we imported in the database). We also cleaned data further using SQLite commands.
+The files in Clean Data contains the code that we used to clean the data that is stored in the SQLite database CHSF which is located in the schoolfinder folder. The subfolder Data_Files contains all the csvs involved in the data cleaning process (raw files, intermediate files, and final files that we imported in the database). We also cleaned data further using SQLite commands because we found it very easy to do and foolproof, so the final csvs do not correspond exactly to the entries in our database.
 The folder schoolfinder contains all of the files that are integrated with our Django interface. The majority of the files that deal with our school selection and ranking algorithms are located in the matcher folder inside schoolfinder.  
 
 Database:
 
-The database contains various sets of data on every high school in Chicago. The key school_id is the primary key for all the tables. 
+The database contains various sets of data on every high school in Chicago. The key school_id is the primary key for all the tables except for the averages table. 
 
 ACT - school ID, mean composite ACT scores for each school for 2011 thru 2015 including additional rows for scores for subsets of every school (by race, free/reduced lunch, etc.), and number tests for the set or subset
 CEP - school ID, college enrollment and persistence rates for 2015, number of graduates
@@ -42,6 +42,7 @@ addrs - school ID and school address (contains all CPS schools)
 main - school ID, school name, school category, school CPS-assigned rating
 FOT - school ID, freshman on track rate, and number of freshman
 websites - school id and website address (contains all CPS schools)
+averages - statistic (mean act score, college enrollment rate, etc.) and its corresponding city-wide average for 2015 based on the entries in our database
 
 The file gen_table.txt contains the SQL code that we used to create the tables in sqlite. We then used the .import command to import the csvs directly into the SQL tables. All of our files are bar-delimited. 
 
