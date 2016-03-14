@@ -1,5 +1,15 @@
 import csv
 
+'''
+This file takes the csv we created that maps school names to addresses
+and writes a new file that maps school IDs to addresses so that we
+can import this data in SQLite with school ID as the primary key
+
+This code is only necessary for building the initial database
+
+Original code
+'''
+
 def make_id_to_address():
 	'''uses extant id_to_name and name_to_address dictionaries to 
 	match school id's with their addresses and creates a csv file
@@ -9,19 +19,16 @@ def make_id_to_address():
 		w = csv.writer(csvfile)
 		for sid in id_to_name:
 			name = id_to_name[sid].upper()
-			print(name)
-			print(name in name_to_address)
 			if name not in name_to_address:
-				print(name[-11:])
 				if name[-11:] == 'HIGH SCHOOL':
 					if name[:-11] + "HS" in name_to_address:
 						name = name[:-11] + 'HS'
-						print('Case 1')
 					elif name[:-12] in name_to_address:
 						name = name[:-12]
 			assert name in name_to_address
 			w.writerow([sid, name_to_address[name]])
  
+#we hardcoded this list here to deal with inconsistences in the school naming 
 
 id_to_name = {'400010': 'Ace Tech High School',
  '400012': 'Amandla High School',
