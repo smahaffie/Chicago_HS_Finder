@@ -43,15 +43,15 @@ def rename_categories(files,magnets,se):
             writer = csv.writer(f1,delimiter = "|")
             next(fin)
             for i in dr:
-                if i["Network"] == None:
-                    print(i)
                 category = i["Network"].title()
-                if "NETWORK" in i["Network"]:
+                if "Network" in i["Network"]:
                     category = "Neighborhood"
                 if i["Network"] == "SERVICE LEADERSHIP ACADEMIES":
                     category = "Military Academy"
                 if i["Network"] == "Os4" or i["Network"] == "Ausl":
                     category = "Reinvestment"
+                if i["Network"] == "Isp":
+                    category = "Neighborhood"
                 if i['School Name'] in magnets:
                     category = "Magnet"
                 if i['School Name'] in se:
