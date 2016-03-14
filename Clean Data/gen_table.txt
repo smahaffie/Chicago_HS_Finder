@@ -1,7 +1,10 @@
 import sqlite3, csv
 
 '''
-Contains function to generate sql tables from csv files 
+Contains the SQL code that we used to generate the
+tables to store CPS school data
+
+Original code
 '''
 
 CREATE TABLE main
