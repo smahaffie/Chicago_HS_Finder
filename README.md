@@ -95,6 +95,8 @@ Combo_high_schools.csv - more intermediate cleaning
 CPS_SchoolsView_cleaned.csv - more intermediate cleaning
 Main_high_schools.csv - more intermediate cleaning
 Options_high_schools.csv - more intermediate cleaning
+id_to_name.json - json we created using the CSVs and some manual editing to deal with inconsistencies that we use in the process of generating the csv that maps school IDs to addresses
+name_to_address.json - json we created using the CSVs and some manual editing to deal with inconsistencies that we use in the process of generating the csv that maps school IDs to addresses
 
 Cleaned data (actually used in database or in files run through django):
 
