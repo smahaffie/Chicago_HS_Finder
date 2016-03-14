@@ -3,27 +3,26 @@ It renames the school categories to be correct because CPS does not
 indicate which schools are magnet and selective enrollment and it merges 
 multiple files together to create the data for the "main" table we use
 in our SQL database. It also contains code to pad csvs that are missing schools 
-with rows that contain just school IDS to ease the SQL querying process'''
+with rows that contain just school IDS to ease the SQL querying process
+
+We hardcoded lists of magnet and selective enrollment schools because none of the CSVS
+labelled the schools  in these categories as such
+
+Original code
+'''
 
 import csv
 import pandas as pd
 
 csv.register_dialect('piper', delimiter='|', quoting=csv.QUOTE_NONE)
 
+#sample input
 files = ["Data_Files/cleaned_Assessmentoptions.csv", "Data_Files/cleaned_Assessmentcombo.csv", "Data_Files/cleaned_Assessment912.csv"]
 
 magnets = ["DISNEY II HS", "VON STEUBEN HS", "CHICAGO AGRICULTURE HS", "CRANE MEDICAL HS", "DEVRY HS", "CURIE HS", "CLARK HS"]
 
 se = ["BROOKS HS", "JONES HS", "KING HS", "LANE TECH HS", "LINDBLOM HS", "NORTHSIDE PREP HS", "PAYTON HS", "SOUTH SHORE INTL HS", "WESTINGHOUSE HS", "YOUNG HS" ]
 
-IB_schools = ["Amundsen High School","Back of the Yards High School",
-"Bogan High School", "Bronzeville Scholastic Academy High School", "Clemente High School",
-"Curie Metropolitan High School", "Farragut High School","Hubbard High School", 
-"Hyde Park Academy High School","Juarez High School","Kelly High School","Kennedy High School",
-"Lincoln Park High School","Morgan Park High School",
-"The Ogden International School of Chicago","Prosser Career Academy","Schurz High School",
-"Senn High School","South Shore International","Steinmetz Academic Centre",
-"Taft High School","Washington High School"]
 
 def rename_categories(files,magnets,se):
     '''
