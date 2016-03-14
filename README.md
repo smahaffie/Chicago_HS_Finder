@@ -95,6 +95,8 @@ Combo_high_schools.csv - more intermediate cleaning
 CPS_SchoolsView_cleaned.csv - more intermediate cleaning
 Main_high_schools.csv - more intermediate cleaning
 Options_high_schools.csv - more intermediate cleaning
+id_to_name.json - json we created using the CSVs and some manual editing to deal with inconsistencies that we use in the process of generating the csv that maps school IDs to addresses
+name_to_address.json - json we created using the CSVs and some manual editing to deal with inconsistencies that we use in the process of generating the csv that maps school IDs to addresses
 
 Cleaned data (actually used in database or in files run through django):
 
@@ -132,7 +134,9 @@ google_maps.py - find distance between two addresses
 build_query .py - takes in user inputs to build query to select matching schools that are then ranked
 Transit_info.py - contains all the functions that use the Google maps API to find information about travel time to every school
 Views.py - processes all the requests made through django to call the appropriate functions and generate the appropriate templates
-ranking.py - calculate ranking for a SQL to be displayed in results page
+ranking.py - calculate ranking for a list of schools returned by the SQL query to be displayed in results page
+
+Things to keep in mind about our ranking algorithm: If the user does not specify preferences for academics and transit time, we weight the two equally and therefore schools that are not strong academically may appear higher than initially expected. If the user does not provide academic history, we do not subtract a difficulty score from the scores of the selective enrollment schools. 
 
 Django templates:
 
