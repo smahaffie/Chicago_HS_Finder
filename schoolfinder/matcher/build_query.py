@@ -3,6 +3,19 @@
 # This file contains the function that uses user inputs to build the main 
 # SQL query
 
+#there is no CSV that indicates whether a school has an IB program, so we created this list
+#from the list on the CPS website
+
+IB_schools = ["Amundsen High School","Back of the Yards High School",
+"Bogan High School", "Bronzeville Scholastic Academy High School", 
+"Clemente High School","Curie Metropolitan High School", "Farragut High School",
+"Hubbard High School", "Hyde Park Academy High School","Juarez High School",
+"Kelly High School","Kennedy High School","Lincoln Park High School",
+"Morgan Park High School","The Ogden International School of Chicago High School",
+"Prosser Career Academy High School","Schurz High School","Senn High School",
+"South Shore International  High School","Steinmetz Academic Centre  High School",
+"Taft High School","Washington High School"]
+
 
 def build_query(neighborhood_schools, cleaned_data):
     '''
@@ -18,6 +31,19 @@ def build_query(neighborhood_schools, cleaned_data):
     
     neighborhood = False
     schooltypes = cleaned_data['schooltype']
+
+
+
+    #If the user is interested in IB schools, the ranking function considers all 
+    #schools with IB programs, even if they are neighborhood schools as being
+    #options that are open to them
+
+    IB = " "
+
+    if "International Baccalaureate" in schooltypes:
+        IB = " OR ( main.name in " + str(tuple(IB_schools)) + ")"
+
+
     if 'Neighborhood' in schooltypes:
         schooltypes.remove('Neighborhood')
         neighborhood = True
@@ -62,6 +88,6 @@ def build_query(neighborhood_schools, cleaned_data):
         " WHERE act.category_type = 'Overall' AND act.year = '2015' AND " + \
         "(main.school_id in (SELECT school_id FROM main WHERE " + \
         ' (school_type IN ' + other_schooltypes + ")" + \
-        neighborhood_q_string + ")" + time_between + ");"
+        neighborhood_q_string + ")" + IB + time_between + ");"
     
     return query
