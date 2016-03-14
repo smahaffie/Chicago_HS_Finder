@@ -1,38 +1,53 @@
 # 122project
+# Shelby Mahaffie, Sherry Shenker, Joseph Day
  
 Overview:
-This project uses public data on Chicago Public Schools and user inputted-background and preferences to generate a list of schools that meet the user’s specifications and are ranked based on academic criteria and distance from the user’s home.
+This project uses public data on Chicago Public Schools and user inputted-background and preferences to generate a list of schools that meet the user’s specifications and are ranked based on academic criteria and public transit travel time from the user's home. 
 
-The data we use comes almost exclusively from http://cps.edu/SchoolData/Pages/SchoolData.aspx. 
+The majority of our data comes from http://cps.edu/SchoolData/Pages/SchoolData.aspx. 
 
-Libraries to install:
+
+Libraries to install before running our application:
 Googlemaps: pip3 install -U googlemaps
 Selenium: pip3 install selenium
 Pandas: pip3 install pandas
 Json: pip3 install json
 Subprocess: pip3 install subprocess 
 
+
 To run our application:
 Navigate to Chicago_HS_Finder/schoolfinder/. 
 Then enter the following in the terminal:
     $ python3 manage.py runserver
-Open firefox and go to  http://127.0.0.1:8000/. Fill in the form with sample user preferences and press submit. Depending on the preferences that you enter, 1 or 2 Firefox windows may open and close within a few seconds. 
-You should then be directed to a new page that shows a table displaying information on the 15 best schools for the user in ranked order based on the inputted preferences and our ranking algorithm. Each label corresponds to a label on the map, and each school’s name links to that school’s website. 
+Open firefox and go to  http://127.0.0.1:8000/. Fill in the form with sample user preferences and press submit. Depending on the preferences that you enter, 1 or 2 additional Firefox windows may open and close within a few seconds. 
 
-Please note that because we did not purchase a google maps api key, our free key stops working for up to several hours if it is queried too often. After this point, every query will redirect to an error page rather than to a results map and table. Therefore, if you plan to run many queries consecutively, it may be a good idea to check only a few school types at once, and especially to avoid when possible checking "Charter" and "IB" on multiple consecutive queries simply because of the large number of these schools for which students are eligible. In practice, we would purchase a real google maps key and we would not encounter this issue. 
+You should then be directed to a new page that shows a map displaying the location of up to 15 schools that met your search criteria and your home address (marked with a '#' and labeled 'home' when you hover over the marker) and a table displaying information on the 15 best schools for the user in ranked order based on their inputted preferences and our ranking algorithm. Each label corresponds to a label on the map, and each school’s name links to that school’s website. 
+If less than 15 schools that you are eligible for satisfy your inputted criteria, only the number of schools that you are eligible for and meet your criteria will be displayed in the table and on the map. If no schools that you are eligible for satisfy your criteria, you will be directed to a separate page advising you to revise your search.  
 
-Please also note, especially when entering addresses on the South Side, that for many of the school types, all of the schools are more than an hour away by public transportation. Therefore, to see the most interesting and useful results, it may be best to put in around 90 minutes as a furthest willingness to travel.
+Please note that because we did not purchase a google maps api key, our free key stops working for up to several hours if it is queried too often. After this point, every query will result in an error page rather than to a results map and table after a few minutes of trying to run a google maps query. Therefore, if you plan to run many queries consecutively, it may be a good idea to check only a few school types at once, and especially to avoid when possible checking "Charter" and "IB" on multiple consecutive queries simply because of the large number of these schools for which students are eligible. In practice, we would purchase a real google maps key and we would not encounter this issue. 
+
+Please also note, especially when entering addresses on the South Side, that for many of the school types, all of the schools are more than an hour away by public transportation. Therefore, to see the most interesting results, it may be best to enter around 90 minutes or more as a furthest willingness to travel.
 
 As an example, by running the following query with different importances assigned to transit time and academics, and different academic histories, you can observe the different results our algorithm returns: 
 
-‘6031 S Ellis Ave’, 90 minutes, [Neighborhood, Selective Enrollment, Magnet, Contract]
+Address: '6031 S Ellis Ave’; 
+Willing to travel: '90'; 
+School types: Neighborhood, Selective Enrollment, Magnet, Contract, Military Academy
 
-Note that when the user checks that you are interested in IB schools, all of the schools of every type that offer IB programs will be eligible to be in the final list in addition to the schools of the types selected by the user.
+When transit time is ranked at 10 and academics at 1, the schools are returned largely in ascending order of total transit time. However, when the preferences are flipped, the schools are ranked for the most part solely based on college enrollment and persistence, Freshmen-On-Track Rate, and 11th grade ACT scores. With academics still most important, note that when the student's grades and test percentiles are very strong, the top-performing selective enrollment schools make up most of the top recommendations. With weaker test scores and grades, however, other school types are recommended first and the less selective selective enrollment schools are recommended before the most selective.
+
+It seems likely that most of the users of our site would rank academics as being more important than travel time, but we do not make this assumption about the user's preferences: if the user ranks travel time and academics as being equally important, then we weight them equally, so it may be the case that neighborhood schools with significantly poorer academic performance may be ranked above schools with much better student outcomes because those schools are further away. 
+
+Note that when the user checks the box indicdating that that they are interested in IB schools, all of the schools of every type (including Neighborhood schools) that offer IB programs will be eligible to be in the final list in addition to the schools of the types selected by the user.
+
+
+
 
 Overall structure of our code:
 
-The files in Clean Data contains the code that we used to clean the data that is stored in the SQLite database CHSF which is located in the schoolfinder folder. The subfolder Data_Files contains all the csvs involved in the data cleaning process (raw files, intermediate files, and final files that we imported in the database). We also cleaned data further using SQLite commands because we found it very easy to do and foolproof, so the final csvs do not correspond exactly to the entries in our database.
-The folder schoolfinder contains all of the files that are integrated with our Django interface. The majority of the files that deal with our school selection and ranking algorithms are located in the matcher folder inside schoolfinder.  
+The files in Clean Data contain the code that we used to clean the data that is stored in the SQLite database CHSF which is located in the schoolfinder folder. The subfolder Data_Files contains all the csvs involved in the data cleaning process (raw files, intermediate files, and final files that we imported in the database). We also cleaned data further using SQLite commands because we found it very easy to do and foolproof, so the final csvs do not correspond exactly to the entries in our database.
+The folder schoolfinder contains all of the files that are integrated with our Django interface. The majority of the files that deal with our school selection and ranking algorithms are located in the matcher folder inside schoolfinder and are imported into views.py, which generates the final web page. 
+
 
 Database:
 
@@ -58,7 +73,6 @@ collenrollpersist_rpt_2015.csv
 FOT_SchoolLevel_2015.csv, Freshman-on-track data
 CPS_SchoolsView.csv, school website list
 Cutoff_Scores_2015_2016.csv - min and max scores for admissions to selective enrollment high schools
-
 
 Intermediate data (generated after intermediate cleaned in some way, but not ready for import to sqlite) :
 
@@ -91,6 +105,7 @@ id_to_address.csv - list of school ids and school addresses
 school_ranges.json - maps selective enrollment schools to the min and max points for admission in 2015
 CPS_SchoolsView_cleaned.csv - maps school IDS to web addresses
 Websites.json - above file in JSON form for easy use
+
 
 Scripts:
 
