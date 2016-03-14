@@ -1,5 +1,7 @@
 ''' contains all functions that process the data on schools returned by the 
-SQL query to rank the schools and sort them based on their rankings '''
+SQL query to rank the schools and sort them based on their rankings 
+
+original'''
 import math
 import json
 import sqlite3
@@ -156,8 +158,6 @@ def compute_score(school_id, d_pref, a_pref,  school_dict, avg_tuple=None,
     mult_dict = {1:0.1, 2:0.4, 3:0.6, 4:0.8, 5:1, 6:1.2, 7:1.4, 8:1.6,
      9:1.8, 10:2.1}
 
-    print(d_pref)
-    print(type(d_pref))
     d_pref = mult_dict[int(d_pref)]
     a_pref = mult_dict[int(a_pref)]
 

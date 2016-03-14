@@ -3,8 +3,8 @@
 # This file contains the function that uses user inputs to build the main 
 # SQL query
 
-#there is no CSV that indicates whether a school has an IB program, so we created this list
-#from the list on the CPS website
+#there is no CSV that indicates whether a school has an IB program, so we 
+#created this list from the list on the CPS website
 
 IB_schools = ["Amundsen High School","Back of the Yards High School",
 "Bogan High School", "Bronzeville Scholastic Academy High School", 

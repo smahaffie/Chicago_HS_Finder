@@ -2,9 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 '''
-This file contains code that is used in cleaning high school names from all files
-to a standard all caps, ending in "HIGH SCHOOL" format. It also has a function that uses selenium 
-to tap into existing CPS tools to find neighborhood schools given an address.
+This file uses selenium to take advantage of an existing CPS tools to find 
+the neighborhood schools of a given address.
 
 Used selenium documentation to write original code.
 '''
@@ -78,8 +77,10 @@ def get_id_from_name(schoolname):
             schoolname = schoolname + " HIGH SCHOOL"
     assert schoolname in name_to_id
     return name_to_id[schoolname]
-#the reason this dictionary is hard-coded here is that we had to deal with the issue that the names used by the CPS 
-#schoolfinder tool are different from the names used in our other data sources(i.e. the csv files) so we had to manually
+
+#the reason this dictionary is hard-coded here is that we had to deal with the 
+#issue that the names used by the CPS schoolfinder tool are different from the 
+#names used in our other data sources(i.e. the csv files) so we had to manually
 #address these issues. This dictionary is not used anywhere else in our code.
 
 name_to_id = {'ACE TECH HIGH SCHOOL': '400010',

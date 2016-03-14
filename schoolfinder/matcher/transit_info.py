@@ -1,4 +1,6 @@
 '''
+Original 
+
 Contains all functions that use google maps to calculate transit-related
 information between a given school and given home address
 '''
@@ -24,7 +26,11 @@ def find_best_route(home, school, travel_mode):
     # Arrival time is 9 AM Monday, April 4th. 
     directions_json = gmaps.directions(home, school, mode=travel_mode, 
         arrival_time=1459778400)
-    best_route = directions_json[0]['legs'][0]
+
+    try:
+        best_route = directions_json[0]['legs'][0]
+    except:
+        best_route = None
 
     return best_route
 
@@ -43,6 +49,9 @@ def get_transit_info(home, school):
             transit time spent walking in minutes
     '''
     best_route = find_best_route(str(home), str(school), 'transit')
+
+    if best_route == None:
+        return "[ , ]"
 
     walking_time = 0 
     for step in best_route['steps']:
@@ -64,4 +73,10 @@ def get_duration(home, school):
         transit time, integer
     '''
     best_route = find_best_route(str(home), str(school), 'transit')
+
+    # If no route was found, return a number that will always 
+    # be larger than the user's maximum willingness to travel.
+    if best_route == None:
+        return 1000000
+        
     return best_route['duration']['value']
