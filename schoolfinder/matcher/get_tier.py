@@ -1,5 +1,8 @@
 '''Contains function to calculate user's tier
-using existing CPS tool and selenium'''
+using existing CPS tool and selenium
+
+Used selenium documentation to write original code
+'''
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
