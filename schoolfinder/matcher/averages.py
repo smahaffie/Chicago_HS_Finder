@@ -1,13 +1,19 @@
 '''
-Below is the python code to connect to the above generated database and
-calculate the city wide act score, enrollment percentage, persistance percentage,
-and freshman on track and then creates another table called averages that has as columns
-statistic - the statistic in question, and average - the city wide average for that statistic
+This file contains the code to to connect to the above generated database and
+calculate the city wide act score, enrollment percentage, persistance 
+percentage, and freshman on track
 '''
 
 import sqlite3
 
 def calc_averages():
+    '''
+    Inputs:
+        None
+
+    Outputs:
+        tuple containing city averages
+    '''
     connection = sqlite3.connect('CHSF.db')
     c = connection.cursor()
 
@@ -42,6 +48,4 @@ def calc_averages():
     average_on_track_rate = r.fetchall()
     average_on_track_rate = average_on_track_rate[0][0]
 
-
-
-    return(average_on_track_rate, average_ppct, average_epct, average_ACT)
+    return (average_on_track_rate, average_ppct, average_epct, average_ACT)
