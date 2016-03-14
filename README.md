@@ -27,6 +27,8 @@ As an example, by running the following query with different importances assigne
 
 ‘6031 S Ellis Ave’, 90 minutes, [Neighborhood, Selective Enrollment, Magnet, Contract]
 
+Note that when the user checks that you are interested in IB schools, all of the schools of every type that offer IB programs will be eligible to be in the final list in addition to the schools of the types selected by the user.
+
 Overall structure of our code:
 
 The files in Clean Data contains the code that we used to clean the data that is stored in the SQLite database CHSF which is located in the schoolfinder folder. The subfolder Data_Files contains all the csvs involved in the data cleaning process (raw files, intermediate files, and final files that we imported in the database). We also cleaned data further using SQLite commands because we found it very easy to do and foolproof, so the final csvs do not correspond exactly to the entries in our database.
