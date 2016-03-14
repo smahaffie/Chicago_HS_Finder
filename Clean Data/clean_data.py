@@ -22,6 +22,9 @@ def clean_data(collenrollpersist_filename, act_filename, freshontrack_filename, 
         mainhs_filename, string
         combohs_filename, string
         optionshs_filename, string
+        
+    Side effects:
+        creates new file for each of the inputs above
     '''
 
     '''
