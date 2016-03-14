@@ -21,6 +21,8 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
 
     point_ranges = []
 
+    avg_tuple = calc_averages()
+
     if extra_form != None: #consider difficulty in ranking
         point_ranges, schoolranges = calc_difficulty(tier,extra_form)
 
@@ -34,18 +36,18 @@ def rank_results(result_dict,form,tier=None,extra_form=None):
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,
                     form["d_priority"],form["a_priority"],result_dict[school],
-                     point_ranges,  max_willing = form["distance"],tier=tier, schoolranges = schoolranges)
+                    avg_tuple, point_ranges,  max_willing = form["distance"],tier=tier, schoolranges = schoolranges)
             else:
                 result_dict[school]["score"] = compute_score(school,
-                    form["d_priority"],form["a_priority"],result_dict[school], 
+                    form["d_priority"],form["a_priority"],result_dict[school], avg_tuple,
                     max_willing = form["distance"])
         else:
             if extra_form != None:
                 result_dict[school]["score"] = compute_score(school,
-                    form["d_priority"],form["a_priority"],result_dict[school], 
+                    form["d_priority"],form["a_priority"],result_dict[school], avg_tuple,
                     point_ranges,tier=tier,schoolranges = schoolranges)
             else:
-                result_dict[school]["score"] = compute_score(school,
+                result_dict[school]["score"] = compute_score(school, avg_tuple,
                 form["d_priority"],form["a_priority"],result_dict[school])
 
     #the following code sorts the schools based on the score we computed above
@@ -124,9 +126,9 @@ def calc_difficulty(tier,extra_form):
     return point_ranges, schoolranges
 
 
-avg_tuple = calc_averages()
 
-def compute_score(school_id, d_pref, a_pref,  school_dict, point_ranges = None, max_willing=60, LAMBDA = 1/400,tier = None, schoolranges =  None):
+
+def compute_score(school_id, d_pref, a_pref,  school_dict, avg_tuple, point_ranges = None, max_willing=60, LAMBDA = 1/400,tier = None, schoolranges =  None):
     '''
     ranks a school based on academics and distance to school_id
     Inputs:
