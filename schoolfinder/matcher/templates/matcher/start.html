@@ -1,8 +1,7 @@
-<!this is the template for the display where the user begins to use the tool. It displays the form for user preferences>
+<!--this is the template for the display where the user begins to use the tool. 
+    It displays the form for user preferences-->
+<!--original with help from Gustav-->
 
-
-
-{% load staticfiles %}
 
 <!DOCTYPE html>
 <html>
@@ -21,35 +20,43 @@
     </head>
     <body BGCOLOR=#99ccff>
         <h1 class="center">SchoolSmart</h1>
-        <img src="{% static 'schoolfinder/logo.png' %}" alt="My image"/>
-
-        <p class="center">Enter your information and preferences below to let SchoolMatch generate a list of schools that we recommend you explore. Click <a href="{% url 'about' %}" target=blank>here</a> to learn more about how SchoolSmart generates its results.</p>
+        <p class="center">Enter your information and preferences below to let 
+            SchoolMatch generate a list of schools that we recommend you 
+            explore. Click 
+            <a href="{% url 'about' %}" target=blank>here</a> 
+            to learn more about how SchoolSmart generates its results.</p>
 
         <form action="/form/" method="post">
             <table>
                 {% csrf_token %}
                 {{ form }}
             </table>
-            <label><input type="checkbox" id="some_name" /> Would you like us to consider odds of admissions to Selective Enrollment schools in our calculations?
-            <a href ="http://cpsoae.org/apps/pages/index.jsp?uREC_ID=72696&type=d&termREC_ID=&pREC_ID=529720" target='_blank'>Learn more here</a></label>
+            <label><input type="checkbox" id="ah_option" /> 
+                Would you like us to consider odds of admissions to 
+                Selective Enrollment schools in our calculations?
+            <a href =
+            "http://cpsoae.org/apps/pages/index.jsp?uREC_ID=72696&type=d&termREC_ID=&pREC_ID=529720" 
+                target='_blank'>Learn more here</a></label>
 
             <div id="extra_form" class="center nodisplay">
                 <table>
-                {{ extra_form }}
+                    {{ extra_form }}
                 </table>
             </div>
+
             <input type="submit" value="Submit" />
     	</form>
 
         <script>
-            $("#some_name").click(function() {
-                if ($("#some_name").is(':checked')) {
-                    $('#extra_form').show();    
+            $("#ah_option").click(function() {
+                if ($("#ah_option").is(':checked')) {
+                    $('#extra_form').show();   
                 } else {
-                    $('#extra_form').hide();    
+                    $('#extra_form').hide();  
              }
 
             });
+
         </script>
     </body>
 </html>

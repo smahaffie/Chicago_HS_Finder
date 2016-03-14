@@ -1,7 +1,6 @@
 '''
 Contains all functions that use google maps to calculate transit-related
 information between a given school and given home address
-
 '''
 import googlemaps
 from selenium import webdriver
@@ -22,7 +21,9 @@ def find_best_route(home, school, travel_mode):
     '''
     gmaps = googlemaps.Client(key='AIzaSyBI1IzrUzrfNjmk3flBCg28YlcQcVVUsyE')
 
-    directions_json = gmaps.directions(home, school, mode=travel_mode)
+    # Arrival time is 9 AM Monday, April 4th. 
+    directions_json = gmaps.directions(home, school, mode=travel_mode, 
+        arrival_time=1459778400)
     best_route = directions_json[0]['legs'][0]
 
     return best_route

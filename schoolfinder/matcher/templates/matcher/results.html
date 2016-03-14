@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<!template for displaying results of user search for schools>
-<!The javascript functions are modified from the official google maps javascrapt API guides>
-
+<!--template for displaying results of user search for schools-->
+<!--Modified: The html was written with help from Bernard and Gustav.
+  The google maps javascript functions are modified from the google maps
+  api documentation--> 
 
 <html>
 <head>
@@ -36,13 +37,6 @@
     </script>
 
     <script type = 'text/javascript'>
-
-      // The following example creates complex markers to indicate beaches near
-      // Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
-      // to the base of the flagpole.
-
-      //var schools = {{ map_info }}
-
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
@@ -67,6 +61,7 @@
         }
       }
     </script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHtXoboDd-gh-swjytgWi_JkO1ObYJJYM&callback=initMap">
     </script>
@@ -75,7 +70,10 @@
 
     {% if names|length > 0 %}
 
-    <p><center>Here is a list of the schools that we recommend you consider based on your preferences, location, and data on the school's performance in recent years. To learn more about how we tabulated this list, click <a href="{% url 'about' %}" target=blank>here</a>.
+    <p><center>Here is a list of the schools that we recommend you consider 
+      based on your preferences, location, and data on the school's performance 
+      in recent years. To learn more about how we tabulated this list, 
+      click <a href="{% url 'about' %}" target=blank>here</a>.
     </center></p>
 
     <table align = "center">
@@ -87,7 +85,7 @@
       <col width="14.75%">
       <col width="14.75%">
       <col width="14.75%">
-      <col width="14.75">
+      <col width="14.75%">
     <tr>
     <th>Label</th>
     <th>Name</th>
@@ -100,21 +98,25 @@
     <th>Freshman on Track Rate </th>
     </tr>
 
-    
+    <tr> <td></td> <td>City Averages</td><td></td><td></td><td></td> 
+    <td>18.18</td><td>58.82</td> <td>62.51</td><td>84.15</td>
 
     {% for name in names %}
 
     {% if name.0 = "" %}
 
-    <tr> <td> {{ name.12 }} </td> <td>{{ name.1 }} </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
+      <tr> <td> {{ name.12 }} </td> <td>{{ name.1 }} </td> <td> {{ name.2 }} 
+      </td><td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td>
+      <td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
     {% else %}
 
-      <tr> <td> {{ name.12 }} </td> <td><a href = {{ name.0 }} target=blank> {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td><td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td><td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
+      <tr> <td> {{ name.12 }} </td> <td><a href = {{ name.0 }} target=blank> 
+      {{ name.1 }} </a> </td> <td> {{ name.2 }} </td> <td> {{ name.3 }} </td>
+      <td> {{ name.9 }} </td><td> {{ name.4}} </td><td> {{ name.5 }} </td>
+      <td> {{ name.6 }} </td> <td> {{ name.10 }} </tr> 
 
-    
     {% endif %}
-
 
     {% endfor %}
     
@@ -125,7 +127,9 @@
 
   {% else %}
 
-  <p> We were unable to find any schools that match your criteria. Please verify your address and try again with more generalized criteria. Thank you. </p>
+  <p> We were unable to find any schools that match your criteria. 
+    Please verify your address and try again with more generalized criteria. 
+    Thank you. </p>
 
   {% endif %}
 
