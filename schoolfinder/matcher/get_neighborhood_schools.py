@@ -5,6 +5,8 @@ from selenium.webdriver.common.keys import Keys
 This file contains code that is used in cleaning high school names from all files
 to a standard all caps, ending in "HIGH SCHOOL" format. It also has a function that uses selenium 
 to tap into existing CPS tools to find neighborhood schools given an address.
+
+Used selenium documentation to write original code.
 '''
 
 def get_neighborhood_schools(address):
@@ -49,7 +51,6 @@ def get_neighborhood_schools(address):
     for high_school in high_schools:
         rvl.append(str(get_id_from_name(" ".join(high_school[:-1]))))
 
-    print(rvl)
 
     if len(rvl) == 1:
         rv = "(" + str(rvl[0]) + ")" 
