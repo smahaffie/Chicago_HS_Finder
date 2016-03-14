@@ -48,8 +48,6 @@ def form(request):
                 form.cleaned_data['schooltype'] == []):
                 neighborhood_schools = get_neighborhood_schools(address)
 
-            print("NEIGHBORHOOD SCHOOLS: ", neighborhood_schools)
-
             tier = None
 
             if extra_form.is_valid(): #then tier is necessary for later calculations
@@ -62,7 +60,6 @@ def form(request):
 
             query = build_query(neighborhood_schools, form.cleaned_data)
 
-            print(query)
             try:
                 r = c.execute(query)
                 results = r.fetchall()
@@ -73,18 +70,12 @@ def form(request):
             except sqlite3.Error as er: 
                 return render(request, 'matcher/error.html')
                 
-
-
-            
-            print('finished')
-            print(results)
             context = {}
             context['names'] = []
             context['map_info'] = []
 
             result_dict = {}
             for result in results:
-                print(result)
                 gmaps_strings = result[7].split(",")
                 s_id = result[2] #key is school id
                 result_dict[s_id] = {} #dictionary to store query results 
@@ -101,10 +92,8 @@ def form(request):
                 result_dict[s_id]["FOT"] = result[10]
 
             if tier != None:
-                print("CASE 1")
                 rank_dict = rank_results(result_dict,form.cleaned_data,tier,extra_form.cleaned_data)
             else:
-                print('CASE 2')
                 rank_dict = rank_results(result_dict,form.cleaned_data)
 
             for tup in rank_dict:
@@ -117,9 +106,6 @@ def form(request):
             context['map_info'].append(["HOME", user_lat, user_lng, "#"])
 
             connection.close()
-
-            print("CONTEXT")
-            print(context['names'])
 
             return render(request, 'matcher/results.html', context)
 
