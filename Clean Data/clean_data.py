@@ -1,11 +1,27 @@
+
+'''
+This file contains two functions that clean the CSV files that we downloaded
+from the CPS website and one we received from a CPS intern that contains information
+about high schools. The files are then imported to the SQL database
+
+This code is original with some documentation used for using the subprocess commands
+'''
+
 import csv
 import subprocess
 import json
 
-
 def clean_data(collenrollpersist_filename, act_filename, freshontrack_filename, mainhs_filename, combohs_filename, optionshs_filename):
     '''
     Contains all the commands to clean all of the csvs required to build the data base
+    
+    Inputs:
+        collenrollpersist_filename, string
+        act_filename, string
+        freshontrack_filename, string 
+        mainhs_filename, string
+        combohs_filename, string
+        optionshs_filename, string
     '''
 
     '''
@@ -84,11 +100,17 @@ def clean_data(collenrollpersist_filename, act_filename, freshontrack_filename, 
             print(line)
             f1.write(line)
 
-def create_website_dict(website_csv_file):
+def create_website_file(website_csv_file):
     '''
     Creates a csv file with each line as an entry with two columns
     the first with School ID unique identifier and the second with 
     a link to their website.
+    
+    Inputs:
+        website csv file, string
+    Returns:
+        cleaned website csv
+        
     '''
     with open(website_csv_file,'r') as f, open("{}_cleaned.csv".format(website_csv_file[:-4]),"w") as f1:
         f.readline()
