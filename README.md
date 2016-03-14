@@ -6,11 +6,11 @@ This project uses public data on Chicago Public Schools and user inputted-backgr
 The data we use comes almost exclusively from http://cps.edu/SchoolData/Pages/SchoolData.aspx. 
 
 Libraries to install:
-Googlemaps: pip install -U googlemaps
-Selenium: pip install selenium
-Pandas: pip install pandas
-Json: pip install json
-Subprocess: pip install subprocess 
+Googlemaps: pip3 install -U googlemaps
+Selenium: pip3 install selenium
+Pandas: pip3 install pandas
+Json: pip3 install json
+Subprocess: pip3 install subprocess 
 
 To run our application:
 Navigate to Chicago_HS_Finder/schoolfinder/. 
