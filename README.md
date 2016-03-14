@@ -134,7 +134,9 @@ google_maps.py - find distance between two addresses
 build_query .py - takes in user inputs to build query to select matching schools that are then ranked
 Transit_info.py - contains all the functions that use the Google maps API to find information about travel time to every school
 Views.py - processes all the requests made through django to call the appropriate functions and generate the appropriate templates
-ranking.py - calculate ranking for a SQL to be displayed in results page
+ranking.py - calculate ranking for a list of schools returned by the SQL query to be displayed in results page
+
+Things to keep in mind about our ranking algorithm: If the user does not specify preferences for academics and transit time, we weight the two equally and therefore schools that are not strong academically may appear higher than initially expected. If the user does not provide academic history, we do not subtract a difficulty score from the scores of the selective enrollment schools. 
 
 Django templates:
 
