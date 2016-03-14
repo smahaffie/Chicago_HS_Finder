@@ -6,7 +6,7 @@ This project uses public data on Chicago Public Schools and user background and 
 The data we use comes almost exclusively from http://cps.edu/SchoolData/Pages/SchoolData.aspx.
 
 Libraries to install:
-Googlemaps: pip install --upgrade google-api-python-client
+Googlemaps: pip install -U googlemaps,  pip install --upgrade google-api-python-client
 Selenium: pip install selenium
 Pandas: pip install pandas
 Json: pip install json
