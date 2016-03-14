@@ -54,7 +54,12 @@ def form(request):
             tier = None
 
             if extra_form.is_valid(): 
-                tier = int(get_tier_number(address))
+                try:
+                    tier = int(get_tier_number(address))
+
+                # invalid address
+                except:
+                    return render(request, 'matcher/error.html')
 
             connection = sqlite3.connect('CHSF.db')
             connection.create_function("time_between", 2, get_duration)
