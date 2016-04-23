@@ -23,10 +23,15 @@ from django.http import HttpResponse
 
 from matcher import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^form/', views.form, name="form"),
-    url(r'^$', views.form, name="form"),
-    url(r'^about/',views.about,name="about")
+    url(r'^$', views.landing, name="shouldbeviewsforms"),
+    url(r'^about/',views.about,name="about"),
+    url(r'^landing/', views.landing,name='landing'),
+    url(r'^student/', views.student, name='student')
     
 ]

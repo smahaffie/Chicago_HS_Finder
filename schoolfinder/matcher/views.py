@@ -19,6 +19,12 @@ from selenium.webdriver.common.keys import Keys
 import json
 from .build_query import build_query
 
+def landing(request):
+    return render(request, 'matcher/landingpage.html')
+
+def student(request):
+    return render(request, 'matcher/student.html')
+
 def about(request):
     '''
     generates "About SchoolSmart" page
