@@ -2,7 +2,10 @@
 Shelby Mahaffie, Sherry Shenker, Joseph Day
  
 Overview:
-This project uses public data on Chicago Public Schools and user inputted-background and preferences to generate a list of schools that meet the user’s specifications and are ranked based on academic criteria and public transit travel time from the user's home. 
+This project uses public data on Chicago Public Schools and user inputted-background and preferences to generate a list of schools that meet the user’s specifications and are ranked based on academic criteria and public transit travel time from the user's home.
+
+Note: 
+The application is no longer available. However, all source code remains published.
 
 The majority of our data comes from http://cps.edu/SchoolData/Pages/SchoolData.aspx. 
 
